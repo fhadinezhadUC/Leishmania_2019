@@ -1,0 +1,21 @@
+List of content:
+. Update the genomes from TryTryp website (script for downloading the current version)
+. Run Aragorn and trnaScane-SE to find the genes (keep the script for running them)
+. Explain the options used for running the genefinders.
+. Explain the method used for integrating the genes, keeping all the information
+  Compare tse vs. ara:
+	. Compare the position displacement between Ara and tse
+	. Compare the identity mismatch of ara and tse 
+	. Analyse the reasons of displacement/ and identity mismatch
+	. Sumerize and compare Union vs. Intersection vs. tse vs. ara tRNA genes
+	. 
+. A summery of gene set (including functional class coverage of each genome!)
+. 
+  
+. improving 
+. the pipeline used for filtering genes
+. a summary of our genes after filtering
+.  
+1. why do we make function logos?
+2. Why do we make ID logos?
+3. why KLD?
