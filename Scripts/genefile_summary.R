@@ -5,39 +5,74 @@ genefile.summary <- function(){
   geneDF <- read.table(genefilepath, header = TRUE,colClasses = "character")
   # make a summary table for the 4 sets of genes found by ara, tse, their intersection, and union
   summery_table(geneDF)
-  # make 4bar paralel to show number of tRNA genes for each genome for union,intersection, tse, and ara gene sets
-  # make 4bar paralel to show the functional class coverage of each genome for three cases
   
+  # make a plot to show number of genes annotated for each genome,
+  # make a plot to show which tRNA functional classes were not annotated by both TSE and ARA for each genome.
+  vidualization(geneDF)
+  
+  # make a plot to show TSE VS Ara gene displacement
+  endDisplacement(geneDF)
 }
 vidualization <- function(integrated_tse_ara){
+  
   genometRNAdf <-
     data.frame(
       integrated_tse_ara$sourceOrg,
       integrated_tse_ara$arafunc,
-      integrated_tse_ara$tsefunc
+      integrated_tse_ara$tsefunc,
+      integrated_tse_ara$foundby
     )
-  names(genometRNAdf) <- c("sourceOrg", "arafunc", "tsefunc")
+  names(genometRNAdf) <- c("sourceOrg", "arafunc", "tsefunc","foundby")
   genome_list = split(genometRNAdf, f = genometRNAdf$sourceOrg)
+  
   
   plotpath <-
     "/home/fatemeh/Leishmania_Aug2018/phyloclassification/tsfminput_2019/"
-  tRNAcountdf <- data.frame(c(names(genome_list), "homo"))
-  tRNAcountdf$counts <- 0
-  names(tRNAcountdf) <- c("genome", "tRNAcounts")
-  tRNAcountdf[tRNAcountdf$genome == "homo", ]$tRNAcounts = 612
+  tRNAcountdf <- data.frame(names(genome_list))
+  tRNAcountdf$aracounts <- 0
+  tRNAcountdf$tsecounts <- 0
+  tRNAcountdf$unioncounts <- 0
+  tRNAcountdf$interscounts <- 0
+  names(tRNAcountdf) <- c("genome", "aracounts","tsecounts","unioncounts","interscounts")
+  
   for (i in 1:length(genome_list)) {
     tRNAcountdf$genome[i] <- names(genome_list[i])
-    tRNAcountdf$tRNAcounts[i] <- nrow(genome_list[[i]])
+    currentgenedf <- genome_list[[i]]
+    # for each genome df make the union, inters, tse and ara df
+    both <- currentgenedf$foundby == "both"
+    tseonly <- currentgenedf$foundby == "tse"
+    araonly <- currentgenedf$foundby == "ara"
+    
+    istse <- (tseonly | both)
+    isara <- (araonly | both)
+    isintersect_tse_ara <- both
+    
+    tse <- currentgenedf[istse, ]
+    ara <- currentgenedf[isara, ]
+    
+    # for intersection if tse and aragorn do not match we do not consider them in our counting
+    intersect_tse_ara <- currentgenedf[isintersect_tse_ara, ]
+    intersect_tse_ara <- intersect_tse_ara[as.character(intersect_tse_ara$tsefunc)==as.character(intersect_tse_ara$arafunc),]
+    union_tse_ara <- currentgenedf
+    
+    tRNAcountdf$aracounts[i] <- nrow(ara)
+    tRNAcountdf$tsecounts[i] <- nrow(tse)
+    tRNAcountdf$unioncounts[i] <- nrow(union_tse_ara)
+    tRNAcountdf$interscounts[i] <- nrow(intersect_tse_ara)
   }
   # keep this order for after filtering vidualization
-  tRNAcountdf <- tRNAcountdf[order(tRNAcountdf$tRNAcounts), ]
+  tRNAcountdf <- tRNAcountdf[order(tRNAcountdf$interscounts), ]
   tRNAcountdf$genome <-
     factor(tRNAcountdf$genome, levels = tRNAcountdf$genome)
-  
+  # 
+  # mymatrix <- rbind(tRNAcountdf$aracounts,tRNAcountdf$tsecounts)
+  # colnames(mymatrix) <- tRNAcountdf$genome
+  # barplot(mymatrix,beside = TRUE,col = c("blue","red"),las=2,cex.names=0.6)
+  # 
   library(ggplot2)
-  p <- ggplot(data = tRNAcountdf, aes(x = genome, y = tRNAcounts)) +
+  p <- ggplot(data = tRNAcountdf, aes(x = genome, y = interscounts)) +
     geom_bar(stat = "identity", fill = "steelblue") + geom_text(
-      aes(label = tRNAcounts),
+      aes(label = interscounts),
       vjust = 1.2,
       color = "white",
       position = position_dodge(0.9),
@@ -45,12 +80,12 @@ vidualization <- function(integrated_tse_ara){
     ) + theme(axis.text.x = element_text(angle = 90, hjust = 1),
               plot.title = element_text(hjust = 0.5)) +
     labs(title =
-           "Number of tRNA genes (union of genes found by ARA and TSE) in HomoC and TryTryp genomes",
+           "Number of tRNA genes (intersection of genes found by ARA and TSE) in TryTryp genomes",
          x =
-           "Genome", y = "Number of tRNAs")
+           "Genome", y = "Number of tRNA genes")
   p
   ggsave(
-    paste(plotpath, "UniontRNAcounts.png", sep = ""),
+    paste(outputpath, "intersecttRNAcounts.png", sep = ""),
     width = 14,
     height = 7
   )
@@ -86,17 +121,21 @@ vidualization <- function(integrated_tse_ara){
     )
   tRNAcountdf$percent_21 <- 0
   tRNAcountdf$missing <- ''
-  tRNAcountdf[tRNAcountdf$genome == "homo", ]$percent_21 = 100
   for (i in 1:length(genome_list)) {
     # remove function Z for now
+    currentgenedf <- genome_list[[i]]
+    both <- currentgenedf$foundby == "both"
+    intersect_tse_ara <- currentgenedf[both,]
+    intersect_tse_ara <- intersect_tse_ara[as.character(intersect_tse_ara$tsefunc)==as.character(intersect_tse_ara$arafunc),]
+    
     countsdf <-
-      as.data.frame(table(as.character(genome_list[[i]]$arafunc)))
+      as.data.frame(table(as.character(intersect_tse_ara$arafunc)))
     tRNAcountdf[tRNAcountdf$genome == names(genome_list[i]),]$missing <-
       paste(setdiff(func_classes, as.character(countsdf$Var1)), collapse = " ")
     diffset <- setdiff(func_classes, as.character(countsdf$Var1))
-    fcount <- 21 - length(diffset)
+    fcount <- 22 - length(diffset)
     tRNAcountdf[tRNAcountdf$genome == names(genome_list[i]),]$percent_21 <-
-      (fcount / 21) * 100
+      (fcount / 22) * 100
     # make a vector of missing functional classes
   }
   tRNAcountdf$genome <-
@@ -115,7 +154,7 @@ vidualization <- function(integrated_tse_ara){
              hjust = -0.1
            )
   p
-  ggsave(paste(plotpath, "ara_funcPerc.png", sep = ""),
+  ggsave(paste(outputpath, "ara_funcPerc.png", sep = ""),
          width = 14,
          height = 7)
   
@@ -740,4 +779,104 @@ summery_table <- function(integrated_tse_ara) {
     file = paste(outputpath,"Gene_Summary_Table.txt",sep = "")
   )
   #paste(summerytable[4,],collapse = " & ")
+}
+endDisplacement <- function(integrated_tse_ara){
+  library(ggplot2)
+  library(dplyr)
+  isboth <- integrated_tse_ara$foundby == "both"
+  tseonly <- integrated_tse_ara$foundby == "tse"
+  araonly <- integrated_tse_ara$foundby == "ara"
+  
+  istse <- (tseonly | isboth)
+  isara <- (araonly | isboth)
+  
+  tse <- integrated_tse_ara[istse,]
+  ara <- integrated_tse_ara[isara,]
+  
+  # for intersection if tse and aragorn do not match we do not consider them in our counting
+  both <- integrated_tse_ara[isboth,]
+  #both <- both[both$tsefunc == both$arafunc, ]
+  union_tse_ara <- integrated_tse_ara
+  
+  Fiveprimend = integer(length = nrow(both))
+  Threeprimend = integer(length = nrow(both))
+  
+  for (i in 1:nrow(both)) {
+    if (both$direction[i] == "+")
+    {
+      Fiveprimend[i] = as.integer(both$tsebegin[i]) - as.integer(both$arabegin[i])
+      Threeprimend[i] = as.integer(both$tseend[i]) - as.integer(both$araend[i])
+    }
+    if (both$direction[i] == "-")
+    {
+      Threeprimend[i] = (as.integer(both$tsebegin[i]) - as.integer(both$arabegin[i])) *
+        -1
+      Fiveprimend[i] = (as.integer(both$tseend[i]) - as.integer(both$araend[i])) *
+        -1
+    }
+  }
+  
+  bad <- is.na(Fiveprimend)
+  Fiveprimend <- Fiveprimend[!bad]
+  #Difference between tse1end and tse2end
+  
+  bad <- is.na(Threeprimend)
+  Threeprimend <- Threeprimend[!bad]
+  
+  par(mfrow = c(1, 1))
+  X = Fiveprimend
+  Y = Threeprimend
+  data <- data.frame(X, Y)
+  data = group_by(data, X, Y)
+  data = summarize(data, frequency = n())
+  data$frequency = data$frequency #/ sims
+  xbreaks <- as.integer(levels(factor(X)))
+  ybreaks <- as.integer(levels(factor(Y)))
+  total <- sum(data$frequency)
+  plottitle <-
+    paste(
+      "Empirical joint distribution of end-displacements in \n",
+      nrow(both),
+      " tRNA gene models found by both Aragorn and tRNAscan-SE 2.0",
+      sep = ""
+    )
+  
+  p <- ggplot(data = data, aes(X, Y)) +
+    geom_tile(aes(fill = frequency), color = "white") + geom_text(aes(label = frequency)) +
+    scale_fill_gradient(low = "lightblue", high = "darkred", name = "Frequency") +
+    labs(title = plottitle) +
+    theme(plot.margin = unit(c(1.8, .5, 1.75, 1.55), "cm")) + theme(plot.title = element_text(
+      color = "#383838",
+      face = "bold",
+      size = 17,
+      vjust = 4,
+      hjust = 0.5
+    )) +
+    theme(
+      axis.title.x = element_text(
+        color = "#383838",
+        face = "bold",
+        size = 13,
+        vjust = -1.5
+      ),
+      axis.title.y = element_text(
+        color = "#383838",
+        face = "bold",
+        size = 13,
+        vjust = 2
+      )
+    ) +
+    theme(
+      axis.text.x = element_text(face = "bold",
+                                 color = "#383838",
+                                 size = 10),
+      axis.text.y = element_text(face = "bold",
+                                 color = "#383838",
+                                 size = 10)
+    ) +
+    xlab("5-prime displacement (tSE2-Ara)") + ylab("3-prime displacement (tSE2-Ara)") + scale_y_continuous(breaks = ybreaks) +
+    scale_x_continuous(breaks = xbreaks) 
+  ggsave(paste(outputpath, "EndDisplacement.png", sep = ""),
+         width = 14,
+         height = 7)
 }

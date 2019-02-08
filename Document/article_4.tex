@@ -60,7 +60,8 @@ BCOR5mm, % Binding correction
 
 \section{Preparing Data}
 %------------------------------------------------
-\textbf{TryTryp genome data}. From tritrypdb website, we downloaded the version 41 of 46 TryTryp genomes released on 2018-12-05 (\href{thesentence}{Script1}). Genomes are compared based on number of sequence fragments relative to their length as shown in figure ~\vref{fig:gallery}.
+\textbf{TryTryp genome data}. From tritrypdb website, we downloaded the version 41 of 46 TryTryp genomes released on 2018-12-05. Genomes are compared based on number of sequence fragments relative to their length as shown in figure ~\vref{fig:gallery}. 
+All the results, scripts and input data for TryTryp version 41 can be found \href{thesentence}{here}. 
 
 \begin{figure}[tb]
 \centering 
@@ -95,7 +96,7 @@ optional positions of the D-loop (17, 17a, 20a, and 20b) whereas in elongators, 
 
 \item At position 20, A is strictly conserved in all eukaryotic initiators
 \end{enumerate} 
-to investigate all these features we clustered CAT tRNA genes using Levenshtein (edit) distance between gene sequences and Ward.D2 method to measure the dissimilarity between each two clusters. We ended up with three clusters. Table ~\vref{tab:1} investigates each of these features in one column. from this table we see that only tRNA genes in cluster 1 have almost all the conserved features for eukaryotic initiators.
+To investigate all these features we clustered CAT tRNA genes using Levenshtein (edit) distance between gene sequences and Ward.D2 method to measure the dissimilarity between each two clusters. We ended up with three clusters. Table \ref{table:1} investigates each of these features in each column. from this table we see that only tRNA genes in cluster 1 have almost all the conserved features for eukaryotic initiators.
 
 
 \begin{table}[hbt]
@@ -112,9 +113,10 @@ Cluster2 & 95 & 95 & 2 & 0 & 95 & 95 & 8 & 0 & 0-8\\
 Cluster3 & 2 & 2 & 2 & 0 & 0 & 0 & 8/9 & 0 & 0-22\\
 \hline
 \end{tabular}
-\label{tab:1}
+\label{table:1}
 \end{adjustbox}
 \end{table}
+
 
 
 %----------------------------------------------------------------------------------------
@@ -123,7 +125,12 @@ Cluster3 & 2 & 2 & 2 & 0 & 0 & 0 & 8/9 & 0 & 0-22\\
 
 \subsection{\textbf{Summary of predicted TryTryp tRNA genes}}
 
-To investigate and compare tRNA genes predicted by two gene finders TSE and ARA, we made four sets of genes for genes found by TSE, ARA, TSE and ARA intersection, and TSE and ARA union. for intersection set, we ignored genes which their identity by ARA and TSE did not match. for union set, we chose TSE identity over ARA. Table  ~\vref{tab:2} shows a summary of these four sets.
+To investigate and compare tRNA genes predicted by two gene finders TSE and ARA, we made four sets of genes. Set one, TSE and ARA intersection, Set two, TSE and ARA union, Set three, genes found by ARA and Set four, genes found by TSE . for intersection set, we dismissed genes which had different identity by ARA and TSE. for union set, we picked TSE identity over ARA. Table  ~\ref{table:2} shows a summary of these four sets. Further, to compare the coordinates of genes annotated by ARA and TSE we made a heatmap shown in figure ~\ref{fig:heatmap}. We see from this figure that ... 
+%----------------------------------------------------------------------------------------
+%	???? Analyse why we have the differences ....
+%----------------------------------------------------------------------------------------
+
+Figure ~\ref{fig:counts} shows the number of genes annotated for each genome, and Figure ~\ref{fig:types} shows which tRNA functional classes were not annotated by both TSE and ARA for each genome. 
 
 \begin{table}[hbt]
 \caption{summary of the predicted genes by TSE and ARA. pseudo genes are marked as \$, initiators as X, stop as \#, sup as "?", sec as Z and pyl as O}
@@ -140,11 +147,36 @@ UNION & 4379 & 377587 & 86.23 & 50-215 & 32.81 & 26.66 & 22.87 & 17.65 & 15.346 
 INTERSECTION & 3560 & 265016 & 74.44 & 68-89 & 32.01 & 26.13 & 23.22 & 18.64 &  2.331 & 212 & 64 & 104 & 161 & 105 & 229 &  80 & 172 & 187 & 338 &  97 & 125 & 200 & 162 & 349 & 230 & 218 & 241 & 52 &  78 & 76 & 78 &  6 & 0 & 0 & 0\\
 \hline
 \end{tabular}
-\label{tab:1}
+\label{table:2}
 \end{adjustbox}
 \end{table}
- 
 
+
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.8\columnwidth]{EndDisplacement.png} 
+\caption[Genome Comparison]{Empirical joint distribution of end-displacements in ? tRNA gene models found by both Aragorn and tRNAscan-SE 2.0.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
+\label{fig:heatmap} 
+\end{figure}
+ 
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.8\columnwidth]{intersecttRNAcounts.png} 
+\caption[Number of Genes annotated]{Number of genes annotated by both TSE and ARA for each TryTryp genome.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
+\label{fig:counts} 
+\end{figure}
+
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.8\columnwidth]{ara_funcPerc.png} 
+\caption[Genome Comparison]{Percentage of 22 tRNA types annotated by both TSE and ARA for each TryTryp genomes. The labels on top of each bar shows which tRNA classes are not annotated for the genome.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
+\label{fig:types} 
+\end{figure}
+
+
+
+
+....
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
