@@ -7355,16 +7355,16 @@ araseq: gccgcgatgagctcagctggtgctgggtgcgggcttcaaacccgtaggtgagttgctctcacagccgttcga
 arass:  (((((((.( (((((((dddd)))))))(((((  AAA  )))))  (((((vvvvv))))) ((((ttttttt))))).)))))))                                                                                                                               
 
 geneid: LinfantumJPCM5_LinJ.07_5                                
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: gcagcggatggcgtagatgcacttgactgctgctgctgaagtcggcgggcgagggcctctcgtgcgatgaggcggtgcctttccgcctcctctgcg                                                                                                                       
-arass:  ((((.(((  ..((ddddddddddd))..((((((  AAA  ))))))(((((vvvvv)))))       (((((ttttttt)))))))).))))                                                                                                                       
-
-geneid: LinfantumJPCM5_LinJ.07_6                                
 tseseq: GTCCGTGTGGCTCAATGGAAGAGCATCTGACTACGGATCAGAGGGtTGCAGGTTCGAATCCTGTCACGGATG                                                                                            
 tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: gtccgtgtggctcaatggaagagcatctgactacggatcagagggttgcaggttcgaatcctgtcacggatg                                                                                                                                               
 arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.07_6                                
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: gcagcggatggcgtagatgcacttgactgctgctgctgaagtcggcgggcgagggcctctcgtgcgatgaggcggtgcctttccgcctcctctgcg                                                                                                                       
+arass:  ((((.(((  ..((ddddddddddd))..((((((  AAA  ))))))(((((vvvvv)))))       (((((ttttttt)))))))).))))                                                                                                                       
 
 geneid: LinfantumJPCM5_LinJ.09_7                                
 tseseq: AGCACCGTAGCGCAGTGGAAGCGCGATGGGCTCATAACCCATAGGtCGTTGGATCGAAACCAATCGGTGCTA                                                                                            
@@ -7451,10 +7451,10 @@ araseq: gggcgtgtagctcagtggtagagcgtccgtttcgcatacggaaggcctagggttcgatcccctactcgtcca
 arass:  (((((.(  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).)))))                                                                                                                                               
 
 geneid: LinfantumJPCM5_LinJ.11_21                               
-tseseq: GGTGAGATGGTCGAGTGGTctAAGACGTTGGATTAAGGTTCCAATCCTTTCGAGGgCGTGGGTTCAAACCCCACTCTCATCA                                                                                  
-tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>.>...<.<...>>>>>.......<<<<<<<<<<<<.                                                                                  
-araseq: ggtgagatggtcgagtggtctaagacgttggattaaggttccaatcctttcgagggcgtgggttcaaaccccactctcatca                                                                                                                                     
-arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                     
+tseseq: GCGCCGCTGGTCTAGTGGCATGATGATACCCTCCCAAGGTATTGaCCCGGGTTCGATTCCCGGGCGGCGCA                                                                                             
+tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
+araseq: gcgccgctggtctagtggcatgatgataccctcccaaggtattgacccgggttcgattcccgggcggcgca                                                                                                                                                
+arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
 
 geneid: LinfantumJPCM5_LinJ.11_22                               
 tseseq: GGGCGTGTAGCTCAGTGGTAGAGCGTCCGTTTCGCATACGGAAGGcCTAGGGTTCGATCCCCTACTCGTCCA                                                                                            
@@ -7463,10 +7463,10 @@ araseq: gggcgtgtagctcagtggtagagcgtccgtttcgcatacggaaggcctagggttcgatcccctactcgtcca
 arass:  (((((.(  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).)))))                                                                                                                                               
 
 geneid: LinfantumJPCM5_LinJ.11_23                               
-tseseq: GCGCCGCTGGTCTAGTGGCATGATGATACCCTCCCAAGGTATTGaCCCGGGTTCGATTCCCGGGCGGCGCA                                                                                             
-tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
-araseq: gcgccgctggtctagtggcatgatgataccctcccaaggtattgacccgggttcgattcccgggcggcgca                                                                                                                                                
-arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
+tseseq: GGTGAGATGGTCGAGTGGTctAAGACGTTGGATTAAGGTTCCAATCCTTTCGAGGgCGTGGGTTCAAACCCCACTCTCATCA                                                                                  
+tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>.>...<.<...>>>>>.......<<<<<<<<<<<<.                                                                                  
+araseq: ggtgagatggtcgagtggtctaagacgttggattaaggttccaatcctttcgagggcgtgggttcaaaccccactctcatca                                                                                                                                     
+arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                     
 
 geneid: LinfantumJPCM5_LinJ.11_24                               
 tseseq: GCGAGCGTAGCGCAGTCGGCAGCGCGTGGGTCTCATAATCCCAAGGtCGTGAGTTCGATCCTCACCGGTCGCA                                                                                           
@@ -7492,451 +7492,463 @@ tsess:  notfound
 araseq: tggcgttgtgggcgacgcggacgcctcgcggtgcctgtgggcatcacgccgccgccggatcttctccagcagcgtcac                                                                                                                                         
 arass:  (((((((   ((.(ddddddddd).))  (((((  AA  )))))        ((.((ttttttt)).)))))))))                                                                                                                                         
 
-geneid: LinfantumJPCM5_LinJ.16_28                               
-tseseq: GCTCCTATAGTGTAGCGGTtATCACCTCGGACTCTGAATCCGATAaCCCTGGTTCGAGTCCAGGTAGGAGTG                                                                                            
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: cgctcctatagtgtagcggttatcacctcggactctgaatccgataaccctggttcgagtccaggtaggagtgac                                                                                                                                            
-arass:  ((((((((  (((.dddddddd.))) (((((  AAA  )))))    (((((ttttttt)))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.17_29                               
+geneid: LinfantumJPCM5_LinJ.15_28                               
 tseseq: TTCTCGGTAGTATAGTGGTtAGTATACCCGCCTGTCACGCGGGTGaCCCGGGTTCAATTCCCGGCCGGGAAG                                                                                            
 tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: ttctcggtagtatagtggttagtatacccgcctgtcacgcgggtgacccgggttcaattcccggccgggaagc                                                                                                                                              
 arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                               
 
-geneid: LinfantumJPCM5_LinJ.17_30                               
-tseseq: GCAAATGTGGCCGAGTGGTtAAGGCGCCTGCCTGCTAAGCAGGTGTGATCTCACGCGAAGGTTCGAACCCTTCCGTTTGCG                                                                                   
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
-araseq: gcaaatgtggccgagtggttaaggcgcctgcctgctaagcaggtgtgatctcacgcgaaggttcgaacccttccgtttgcgc                                                                                                                                     
-arass:  (((((((  (((dddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
-
-geneid: LinfantumJPCM5_LinJ.17_31                               
-tseseq: GGGGATGTAGCTCAGATGGTAGAGCGACCGCTTAGCATGCGGTAGGtATTGGGATCGATACCCAACTTCTCCA                                                                                           
-tsess:  >>>>>.>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<.<<<<<.                                                                                           
-araseq: tggggatgtagctcagatggtagagcgaccgcttagcatgcggtaggtattgggatcgatacccaacttctccaac                                                                                                                                           
-arass:  ((((((.(  ((((dddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).))))))                                                                                                                                            
-
-geneid: LinfantumJPCM5_LinJ.18_32                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: gccagccattgtcgagggtgcgtccgctgtggcctctgcctccagccaggacggcggtgtgagtcttgagtcgcggctcaggtccgggtggcaggct                                                                                                                      
-arass:  (((.((((  (.((dddddd)).)  (((.((  AAA  )).))) ((((((.vvvvvvvv.))))))   (.(((ttttttt))).))))).)))                                                                                                                      
-
-geneid: LinfantumJPCM5_LinJ.18_33                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: tgatggggtagcctgtggcggcgaggccgccgttgcaagcgacattgtgaatgccccggaacctatgaggcccacatgtatccgtaacttggtggacggcgttggcgcgccgtttcaggcgatctactcgtcttcgtcgtc                                                                          
-arass:  (((((((   ((((ddddddddd))))(((((  AAA iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii )))))                       ((((ttttttt)))))))))))                                                                           
-
-geneid: LinfantumJPCM5_LinJ.21_34                               
-tseseq: GCAAACGTGGCCGAGTGGTtAAGGCGCCTGCCTGCTAAGCAGGTGTGATCTCACGCGAAGGTTCGAACCCTTCCGTTTGCG                                                                                   
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
-araseq: gcaaacgtggccgagtggttaaggcgcctgcctgctaagcaggtgtgatctcacgcgaaggttcgaacccttccgtttgcg                                                                                                                                      
-arass:  (((((((  (((dddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
-
-geneid: LinfantumJPCM5_LinJ.21_35                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: tggcgcggcgggcagcggaggcgccggcgggcagcgtcgcgaggtgaacacgacgaccggctcgcctattgtgccgacccccgtgacgggcagctccggcgcgctcgatgcgtacaactcgcgctgcgtcat                                                                                   
-arass:  (((((((   (((.ddddddd.))) (.((( iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii AAA  ))).)    .((vvvv)).           .((((ttttttt)))).)))))))                                                                                   
-
-geneid: LinfantumJPCM5_LinJ.21_36                               
-tseseq: GGTCCAGTGGTCTAGTGGCATGATTCTCCCTTAGGGTGGGAGAGGtCCCGGGTTCAATTCCCGGCTGGACCC                                                                                            
-tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggtccagtggtctagtggcatgattctcccttagggtgggagaggtcccgggttcaattcccggctggaccc                                                                                                                                               
-arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.21_37                               
-tseseq: GCGCGGTTGGTCTAGGTGGTtATGACGTCGCTTTAACACGGCGAAGGtCTCGGGTTCGAGTCCCGAACTGCGTA                                                                                          
-tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
-araseq: gcgcggttggtctaggtggttatgacgtcgctttaacacggcgaaggtctcgggttcgagtcccgaactgcgtac                                                                                                                                            
-arass:  (((((((  (((.ddddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.21_38                               
-tseseq: GCATTCCTAGCTCAGTCGGTAGAGCGCACGGCTCTTAACCGTGTGGtCGTGGGTTCGATCCCCACGGAGTGCG                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: gcattcctagctcagtcggtagagcgcacggctcttaaccgtgtggtcgtgggttcgatccccacggagtgcgc                                                                                                                                             
-arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.21_39                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: acagcgggtggcagagaggcgttgctcgctcttcaccacggtgtgtgtgtataaattagtgcgcaggtgccgcgttcaacgcctgccgctctcc                                                                                                                         
-arass:  (.(((((   ((((ddddddd)))) (((.((  AAA  )).)))(((((((vvvvvv)))))))     ((.(ttttttt).))))))).)                                                                                                                          
-
-geneid: LinfantumJPCM5_LinJ.23_40                               
-tseseq: GCTCCCGTGGTCTAGTTGGTtAGGACGCTGGTCTTATGAACCGGATGtCGCGGGTTCGAGCCCCGCCGGGAGCA                                                                                          
-tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
-araseq: gctcccgtggtctagttggttaggacgctggtcttatgaaccggatgtcgcgggttcgagccccgccgggagcac                                                                                                                                            
-arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.23_41                               
-tseseq: GCGTGGGTGATCTAGTGGTtATGATGTCTGCTTTACACGCAGAACGtCGCGGGTTCGAACCCCGCCCCGCGTA                                                                                           
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: gcgtgggtgatctagtggttatgatgtctgctttacacgcagaacgtcgcgggttcgaaccccgccccgcgta                                                                                                                                              
-arass:  (((((((  (((.dddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.23_42                               
-tseseq: GGTCCTATAGTGTAGTGGTtATCACTTCGGACTTTGAATCCGAAAaCCCAGGTTCGAATCCTGGTAGGACCA                                                                                            
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggtcctatagtgtagtggttatcacttcggactttgaatccgaaaacccaggttcgaatcctggtaggaccac                                                                                                                                              
-arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.23_43                               
-tseseq: GTCCGTGTGGCTCAATGGAAGAGCATCTGACTACGGATCAGAGGGtTGCAGGTTCGAATCCTGTCACGGATG                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: tgtccgtgtggctcaatggaagagcatctgactacggatcagagggttgcaggttcgaatcctgtcacggatgt                                                                                                                                             
-arass:  ((((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.23_44                               
-tseseq: GGCAAGATGGTCGAGTGGTctAAGACGTCACGTTCAGGTCGTGATCTCCCCTGGAGGCGTGGGTTCAAACCCCACTCTTGTCA                                                                                 
-tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>...<<<<..>>>>>.......<<<<<<<<<<<<.                                                                                 
-araseq: tggcaagatggtcgagtggtctaagacgtcacgttcaggtcgtgatctcccctggaggcgtgggttcaaaccccactcttgtcaa                                                                                                                                  
-arass:  ((((((((  (((ddddddddddd)))((((((  AAA  ))))))(((vvvvv)))  (((((ttttttt)))))))))))))                                                                                                                                  
-
-geneid: LinfantumJPCM5_LinJ.23_45                               
-tseseq: GGCCGCTTAGCACAGTGGCAGTGCACTGGTCTTGTAAACCAGGGGtCCCGAGTTCAATTCTCGGAGTGGCCT                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: aggccgcttagcacagtggcagtgcactggtcttgtaaaccaggggtcccgagttcaattctcggagtggcctt                                                                                                                                             
-arass:  ((((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.23_46                               
-tseseq: GGCCTCTTGGCGCAATGGAAGCGCATCAGACTTCGGATCTGAGGGtTGCAGGTTCGAGTCCTGCAGGGGTCG                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggcctcttggcgcaatggaagcgcatcagacttcggatctgagggttgcaggttcgagtcctgcaggggtcg                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.23_47                               
-tseseq: GCACTTCTAGCTCAGTTGGTAGAGCGCGTGGCTTTTAACCTCGTGGtCGTGGGTTCGAGCCCCACGGAGTGCG                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<.>>.>>.......<<.<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: cgcacttctagctcagttggtagagcgcgtggcttttaacctcgtggtcgtgggttcgagccccacggagtgcgg                                                                                                                                            
-arass:  ((((((((  ((((dddddddd))))(((.((  AAA  )).)))    (((((ttttttt)))))))))))))                                                                                                                                            
-
-geneid: LinfantumJPCM5_LinJ.23_48                               
-tseseq: GCAATTGTGGTCCAACGGTtAAGATCCCCGCCTTCCAAGCGGGTGaCCCGGGTTCGACTCCCGGCAATTGCA                                                                                            
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: gcaattgtggtccaacggttaagatccccgccttccaagcgggtgacccgggttcgactcccggcaattgcac                                                                                                                                              
-arass:  (((((((  (((dddddddddd))) (((((  AAA  )))))    (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.23_49                               
-tseseq: GGGGGCTTAGCTCAGTGGTAGAGCATTGGATTCCAAATCCAGGGGtCGTAGGTTCAATCCCTGCAGCTCTCA                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: gggggcttagctcagtggtagagcattggattccaaatccaggggtcgtaggttcaatccctgcagctctca                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.23_50                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: agaaaaagtgtccaatggacacgacagcgttattgttgctgggggcgcgagttctagtctcgattttcttc                                                                                                                                                
-arass:  ((.((((   ((.dddddddd.))(((((  AAA  )))))     .((((ttttttt)))).)))).))                                                                                                                                                
-
-geneid: LinfantumJPCM5_LinJ.24_51                               
-tseseq: GGCCGCTTAGTCTAGTGGTATGATTCCCGCTTCGGGTGCGGGAGGtCAGGGGTTCAATTCCCCTAGCGGCCC                                                                                            
-tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggccgcttagtctagtggtatgattcccgcttcgggtgcgggaggtcaggggttcaattcccctagcggccc                                                                                                                                               
-arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.24_52                               
-tseseq: GCTCCTATAGTGTAGCGGTtATCACCTCGGACTCTGAATCCGATAaCCCTGGTTCGAGTCCAGGTAGGAGTG                                                                                            
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: gctcctatagtgtagcggttatcacctcggactctgaatccgataaccctggttcgagtccaggtaggagtgc                                                                                                                                              
-arass:  (((((((  (((.dddddddd.))) (((((  AAA  )))))    (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.24_53                               
-tseseq: GCTGGGGTTCCCGAGTTGGTcaAAGGGGTGAGACTTAAGTTCTCATGCGCAAGCTtCGTGGGTTCGAACCCCACCTCCAGCA                                                                                  
-tsess:  >>>>>>>..>>>............<<<.>>>>>.......<<<<<.>>....<<...>>>>>.......<<<<<<<<<<<<.                                                                                  
-araseq: gctggggttcccgagttggtcaaaggggtgagacttaagttctcatgcgcaagcttcgtgggttcgaaccccacctccagca                                                                                                                                     
-arass:  (((((((  (((.dddddddddd.)))((((((  AAA  ))))))           (((((ttttttt))))))))))))                                                                                                                                     
-
-geneid: LinfantumJPCM5_LinJ.24_54                               
-tseseq: GCTCTCATAGCTCAGTCGGTtAGAGCGTGGGTCTAATAAGCCCAAGGtCACAGGTTCGACCCCTGTTGGGAGCA                                                                                          
-tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
-araseq: gctctcatagctcagtcggttagagcgtgggtctaataagcccaaggtcacaggttcgacccctgttgggagcac                                                                                                                                            
-arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.24_55                               
-tseseq: GCTCTCATAGCTCAGTCGGTtAGAGCGTGGGTCTAATAAGCCCAAGGtCACAGGTTCGACCCCTGTTGGGAGCA                                                                                          
-tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
-araseq: gctctcatagctcagtcggttagagcgtgggtctaataagcccaaggtcacaggttcgacccctgttgggagcac                                                                                                                                            
-arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.24_56                               
-tseseq: TTCTCGGTAGTATAGTGGTtAGTATACCCGCCTGTCACGCGGGTGaCCCGGGTTCAATTCCCGGCCGGGAAG                                                                                            
-tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ttctcggtagtatagtggttagtatacccgcctgtcacgcgggtgacccgggttcaattcccggccgggaag                                                                                                                                               
-arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.25_57                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: ggatgctctgcgctagttgatgtggggatgttggattgtgcgtgggcggtgagcagccgtgctgatagccgctgttgagagttatgattctcttgtagctcaagttgaaggtttcctcttggttgagcgccatctctggtgatgacgcaggcatcaggcgcgttggtgcgacgctttctgcgtcgc                             
-arass:  .(((((.   (((.dddddd.))) (((((  AAiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiA  )))))           ...vvvvv...    (..((ttttttt))..).))))).                             
-
-geneid: LinfantumJPCM5_LinJ.26_58                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: cggccgtgtcgatgagcttcagcttcctccccttgtacgtgcatgcgatttcgatggggtcgcgggtcgtgttcgactcgtcagcggcgcggtttcgctcgtagccgac                                                                                                          
-arass:  ((((.(((  ((.(dddddddd).))  ((((. iiiiiiiiiiiiii AAA  .))))(.(.vvvvvvvv.).)       (((((ttttttt)))))))).))))                                                                                                           
-
-geneid: LinfantumJPCM5_LinJ.28_59                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: cgtcgctgggctggagagcttggctgcgctggccgttgcccaccgtgagatgctctaccaacacgctcagcagcggtgcatgctgctggcgtcagcc                                                                                                                      
-arass:  .(.(((( (((ddddddddddd))) ((.(((  AAA  ))).))((((.vvvvvvvvvvvvvv.))))  (((((tttttt))))))))).).                                                                                                                        
-
-geneid: LinfantumJPCM5_LinJ.29_60                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: gccgaagttagtcggggaacggccacggatggcgtccgtgcggagctgctgctgcgtgtactggcgcggagccagctccttggca                                                                                                                                  
-arass:  (((((.(.  ((((ddddd))))(((((  AAA  )))))(((.(vvvv).)))     .((((ttttttt))))..).)))))                                                                                                                                  
-
-geneid: LinfantumJPCM5_LinJ.29_61                               
-tseseq: GGCAGGATGGCCGAGTGGTctAAGGCGGGAGACTCAAGTTCTCTTCTATTCGTAGGCGCGGGTTCGAACCCCGCTCCTGTCA                                                                                  
-tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                  
-araseq: ggcaggatggccgagtggtctaaggcgggagactcaagttctcttctattcgtaggcgcgggttcgaaccccgctcctgtcac                                                                                                                                    
-arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                     
-
-geneid: LinfantumJPCM5_LinJ.29_62                               
-tseseq: GTCATCATACCCAAGTGGTtACGGGGGTTGACTCGAAATCAACTGCGATCTCGCGCGCAGGTTCGAATCCTGCTGATGACG                                                                                   
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
-araseq: gtcatcatacccaagtggttacgggggttgactcgaaatcaactgcgatctcgcgcgcaggttcgaatcctgctgatgacg                                                                                                                                      
-arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
-
-geneid: LinfantumJPCM5_LinJ.30_63                               
-tseseq: GGCCGCTTAGCACAGTGGCAGTGCACCACTCTCGTAAAGTGGGGGtCGCGAGTTCGATTCTCGCAGTGGCCT                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggccgcttagcacagtggcagtgcaccactctcgtaaagtgggggtcgcgagttcgattctcgcagtggcct                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.31_64                               
-tseseq: GCCGCGATAGCTCAGTTGGGAGAGCGTCAGACTGAAGATCTGAAGGtCCCTGGTTCGATCCCGGGTCGCGGCA                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: gccgcgatagctcagttgggagagcgtcagactgaagatctgaaggtccctggttcgatcccgggtcgcggca                                                                                                                                              
-arass:  (((((((  ((((dddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.31_65                               
-tseseq: GTCACCATACCCAAGTGGTtACGGGGACTGACTAGAAATCAGTTGCGATCTCGCGCGCAGGTTCGAATCCTGCTGGTGACG                                                                                   
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
-araseq: gtcaccatacccaagtggttacggggactgactagaaatcagttgcgatctcgcgcgcaggttcgaatcctgctggtgacgc                                                                                                                                     
-arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
-
-geneid: LinfantumJPCM5_LinJ.31_66                               
-tseseq: GGGGATGTAGCTCAGATGGTAGAGCGACCGCTTAGCATGCGGTAGGtATTGGGATCGATACCCAACTTCTCCA                                                                                           
-tsess:  >>>>>.>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<.<<<<<.                                                                                           
-araseq: ggggatgtagctcagatggtagagcgaccgcttagcatgcggtaggtattgggatcgatacccaacttctcca                                                                                                                                              
-arass:  (((((.(  ((((dddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).)))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.31_67                               
-tseseq: GCGCAGTTGGTCTAGTGGTAGAATTCTCGCCTGCCACGCGGGAGGCCCGGGTTCGATTCCCGGACTGCGCA                                                                                             
-tsess:  >>>>>>>..>>.>.......<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
-araseq: gcgcagttggtctagtggtagaattctcgcctgccacgcgggaggcccgggttcgattcccggactgcgcacc                                                                                                                                              
-arass:  (((((((  ((.(ddddddd).))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
-
-geneid: LinfantumJPCM5_LinJ.31_68                               
+geneid: LinfantumJPCM5_LinJ.15_29                               
 tseseq: TCCGATGTGGTATAGTGGAtAGAACAAGCGGCTCTCACCCGCTAGaCCCGGGTTCGATCCCCGGCATCGGAA                                                                                            
 tsess:  >>>>>>>..>>.>........<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: ttccgatgtggtatagtggatagaacaagcggctctcacccgctagacccgggttcgatccccggcatcggaag                                                                                                                                             
 arass:  ((((((((  ((.(dddddddd).)) (((((  AAA  )))))    (((((ttttttt)))))))))))))                                                                                                                                             
 
-geneid: LinfantumJPCM5_LinJ.31_69                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: cctgctcttccgcgtggaacagcagcggcactgcgatagcgtggagacggtgcgccactggtgtcttcagaaacacctcagctacgacaagctgatggccattgtagacctggagagccacatcaagtacgagctcgcggagttcatgccgttccgcagcatcgttgaggcggagaagctgttggaacagctggacaagc               
-arass:  (.((.((  (.((dddddddd)).)(((((  AAA  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii)))))       ...(.vvvvvvv.)... (((((tttttt))))))).)).)               
+geneid: LinfantumJPCM5_LinJ.16_30                               
+tseseq: GCTCCTATAGTGTAGCGGTtATCACCTCGGACTCTGAATCCGATAaCCCTGGTTCGAGTCCAGGTAGGAGTG                                                                                            
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: cgctcctatagtgtagcggttatcacctcggactctgaatccgataaccctggttcgagtccaggtaggagtgac                                                                                                                                            
+arass:  ((((((((  (((.dddddddd.))) (((((  AAA  )))))    (((((ttttttt)))))))))))))                                                                                                                                             
 
-geneid: LinfantumJPCM5_LinJ.32_70                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: ttggtgctggcgagcgcttgcgtgcgtgcttgctcgagtagcgtttccctcttcgcgggtcgcgcctcctcagtgtcggaggtgacggtctgtgccgctcgcggtgcaacgccgcggcgctaaa                                                                                           
-arass:  (((((((  (((dddddddddd)))(((((  AAA iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii )))))  (.(..vvvvvvv..).)    (((((ttttttt))))))))))))                                                                                           
+geneid: LinfantumJPCM5_LinJ.17_31                               
+tseseq: TTCTCGGTAGTATAGTGGTtAGTATACCCGCCTGTCACGCGGGTGaCCCGGGTTCAATTCCCGGCCGGGAAG                                                                                            
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ttctcggtagtatagtggttagtatacccgcctgtcacgcgggtgacccgggttcaattcccggccgggaagc                                                                                                                                              
+arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                               
 
-geneid: LinfantumJPCM5_LinJ.32_71                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: gctgcttggtggaggcattcagcgacactgcgctctctgggctggacaagtctctgcggggcagcatccgcagttgctcctcgagctgctctcgttccatggtgtcgagggggcttccggagccaccgtcgccgttcaggatcgacggggtcgca                                                            
-arass:  ((.(((( (.(dddddd).)  (((((  AAAiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  )))))          (((vvvvv))) ((.((tttttttt)).)))))).))                                                            
-
-geneid: LinfantumJPCM5_LinJ.33_72                               
-tseseq: GCCCTTGTAGCCTAATGGAtATGGCGTTTGCTTCCTAAGCAAAAGGtTGCGGGTTCGAGTCCCGCCAGGGGTA                                                                                           
-tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: gcccttgtagcctaatggatatggcgtttgcttcctaagcaaaaggttgcgggttcgagtcccgccaggggtac                                                                                                                                             
-arass:  (((((((  (((.dddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.33_73                               
-tseseq: GCTCCAGTGGCCTAACGGAtAAGGCTTTGGACTTCTAATCCAAAGAtTGCGGGTTCGAATCCCGCCTGGAGTA                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: gctccagtggcctaacggataaggctttggacttctaatccaaagattgcgggttcgaatcccgcctggagtac                                                                                                                                             
-arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.33_74                               
-tseseq: GGGCGTGTAGCTCAGTGGTAGAGCGCCTGTTTTGCATACAGGAGGcCTAGGGTTCAAACCCCTACTCGTCCA                                                                                            
-tsess:  >>>>>.>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<.<<<<<.                                                                                            
-araseq: tgggcgtgtagctcagtggtagagcgcctgttttgcatacaggaggcctagggttcaaacccctactcgtccat                                                                                                                                             
-arass:  ((((((.(  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.33_75                               
-tseseq: GCATTCCTAGCTCAGTCGGTAGAGCGCACGGCTCTTAACCGTGTGGtCGTGGGTTCGATCCCCACGGAGTGCG                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: gcattcctagctcagtcggtagagcgcacggctcttaaccgtgtggtcgtgggttcgatccccacggagtgcgc                                                                                                                                             
-arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.34_76                               
-tseseq: TCCTCCCTGGCGCAGTCGGCAGCGCGTTAGGCTGTTAACCTACAGGtCGTTGGTTCGAATCCAACGGGAGGAG                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: tcctccctggcgcagtcggcagcgcgttaggctgttaacctacaggtcgttggttcgaatccaacgggaggagc                                                                                                                                             
-arass:  (((((((  ((((dddddddd)))) .((((  AAA  )))).     (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.34_77                               
-tseseq: CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGagatcgcagatATCACAGGGtCGCTGGTTCGATTCCGGCCGGAAGGA                                                                                
-tsess:  >>>>>>>..>>>>........<<<<.>>>>>..................<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                
-araseq: ccttctgtagctcaattggtagagcatgtgactgtagagatcgcagatatcacagggtcgctggttcgattccggccggaagga                                                                                                                                   
-arass:  (((((((  ((((dddddddd)))) (((((  AAA iiiiiiiiiii )))))     (((((ttttttt))))))))))))                                                                                                                                   
-
-geneid: LinfantumJPCM5_LinJ.34_78                               
-tseseq: GGCCGCTTAGCACAGTGGCAGTGCACCACTCTCGTAAAGTGGGGGtCGCGAGTTCGATTCTCGCAGTGGCCT                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggccgcttagcacagtggcagtgcaccactctcgtaaagtgggggtcgcgagttcgattctcgcagtggcct                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.34_79                               
-tseseq: GGCCGCTTAGTCTAGTGGTATGATTCCCGCTTCGGGTGCGGGAGGtCAGGGGTTCAATTCCCCTAGCGGCCC                                                                                            
-tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggccgcttagtctagtggtatgattcccgcttcgggtgcgggaggtcaggggttcaattcccctagcggccc                                                                                                                                               
-arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.34_80                               
-tseseq: TCCTCCCTGGCGCAGTCGGCAGCGCGTTAGGCTGTTAACCTACAGGtCGTTGGTTCGAATCCAACGGGAGGAG                                                                                           
-tsess:  >>>>>>>..>>>>........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.                                                                                           
-araseq: tcctccctggcgcagtcggcagcgcgttaggctgttaacctacaggtcgttggttcgaatccaacgggaggagc                                                                                                                                             
-arass:  (((((((  ((((dddddddd)))) .((((  AAA  )))).     (((((ttttttt))))))))))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.34_81                               
-tseseq: notfound                                                                                                                                                            
-tsess:  notfound                                                                                                                                                            
-araseq: agtatacatggagtgggatacttggacacacatagacagggccgcagtcaagcatcgcgtgcacctattcgctgtggtggcatgcgtgcgcgtatgggtgtgtgcgtgtgtgtgtgtgcacgtgtgcacgtgtgcgaattgcatgtgctttgc                                                              
-arass:  ((..(((   (.((ddddddddddd)).)((((( iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii AAA  )))))                        (.(((ttttttt))).))))..))                                                               
-
-geneid: LinfantumJPCM5_LinJ.34_82                               
-tseseq: GCGCGGTTGGTCTAGGTGGTtATGACGTCGCTTTAACACGGCGAAGGtCTCGGGTTCGAGTCCCGAACTGCGTA                                                                                          
-tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
-araseq: gcgcggttggtctaggtggttatgacgtcgctttaacacggcgaaggtctcgggttcgagtcccgaactgcgtac                                                                                                                                            
-arass:  (((((((  (((.ddddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.34_83                               
-tseseq: GCTCTCATAGCTCAGTCGGTtAGAGCGTGGGTCTAATAAGCCCAAGGtCACAGGTTCGACCCCTGTTGGGAGCA                                                                                          
-tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
-araseq: gctctcatagctcagtcggttagagcgtgggtctaataagcccaaggtcacaggttcgacccctgttgggagcac                                                                                                                                            
-arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
-
-geneid: LinfantumJPCM5_LinJ.34_84                               
-tseseq: GCGAGCGTAGCGCAGTCGGCAGCGCGTGGGTCTCATAATCCCAAGGtCGTGAGTTCGATCCTCACCGGTCGCA                                                                                           
-tsess:  >>>>.>>..>>>>........<<<<.>>>>.........<<<<.....>>>>>.......<<<<<<<.<<<<.                                                                                           
-araseq: gcgagcgtagcgcagtcggcagcgcgtgggtctcataatcccaaggtcgtgagttcgatcctcaccggtcgca                                                                                                                                              
-arass:  ((((.((  ((((dddddddd)))) ((((.  AAA  .))))     (((((ttttttt))))))).))))                                                                                                                                              
-
-geneid: LinfantumJPCM5_LinJ.34_85                               
-tseseq: GGCGGAGTGGCCGAGTGGTctAAGGCGCCAGATTTAGGCTCTGGTCTTTCGAGgCGTGGGTTCGAACCCCACCTCCGTCA                                                                                    
-tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<..>>..<<...>>>>>.......<<<<<<<<<<<<.                                                                                    
-araseq: ggcggagtggccgagtggtctaaggcgccagatttaggctctggtctttcgaggcgtgggttcgaaccccacctccgtcacc                                                                                                                                     
-arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))          (((((ttttttt))))))))))))                                                                                                                                       
-
-geneid: LinfantumJPCM5_LinJ.34_86                               
-tseseq: GTCAACATACCCAAGTGGTtACGGGGTTTGACTTGAAATCAAATGCGATCTCGCGCGCAGGTTCGAACCCTGCTGTTGACG                                                                                   
+geneid: LinfantumJPCM5_LinJ.17_32                               
+tseseq: GCAAATGTGGCCGAGTGGTtAAGGCGCCTGCCTGCTAAGCAGGTGTGATCTCACGCGAAGGTTCGAACCCTTCCGTTTGCG                                                                                   
 tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
-araseq: gtcaacatacccaagtggttacggggtttgacttgaaatcaaatgcgatctcgcgcgcaggttcgaaccctgctgttgacg                                                                                                                                      
-arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
+araseq: gcaaatgtggccgagtggttaaggcgcctgcctgctaagcaggtgtgatctcacgcgaaggttcgaacccttccgtttgcgc                                                                                                                                     
+arass:  (((((((  (((dddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
 
-geneid: LinfantumJPCM5_LinJ.35_87                               
+geneid: LinfantumJPCM5_LinJ.17_33                               
+tseseq: GGGGATGTAGCTCAGATGGTAGAGCGACCGCTTAGCATGCGGTAGGtATTGGGATCGATACCCAACTTCTCCA                                                                                           
+tsess:  >>>>>.>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<.<<<<<.                                                                                           
+araseq: tggggatgtagctcagatggtagagcgaccgcttagcatgcggtaggtattgggatcgatacccaacttctccaac                                                                                                                                           
+arass:  ((((((.(  ((((dddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).))))))                                                                                                                                            
+
+geneid: LinfantumJPCM5_LinJ.18_34                               
 tseseq: notfound                                                                                                                                                            
 tsess:  notfound                                                                                                                                                            
-araseq: gccgcagctgcggcggcgttgcgctgacgacgtcgccgccgccgcgaactcttcgttgctttgggattgtggtgatgctggtgcgatgagcggtgctggcggccttgaccgcggtgcagctgagagcggtgccggctgccgccgccgccagtcgagcgcggacctcgactgcggcc                                       
-arass:  (((((((   (((dddddddddd))) ((.((iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  AAA  )).))    (((((ttttttt))))))))))))                                       
+araseq: gccagccattgtcgagggtgcgtccgctgtggcctctgcctccagccaggacggcggtgtgagtcttgagtcgcggctcaggtccgggtggcaggct                                                                                                                      
+arass:  (((.((((  (.((dddddd)).)  (((.((  AAA  )).))) ((((((.vvvvvvvv.))))))   (.(((ttttttt))).))))).)))                                                                                                                      
 
-geneid: LinfantumJPCM5_LinJ.35_88                               
+geneid: LinfantumJPCM5_LinJ.18_35                               
 tseseq: notfound                                                                                                                                                            
 tsess:  notfound                                                                                                                                                            
-araseq: agggtgctggcgcggtagttgcgcatctgctcggccgtcaccttctttacgccttcctccgtaccgtagagcggagtacccacaccgtacggggtgctgtcgaaagcgcagcggtgcaagttgtccatgaccagatcgtcggggcgctcctcgaacaggtgctgatcctggtgcacca                                     
-arass:  .(.((((  (((ddddddddd)))(((((  AAiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiA  ))))).(.vvvvvvvvv.).    ((((ttttttt)))))))).).                                     
+araseq: tgatggggtagcctgtggcggcgaggccgccgttgcaagcgacattgtgaatgccccggaacctatgaggcccacatgtatccgtaacttggtggacggcgttggcgcgccgtttcaggcgatctactcgtcttcgtcgtc                                                                          
+arass:  (((((((   ((((ddddddddd))))(((((  AAA iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii )))))                       ((((ttttttt)))))))))))                                                                           
 
-geneid: LinfantumJPCM5_LinJ.36_89                               
-tseseq: GCGCAGTTGGTCTAGTGGTAGAATTCTCGCCTGCCACGCGGGAGGCCCGGGTTCGATTCCCGGACTGCGCA                                                                                             
-tsess:  >>>>>>>..>>.>.......<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
-araseq: gcgcagttggtctagtggtagaattctcgcctgccacgcgggaggcccgggttcgattcccggactgcgcac                                                                                                                                               
-arass:  (((((((  ((.(ddddddd).))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
+geneid: LinfantumJPCM5_LinJ.21_36                               
+tseseq: GCAAACGTGGCCGAGTGGTtAAGGCGCCTGCCTGCTAAGCAGGTGTGATCTCACGCGAAGGTTCGAACCCTTCCGTTTGCG                                                                                   
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
+araseq: gcaaacgtggccgagtggttaaggcgcctgcctgctaagcaggtgtgatctcacgcgaaggttcgaacccttccgtttgcg                                                                                                                                      
+arass:  (((((((  (((dddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
 
-geneid: LinfantumJPCM5_LinJ.36_90                               
-tseseq: GGCTGCTTAGCTCAATGGCAGAGCGCCGTCCTAGTAAGACGGAGGtCAGGGGTTCGATCCCCCTAGCGGCCT                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggctgcttagctcaatggcagagcgccgtcctagtaagacggaggtcaggggttcgatccccctagcggcct                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+geneid: LinfantumJPCM5_LinJ.21_37                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: tggcgcggcgggcagcggaggcgccggcgggcagcgtcgcgaggtgaacacgacgaccggctcgcctattgtgccgacccccgtgacgggcagctccggcgcgctcgatgcgtacaactcgcgctgcgtcat                                                                                   
+arass:  (((((((   (((.ddddddd.))) (.((( iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii AAA  ))).)    .((vvvv)).           .((((ttttttt)))).)))))))                                                                                   
 
-geneid: LinfantumJPCM5_LinJ.36_91                               
-tseseq: GCGCAGTTGGTCTAGTGGTAGAATTCTCGCCTGCCACGCGGGAGGCCCGGGTTCGATTCCCGGACTGCGCA                                                                                             
-tsess:  >>>>>>>..>>.>.......<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
-araseq: gcgcagttggtctagtggtagaattctcgcctgccacgcgggaggcccgggttcgattcccggactgcgca                                                                                                                                                
-arass:  (((((((  ((.(ddddddd).))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
-
-geneid: LinfantumJPCM5_LinJ.36_92                               
+geneid: LinfantumJPCM5_LinJ.21_38                               
 tseseq: GGTCCAGTGGTCTAGTGGCATGATTCTCCCTTAGGGTGGGAGAGGtCCCGGGTTCAATTCCCGGCTGGACCC                                                                                            
 tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: ggtccagtggtctagtggcatgattctcccttagggtgggagaggtcccgggttcaattcccggctggaccc                                                                                                                                               
 arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
 
+geneid: LinfantumJPCM5_LinJ.21_39                               
+tseseq: GCGCGGTTGGTCTAGGTGGTtATGACGTCGCTTTAACACGGCGAAGGtCTCGGGTTCGAGTCCCGAACTGCGTA                                                                                          
+tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
+araseq: gcgcggttggtctaggtggttatgacgtcgctttaacacggcgaaggtctcgggttcgagtcccgaactgcgtac                                                                                                                                            
+arass:  (((((((  (((.ddddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.21_40                               
+tseseq: GCATTCCTAGCTCAGTCGGTAGAGCGCACGGCTCTTAACCGTGTGGtCGTGGGTTCGATCCCCACGGAGTGCG                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: gcattcctagctcagtcggtagagcgcacggctcttaaccgtgtggtcgtgggttcgatccccacggagtgcgc                                                                                                                                             
+arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.21_41                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: acagcgggtggcagagaggcgttgctcgctcttcaccacggtgtgtgtgtataaattagtgcgcaggtgccgcgttcaacgcctgccgctctcc                                                                                                                         
+arass:  (.(((((   ((((ddddddd)))) (((.((  AAA  )).)))(((((((vvvvvv)))))))     ((.(ttttttt).))))))).)                                                                                                                          
+
+geneid: LinfantumJPCM5_LinJ.23_42                               
+tseseq: GCTCCCGTGGTCTAGTTGGTtAGGACGCTGGTCTTATGAACCGGATGtCGCGGGTTCGAGCCCCGCCGGGAGCA                                                                                          
+tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
+araseq: gctcccgtggtctagttggttaggacgctggtcttatgaaccggatgtcgcgggttcgagccccgccgggagcac                                                                                                                                            
+arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.23_43                               
+tseseq: GCGTGGGTGATCTAGTGGTtATGATGTCTGCTTTACACGCAGAACGtCGCGGGTTCGAACCCCGCCCCGCGTA                                                                                           
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: gcgtgggtgatctagtggttatgatgtctgctttacacgcagaacgtcgcgggttcgaaccccgccccgcgta                                                                                                                                              
+arass:  (((((((  (((.dddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.23_44                               
+tseseq: GGTCCTATAGTGTAGTGGTtATCACTTCGGACTTTGAATCCGAAAaCCCAGGTTCGAATCCTGGTAGGACCA                                                                                            
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggtcctatagtgtagtggttatcacttcggactttgaatccgaaaacccaggttcgaatcctggtaggaccac                                                                                                                                              
+arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.23_45                               
+tseseq: GTCCGTGTGGCTCAATGGAAGAGCATCTGACTACGGATCAGAGGGtTGCAGGTTCGAATCCTGTCACGGATG                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: tgtccgtgtggctcaatggaagagcatctgactacggatcagagggttgcaggttcgaatcctgtcacggatgt                                                                                                                                             
+arass:  ((((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.23_46                               
+tseseq: GGCAAGATGGTCGAGTGGTctAAGACGTCACGTTCAGGTCGTGATCTCCCCTGGAGGCGTGGGTTCAAACCCCACTCTTGTCA                                                                                 
+tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>>...<<<<..>>>>>.......<<<<<<<<<<<<.                                                                                 
+araseq: tggcaagatggtcgagtggtctaagacgtcacgttcaggtcgtgatctcccctggaggcgtgggttcaaaccccactcttgtcaa                                                                                                                                  
+arass:  ((((((((  (((ddddddddddd)))((((((  AAA  ))))))(((vvvvv)))  (((((ttttttt)))))))))))))                                                                                                                                  
+
+geneid: LinfantumJPCM5_LinJ.23_47                               
+tseseq: GGCCGCTTAGCACAGTGGCAGTGCACTGGTCTTGTAAACCAGGGGtCCCGAGTTCAATTCTCGGAGTGGCCT                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: aggccgcttagcacagtggcagtgcactggtcttgtaaaccaggggtcccgagttcaattctcggagtggcctt                                                                                                                                             
+arass:  ((((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.23_48                               
+tseseq: GGCCTCTTGGCGCAATGGAAGCGCATCAGACTTCGGATCTGAGGGtTGCAGGTTCGAGTCCTGCAGGGGTCG                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggcctcttggcgcaatggaagcgcatcagacttcggatctgagggttgcaggttcgagtcctgcaggggtcg                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.23_49                               
+tseseq: GCACTTCTAGCTCAGTTGGTAGAGCGCGTGGCTTTTAACCTCGTGGtCGTGGGTTCGAGCCCCACGGAGTGCG                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<.>>.>>.......<<.<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: cgcacttctagctcagttggtagagcgcgtggcttttaacctcgtggtcgtgggttcgagccccacggagtgcgg                                                                                                                                            
+arass:  ((((((((  ((((dddddddd))))(((.((  AAA  )).)))    (((((ttttttt)))))))))))))                                                                                                                                            
+
+geneid: LinfantumJPCM5_LinJ.23_50                               
+tseseq: GCAATTGTGGTCCAACGGTtAAGATCCCCGCCTTCCAAGCGGGTGaCCCGGGTTCGACTCCCGGCAATTGCA                                                                                            
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: gcaattgtggtccaacggttaagatccccgccttccaagcgggtgacccgggttcgactcccggcaattgcac                                                                                                                                              
+arass:  (((((((  (((dddddddddd))) (((((  AAA  )))))    (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.23_51                               
+tseseq: GGGGGCTTAGCTCAGTGGTAGAGCATTGGATTCCAAATCCAGGGGtCGTAGGTTCAATCCCTGCAGCTCTCA                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: gggggcttagctcagtggtagagcattggattccaaatccaggggtcgtaggttcaatccctgcagctctca                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.23_52                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: agaaaaagtgtccaatggacacgacagcgttattgttgctgggggcgcgagttctagtctcgattttcttc                                                                                                                                                
+arass:  ((.((((   ((.dddddddd.))(((((  AAA  )))))     .((((ttttttt)))).)))).))                                                                                                                                                
+
+geneid: LinfantumJPCM5_LinJ.24_53                               
+tseseq: GGCCGCTTAGTCTAGTGGTATGATTCCCGCTTCGGGTGCGGGAGGtCAGGGGTTCAATTCCCCTAGCGGCCC                                                                                            
+tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggccgcttagtctagtggtatgattcccgcttcgggtgcgggaggtcaggggttcaattcccctagcggccc                                                                                                                                               
+arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.24_54                               
+tseseq: GCTCCTATAGTGTAGCGGTtATCACCTCGGACTCTGAATCCGATAaCCCTGGTTCGAGTCCAGGTAGGAGTG                                                                                            
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: gctcctatagtgtagcggttatcacctcggactctgaatccgataaccctggttcgagtccaggtaggagtgc                                                                                                                                              
+arass:  (((((((  (((.dddddddd.))) (((((  AAA  )))))    (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.24_55                               
+tseseq: GCTGGGGTTCCCGAGTTGGTcaAAGGGGTGAGACTTAAGTTCTCATGCGCAAGCTtCGTGGGTTCGAACCCCACCTCCAGCA                                                                                  
+tsess:  >>>>>>>..>>>............<<<.>>>>>.......<<<<<.>>....<<...>>>>>.......<<<<<<<<<<<<.                                                                                  
+araseq: gctggggttcccgagttggtcaaaggggtgagacttaagttctcatgcgcaagcttcgtgggttcgaaccccacctccagca                                                                                                                                     
+arass:  (((((((  (((.dddddddddd.)))((((((  AAA  ))))))           (((((ttttttt))))))))))))                                                                                                                                     
+
+geneid: LinfantumJPCM5_LinJ.24_56                               
+tseseq: GCTCTCATAGCTCAGTCGGTtAGAGCGTGGGTCTAATAAGCCCAAGGtCACAGGTTCGACCCCTGTTGGGAGCA                                                                                          
+tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
+araseq: gctctcatagctcagtcggttagagcgtgggtctaataagcccaaggtcacaggttcgacccctgttgggagcac                                                                                                                                            
+arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.24_57                               
+tseseq: GCTCTCATAGCTCAGTCGGTtAGAGCGTGGGTCTAATAAGCCCAAGGtCACAGGTTCGACCCCTGTTGGGAGCA                                                                                          
+tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
+araseq: gctctcatagctcagtcggttagagcgtgggtctaataagcccaaggtcacaggttcgacccctgttgggagcac                                                                                                                                            
+arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.24_58                               
+tseseq: TTCTCGGTAGTATAGTGGTtAGTATACCCGCCTGTCACGCGGGTGaCCCGGGTTCAATTCCCGGCCGGGAAG                                                                                            
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ttctcggtagtatagtggttagtatacccgcctgtcacgcgggtgacccgggttcaattcccggccgggaag                                                                                                                                               
+arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.25_59                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: ggatgctctgcgctagttgatgtggggatgttggattgtgcgtgggcggtgagcagccgtgctgatagccgctgttgagagttatgattctcttgtagctcaagttgaaggtttcctcttggttgagcgccatctctggtgatgacgcaggcatcaggcgcgttggtgcgacgctttctgcgtcgc                             
+arass:  .(((((.   (((.dddddd.))) (((((  AAiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiA  )))))           ...vvvvv...    (..((ttttttt))..).))))).                             
+
+geneid: LinfantumJPCM5_LinJ.26_60                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: cggccgtgtcgatgagcttcagcttcctccccttgtacgtgcatgcgatttcgatggggtcgcgggtcgtgttcgactcgtcagcggcgcggtttcgctcgtagccgac                                                                                                          
+arass:  ((((.(((  ((.(dddddddd).))  ((((. iiiiiiiiiiiiii AAA  .))))(.(.vvvvvvvv.).)       (((((ttttttt)))))))).))))                                                                                                           
+
+geneid: LinfantumJPCM5_LinJ.28_61                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: cgtcgctgggctggagagcttggctgcgctggccgttgcccaccgtgagatgctctaccaacacgctcagcagcggtgcatgctgctggcgtcagcc                                                                                                                      
+arass:  .(.(((( (((ddddddddddd))) ((.(((  AAA  ))).))((((.vvvvvvvvvvvvvv.))))  (((((tttttt))))))))).).                                                                                                                        
+
+geneid: LinfantumJPCM5_LinJ.29_62                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: gccgaagttagtcggggaacggccacggatggcgtccgtgcggagctgctgctgcgtgtactggcgcggagccagctccttggca                                                                                                                                  
+arass:  (((((.(.  ((((ddddd))))(((((  AAA  )))))(((.(vvvv).)))     .((((ttttttt))))..).)))))                                                                                                                                  
+
+geneid: LinfantumJPCM5_LinJ.29_63                               
+tseseq: GGCAGGATGGCCGAGTGGTctAAGGCGGGAGACTCAAGTTCTCTTCTATTCGTAGGCGCGGGTTCGAACCCCGCTCCTGTCA                                                                                  
+tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                  
+araseq: ggcaggatggccgagtggtctaaggcgggagactcaagttctcttctattcgtaggcgcgggttcgaaccccgctcctgtcac                                                                                                                                    
+arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                     
+
+geneid: LinfantumJPCM5_LinJ.29_64                               
+tseseq: GTCATCATACCCAAGTGGTtACGGGGGTTGACTCGAAATCAACTGCGATCTCGCGCGCAGGTTCGAATCCTGCTGATGACG                                                                                   
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
+araseq: gtcatcatacccaagtggttacgggggttgactcgaaatcaactgcgatctcgcgcgcaggttcgaatcctgctgatgacg                                                                                                                                      
+arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
+
+geneid: LinfantumJPCM5_LinJ.30_65                               
+tseseq: GGCCGCTTAGCACAGTGGCAGTGCACCACTCTCGTAAAGTGGGGGtCGCGAGTTCGATTCTCGCAGTGGCCT                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggccgcttagcacagtggcagtgcaccactctcgtaaagtgggggtcgcgagttcgattctcgcagtggcct                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.31_66                               
+tseseq: GCCGCGATAGCTCAGTTGGGAGAGCGTCAGACTGAAGATCTGAAGGtCCCTGGTTCGATCCCGGGTCGCGGCA                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: gccgcgatagctcagttgggagagcgtcagactgaagatctgaaggtccctggttcgatcccgggtcgcggca                                                                                                                                              
+arass:  (((((((  ((((dddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.31_67                               
+tseseq: GTCACCATACCCAAGTGGTtACGGGGACTGACTAGAAATCAGTTGCGATCTCGCGCGCAGGTTCGAATCCTGCTGGTGACG                                                                                   
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
+araseq: gtcaccatacccaagtggttacggggactgactagaaatcagttgcgatctcgcgcgcaggttcgaatcctgctggtgacgc                                                                                                                                     
+arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
+
+geneid: LinfantumJPCM5_LinJ.31_68                               
+tseseq: GGGGATGTAGCTCAGATGGTAGAGCGACCGCTTAGCATGCGGTAGGtATTGGGATCGATACCCAACTTCTCCA                                                                                           
+tsess:  >>>>>.>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<.<<<<<.                                                                                           
+araseq: ggggatgtagctcagatggtagagcgaccgcttagcatgcggtaggtattgggatcgatacccaacttctcca                                                                                                                                              
+arass:  (((((.(  ((((dddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).)))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.31_69                               
+tseseq: GCGCAGTTGGTCTAGTGGTAGAATTCTCGCCTGCCACGCGGGAGGCCCGGGTTCGATTCCCGGACTGCGCA                                                                                             
+tsess:  >>>>>>>..>>.>.......<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
+araseq: gcgcagttggtctagtggtagaattctcgcctgccacgcgggaggcccgggttcgattcccggactgcgcacc                                                                                                                                              
+arass:  (((((((  ((.(ddddddd).))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
+
+geneid: LinfantumJPCM5_LinJ.31_70                               
+tseseq: TCCGATGTGGTATAGTGGAtAGAACAAGCGGCTCTCACCCGCTAGaCCCGGGTTCGATCCCCGGCATCGGAA                                                                                            
+tsess:  >>>>>>>..>>.>........<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ttccgatgtggtatagtggatagaacaagcggctctcacccgctagacccgggttcgatccccggcatcggaag                                                                                                                                             
+arass:  ((((((((  ((.(dddddddd).)) (((((  AAA  )))))    (((((ttttttt)))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.31_71                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: cctgctcttccgcgtggaacagcagcggcactgcgatagcgtggagacggtgcgccactggtgtcttcagaaacacctcagctacgacaagctgatggccattgtagacctggagagccacatcaagtacgagctcgcggagttcatgccgttccgcagcatcgttgaggcggagaagctgttggaacagctggacaagc               
+arass:  (.((.((  (.((dddddddd)).)(((((  AAA  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii)))))       ...(.vvvvvvv.)... (((((tttttt))))))).)).)               
+
+geneid: LinfantumJPCM5_LinJ.32_72                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: ttggtgctggcgagcgcttgcgtgcgtgcttgctcgagtagcgtttccctcttcgcgggtcgcgcctcctcagtgtcggaggtgacggtctgtgccgctcgcggtgcaacgccgcggcgctaaa                                                                                           
+arass:  (((((((  (((dddddddddd)))(((((  AAA iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii )))))  (.(..vvvvvvv..).)    (((((ttttttt))))))))))))                                                                                           
+
+geneid: LinfantumJPCM5_LinJ.32_73                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: gctgcttggtggaggcattcagcgacactgcgctctctgggctggacaagtctctgcggggcagcatccgcagttgctcctcgagctgctctcgttccatggtgtcgagggggcttccggagccaccgtcgccgttcaggatcgacggggtcgca                                                            
+arass:  ((.(((( (.(dddddd).)  (((((  AAAiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  )))))          (((vvvvv))) ((.((tttttttt)).)))))).))                                                            
+
+geneid: LinfantumJPCM5_LinJ.33_74                               
+tseseq: GCCCTTGTAGCCTAATGGAtATGGCGTTTGCTTCCTAAGCAAAAGGtTGCGGGTTCGAGTCCCGCCAGGGGTA                                                                                           
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: gcccttgtagcctaatggatatggcgtttgcttcctaagcaaaaggttgcgggttcgagtcccgccaggggtac                                                                                                                                             
+arass:  (((((((  (((.dddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.33_75                               
+tseseq: GCTCCAGTGGCCTAACGGAtAAGGCTTTGGACTTCTAATCCAAAGAtTGCGGGTTCGAATCCCGCCTGGAGTA                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: gctccagtggcctaacggataaggctttggacttctaatccaaagattgcgggttcgaatcccgcctggagtac                                                                                                                                             
+arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.33_76                               
+tseseq: GGGCGTGTAGCTCAGTGGTAGAGCGCCTGTTTTGCATACAGGAGGcCTAGGGTTCAAACCCCTACTCGTCCA                                                                                            
+tsess:  >>>>>.>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<.<<<<<.                                                                                            
+araseq: tgggcgtgtagctcagtggtagagcgcctgttttgcatacaggaggcctagggttcaaacccctactcgtccat                                                                                                                                             
+arass:  ((((((.(  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt)))))).))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.33_77                               
+tseseq: GCATTCCTAGCTCAGTCGGTAGAGCGCACGGCTCTTAACCGTGTGGtCGTGGGTTCGATCCCCACGGAGTGCG                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: gcattcctagctcagtcggtagagcgcacggctcttaaccgtgtggtcgtgggttcgatccccacggagtgcgc                                                                                                                                             
+arass:  (((((((  ((((dddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.34_78                               
+tseseq: TCCTCCCTGGCGCAGTCGGCAGCGCGTTAGGCTGTTAACCTACAGGtCGTTGGTTCGAATCCAACGGGAGGAG                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: tcctccctggcgcagtcggcagcgcgttaggctgttaacctacaggtcgttggttcgaatccaacgggaggagc                                                                                                                                             
+arass:  (((((((  ((((dddddddd)))) .((((  AAA  )))).     (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.34_79                               
+tseseq: CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGagatcgcagatATCACAGGGtCGCTGGTTCGATTCCGGCCGGAAGGA                                                                                
+tsess:  >>>>>>>..>>>>........<<<<.>>>>>..................<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                
+araseq: ccttctgtagctcaattggtagagcatgtgactgtagagatcgcagatatcacagggtcgctggttcgattccggccggaagga                                                                                                                                   
+arass:  (((((((  ((((dddddddd)))) (((((  AAA iiiiiiiiiii )))))     (((((ttttttt))))))))))))                                                                                                                                   
+
+geneid: LinfantumJPCM5_LinJ.34_80                               
+tseseq: GGCCGCTTAGCACAGTGGCAGTGCACCACTCTCGTAAAGTGGGGGtCGCGAGTTCGATTCTCGCAGTGGCCT                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggccgcttagcacagtggcagtgcaccactctcgtaaagtgggggtcgcgagttcgattctcgcagtggcct                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.34_81                               
+tseseq: GGCCGCTTAGTCTAGTGGTATGATTCCCGCTTCGGGTGCGGGAGGtCAGGGGTTCAATTCCCCTAGCGGCCC                                                                                            
+tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggccgcttagtctagtggtatgattcccgcttcgggtgcgggaggtcaggggttcaattcccctagcggccc                                                                                                                                               
+arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.34_82                               
+tseseq: TCCTCCCTGGCGCAGTCGGCAGCGCGTTAGGCTGTTAACCTACAGGtCGTTGGTTCGAATCCAACGGGAGGAG                                                                                           
+tsess:  >>>>>>>..>>>>........<<<<..>>>>.......<<<<......>>>>>.......<<<<<<<<<<<<.                                                                                           
+araseq: tcctccctggcgcagtcggcagcgcgttaggctgttaacctacaggtcgttggttcgaatccaacgggaggagc                                                                                                                                             
+arass:  (((((((  ((((dddddddd)))) .((((  AAA  )))).     (((((ttttttt))))))))))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.34_83                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: agtatacatggagtgggatacttggacacacatagacagggccgcagtcaagcatcgcgtgcacctattcgctgtggtggcatgcgtgcgcgtatgggtgtgtgcgtgtgtgtgtgtgcacgtgtgcacgtgtgcgaattgcatgtgctttgc                                                              
+arass:  ((..(((   (.((ddddddddddd)).)((((( iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii AAA  )))))                        (.(((ttttttt))).))))..))                                                               
+
+geneid: LinfantumJPCM5_LinJ.34_84                               
+tseseq: GCGCGGTTGGTCTAGGTGGTtATGACGTCGCTTTAACACGGCGAAGGtCTCGGGTTCGAGTCCCGAACTGCGTA                                                                                          
+tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
+araseq: gcgcggttggtctaggtggttatgacgtcgctttaacacggcgaaggtctcgggttcgagtcccgaactgcgtac                                                                                                                                            
+arass:  (((((((  (((.ddddddddd.))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.34_85                               
+tseseq: GCTCTCATAGCTCAGTCGGTtAGAGCGTGGGTCTAATAAGCCCAAGGtCACAGGTTCGACCCCTGTTGGGAGCA                                                                                          
+tsess:  >>>>>>>..>>>>.........<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                          
+araseq: gctctcatagctcagtcggttagagcgtgggtctaataagcccaaggtcacaggttcgacccctgttgggagcac                                                                                                                                            
+arass:  (((((((  ((((ddddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                             
+
+geneid: LinfantumJPCM5_LinJ.34_86                               
+tseseq: GCGAGCGTAGCGCAGTCGGCAGCGCGTGGGTCTCATAATCCCAAGGtCGTGAGTTCGATCCTCACCGGTCGCA                                                                                           
+tsess:  >>>>.>>..>>>>........<<<<.>>>>.........<<<<.....>>>>>.......<<<<<<<.<<<<.                                                                                           
+araseq: gcgagcgtagcgcagtcggcagcgcgtgggtctcataatcccaaggtcgtgagttcgatcctcaccggtcgca                                                                                                                                              
+arass:  ((((.((  ((((dddddddd)))) ((((.  AAA  .))))     (((((ttttttt))))))).))))                                                                                                                                              
+
+geneid: LinfantumJPCM5_LinJ.34_87                               
+tseseq: GGCGGAGTGGCCGAGTGGTctAAGGCGCCAGATTTAGGCTCTGGTCTTTCGAGgCGTGGGTTCGAACCCCACCTCCGTCA                                                                                    
+tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<..>>..<<...>>>>>.......<<<<<<<<<<<<.                                                                                    
+araseq: ggcggagtggccgagtggtctaaggcgccagatttaggctctggtctttcgaggcgtgggttcgaaccccacctccgtcacc                                                                                                                                     
+arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))          (((((ttttttt))))))))))))                                                                                                                                       
+
+geneid: LinfantumJPCM5_LinJ.34_88                               
+tseseq: GTCAACATACCCAAGTGGTtACGGGGTTTGACTTGAAATCAAATGCGATCTCGCGCGCAGGTTCGAACCCTGCTGTTGACG                                                                                   
+tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<.                                                                                   
+araseq: gtcaacatacccaagtggttacggggtttgacttgaaatcaaatgcgatctcgcgcgcaggttcgaaccctgctgttgacg                                                                                                                                      
+arass:  (((((((  (((.dddddddd.)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                      
+
+geneid: LinfantumJPCM5_LinJ.35_89                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: gccgcagctgcggcggcgttgcgctgacgacgtcgccgccgccgcgaactcttcgttgctttgggattgtggtgatgctggtgcgatgagcggtgctggcggccttgaccgcggtgcagctgagagcggtgccggctgccgccgccgccagtcgagcgcggacctcgactgcggcc                                       
+arass:  (((((((   (((dddddddddd))) ((.((iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  AAA  )).))    (((((ttttttt))))))))))))                                       
+
+geneid: LinfantumJPCM5_LinJ.35_90                               
+tseseq: notfound                                                                                                                                                            
+tsess:  notfound                                                                                                                                                            
+araseq: agggtgctggcgcggtagttgcgcatctgctcggccgtcaccttctttacgccttcctccgtaccgtagagcggagtacccacaccgtacggggtgctgtcgaaagcgcagcggtgcaagttgtccatgaccagatcgtcggggcgctcctcgaacaggtgctgatcctggtgcacca                                     
+arass:  .(.((((  (((ddddddddd)))(((((  AAiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiA  ))))).(.vvvvvvvvv.).    ((((ttttttt)))))))).).                                     
+
+geneid: LinfantumJPCM5_LinJ.36_91                               
+tseseq: GCGCAGTTGGTCTAGTGGTAGAATTCTCGCCTGCCACGCGGGAGGCCCGGGTTCGATTCCCGGACTGCGCA                                                                                             
+tsess:  >>>>>>>..>>.>.......<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
+araseq: gcgcagttggtctagtggtagaattctcgcctgccacgcgggaggcccgggttcgattcccggactgcgcac                                                                                                                                               
+arass:  (((((((  ((.(ddddddd).))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
+
+geneid: LinfantumJPCM5_LinJ.36_92                               
+tseseq: GGCTGCTTAGCTCAATGGCAGAGCGCCGTCCTAGTAAGACGGAGGtCAGGGGTTCGATCCCCCTAGCGGCCT                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggctgcttagctcaatggcagagcgccgtcctagtaagacggaggtcaggggttcgatccccctagcggcct                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
 geneid: LinfantumJPCM5_LinJ.36_93                               
+tseseq: GCGCAGTTGGTCTAGTGGTAGAATTCTCGCCTGCCACGCGGGAGGCCCGGGTTCGATTCCCGGACTGCGCA                                                                                             
+tsess:  >>>>>>>..>>.>.......<.<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                             
+araseq: gcgcagttggtctagtggtagaattctcgcctgccacgcgggaggcccgggttcgattcccggactgcgca                                                                                                                                                
+arass:  (((((((  ((.(ddddddd).))((((((  AAA  ))))))   (((((ttttttt))))))))))))                                                                                                                                                
+
+geneid: LinfantumJPCM5_LinJ.36_94                               
+tseseq: GGTCCAGTGGTCTAGTGGCATGATTCTCCCTTAGGGTGGGAGAGGtCCCGGGTTCAATTCCCGGCTGGACCC                                                                                            
+tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggtccagtggtctagtggcatgattctcccttagggtgggagaggtcccgggttcaattcccggctggaccc                                                                                                                                               
+arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.36_95                               
 tseseq: GCTCCTATAGTGTAGCGGTtATCACCTCGGACTCTGAATCCGATAaCCCTGGTTCGAGTCCAGGTAGGAGTG                                                                                            
 tsess:  >>>>>>>..>>>..........<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: cgctcctatagtgtagcggttatcacctcggactctgaatccgataaccctggttcgagtccaggtaggagtgt                                                                                                                                             
 arass:  ((((((((  (((.dddddddd.))) (((((  AAA  )))))    (((((ttttttt)))))))))))))                                                                                                                                             
 
-geneid: LinfantumJPCM5_LinJ.36_94                               
+geneid: LinfantumJPCM5_LinJ.36_96                               
 tseseq: notfound                                                                                                                                                            
 tsess:  notfound                                                                                                                                                            
 araseq: gcatcaagcagctcgaggagctctccggcgtcaccggcatcaccgacatccaccgccagttcgtcgacgatatcacgatcccaagtaagcggcctggcatgccgccgctgaagcgtgtgccgatggtgtttgactgctggttcgagtccggctcgatgcc                                                       
 arass:  (((((.(   (..(ddddd)..)  ((((( iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii AAA  )))))         .((vvvvvvvv)).  (((((ttttttt)))))).)))))                                                       
 
-geneid: LinfantumJPCM5_LinJ.36_95                               
+geneid: LinfantumJPCM5_LinJ.36_97                               
 tseseq: GGATTCATAGCTCAGTGGTAGAGCATTCGGCTGCAGTCCGAATGGtCCCCGGTTCAAACCCGGGTGGGTCCT                                                                                            
 tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: ggattcatagctcagtggtagagcattcggctgcagtccgaatggtccccggttcaaacccgggtgggtcct                                                                                                                                               
 arass:  (((((((  ((((ddddddd))))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
 
-geneid: LinfantumJPCM5_LinJ.36_96                               
+geneid: LinfantumJPCM5_LinJ.36_98                               
 tseseq: GGTGAGATGGTCGAGTGGTctAAGACGTTGGATTAAGGTTCCAATCCTTTCGAGGgCGTGGGTTCAAACCCCACTCTCATCA                                                                                  
 tsess:  >>>>>>>..>>>...........<<<.>>>>>.......<<<<<.>.>...<.<...>>>>>.......<<<<<<<<<<<<.                                                                                  
 araseq: ggtgagatggtcgagtggtctaagacgttggattaaggttccaatcctttcgagggcgtgggttcaaaccccactctcatca                                                                                                                                     
 arass:  (((((((  (((ddddddddddd)))((((((  AAA  ))))))            (((((ttttttt))))))))))))                                                                                                                                     
 
-geneid: LinfantumJPCM5_LinJ.36_97                               
+geneid: LinfantumJPCM5_LinJ.36_99                               
 tseseq: AGCACCGTAGCGCAGTGGAAGCGCGATGGGCTCATAACCCATAGGtCGTTGGATCGAAACCAATCGGTGCTA                                                                                            
 tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: agcaccgtagcgcagtggaagcgcgatgggctcataacccataggtcgttggatcgaaaccaatcggtgcta                                                                                                                                               
 arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
 
-geneid: LinfantumJPCM5_LinJ.36_98                               
+geneid: LinfantumJPCM5_LinJ.36_100                              
 tseseq: GGTCGTTTGGTCTAGTGGTATGATTCCTGTTTTGGGTACAGGAGGtCACGGGTTCAATTCCCGTAACGACCC                                                                                            
 tsess:  >>>>>>>..>>>.........<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
 araseq: ggtcgtttggtctagtggtatgattcctgttttgggtacaggaggtcacgggttcaattcccgtaacgacccc                                                                                                                                              
 arass:  (((((((  (((.ddddddd.)))((((((  AAA  ))))))    (((((ttttttt))))))))))))                                                                                                                                               
 
-geneid: LinfantumJPCM5_LinJ.36_99                               
+geneid: LinfantumJPCM5_LinJ.36_101                              
 tseseq: CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGagttcgcaggtATCACAGGGtCGCTGGTTCGATTCCGGCCGGAAGGA                                                                                
 tsess:  >>>>>>>..>>>>........<<<<.>>>>>..................<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                
 araseq: ccttctgtagctcaattggtagagcatgtgactgtagagttcgcaggtatcacagggtcgctggttcgattccggccggaaggac                                                                                                                                  
 arass:  (((((((  ((((dddddddd)))) (((((  AAA iiiiiiiiiii )))))     (((((ttttttt))))))))))))                                                                                                                                   
 
-geneid: LinfantumJPCM5_LinJ.36_100                              
-tseseq: GGCTGCTTAGCTCAATGGCAGAGCGCCGTCCTAGTAAGACGGAGGtCAGGGGTTCGATCCCCCTAGCGGCCT                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggctgcttagctcaatggcagagcgccgtcctagtaagacggaggtcaggggttcgatccccctagcggcct                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
-
-geneid: LinfantumJPCM5_LinJ.36_101                              
-tseseq: GGCTGCTTAGCTCAATGGCAGAGCGCCGTCCTAGTAAGACGGAGGtCAGGGGTTCGATCCCCCTAGCGGCCT                                                                                            
-tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
-araseq: ggctgcttagctcaatggcagagcgccgtcctagtaagacggaggtcaggggttcgatccccctagcggcct                                                                                                                                               
-arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
-
 geneid: LinfantumJPCM5_LinJ.36_102                              
+tseseq: GGCTGCTTAGCTCAATGGCAGAGCGCCGTCCTAGTAAGACGGAGGtCAGGGGTTCGATCCCCCTAGCGGCCT                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggctgcttagctcaatggcagagcgccgtcctagtaagacggaggtcaggggttcgatccccctagcggcct                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.36_103                              
+tseseq: GGCTGCTTAGCTCAATGGCAGAGCGCCGTCCTAGTAAGACGGAGGtCAGGGGTTCGATCCCCCTAGCGGCCT                                                                                            
+tsess:  >>>>>>>..>>>>.......<<<<.>>>>>.......<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                            
+araseq: ggctgcttagctcaatggcagagcgccgtcctagtaagacggaggtcaggggttcgatccccctagcggcct                                                                                                                                               
+arass:  (((((((  ((((ddddddd)))) (((((  AAA  )))))     (((((ttttttt))))))))))))                                                                                                                                               
+
+geneid: LinfantumJPCM5_LinJ.36_104                              
 tseseq: CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGagttcgcaggtATCACAGGGtCGCTGGTTCGATTCCGGCCGGAAGGA                                                                                
 tsess:  >>>>>>>..>>>>........<<<<.>>>>>..................<<<<<.....>>>>>.......<<<<<<<<<<<<.                                                                                
 araseq: ccttctgtagctcaattggtagagcatgtgactgtagagttcgcaggtatcacagggtcgctggttcgattccggccggaaggac                                                                                                                                  

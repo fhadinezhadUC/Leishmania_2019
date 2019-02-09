@@ -11,8 +11,7 @@ Integrate_Tse_Ara <- function() {
   resultpath <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
   ara_filenames <-
     list.files(
-      "/home/fatemeh/Leishmania_Aug2018/genefindersScriptAndOutput/AraOutput/AraOutput_Flybaseoptions/",
-      ##########################?????
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/AragornGenes/",
       pattern = "*.ara.out",
       full.names = TRUE
     )
@@ -25,13 +24,13 @@ Integrate_Tse_Ara <- function() {
     nameorg <- unlist(strsplit(nameorg, split = ".ara.out"))[1]
     
     tse_filenames[i] = paste(
-      "/home/fatemeh/Leishmania_Aug2018/genefindersScriptAndOutput/TseOutput/tse.out/",
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tRNAScanGenes/tse.out/",
       nameorg,
       ".tse.out",
       sep = ""
     )
     tse_ss_filenames[i] = paste(
-      "/home/fatemeh/Leishmania_Aug2018/genefindersScriptAndOutput/TseOutput/ss.tse.out/",
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tRNAScanGenes/ss.tse.out/",
       nameorg,
       ".SS.tse.out",
       sep = ""
@@ -984,20 +983,20 @@ initiatorDetecting <- function(geneDF) {
     }
   }
   
-  m <- matrix(nrow = nrow(clus1DF), ncol = nrow(clus1DF))
-  distanceDF <- as.data.frame(m)
-  for (i in 1:length(clus1DF$tsegeneseq)) {
-    for (j in 1:length(clus1DF$tsegeneseq)) {
-      distanceDF[i, j] <- adist(clus1DF$tsegeneseq[i], clus1DF$tsegeneseq[j])
-    }
-  }
-  m <- matrix(nrow = nrow(clus2DF), ncol = nrow(clus2DF))
-  distanceDF <- as.data.frame(m)
-  for (i in 1:length(clus2DF$tsegeneseq)) {
-    for (j in 1:length(clus2DF$tsegeneseq)) {
-      distanceDF[i, j] <- adist(clus2DF$tsegeneseq[i], clus2DF$tsegeneseq[j])
-    }
-  }
+  # m <- matrix(nrow = nrow(clus1DF), ncol = nrow(clus1DF))
+  # distanceDF <- as.data.frame(m)
+  # for (i in 1:length(clus1DF$tsegeneseq)) {
+  #   for (j in 1:length(clus1DF$tsegeneseq)) {
+  #     distanceDF[i, j] <- adist(clus1DF$tsegeneseq[i], clus1DF$tsegeneseq[j])
+  #   }
+  # }
+  # m <- matrix(nrow = nrow(clus2DF), ncol = nrow(clus2DF))
+  # distanceDF <- as.data.frame(m)
+  # for (i in 1:length(clus2DF$tsegeneseq)) {
+  #   for (j in 1:length(clus2DF$tsegeneseq)) {
+  #     distanceDF[i, j] <- adist(clus2DF$tsegeneseq[i], clus2DF$tsegeneseq[j])
+  #   }
+  # }
   ####################################################### Hierarchical Cluster Analysis ######################################
   # Hierarchical clustering is an alternative approach to k-means clustering for identifying groups in the dataset.
   # we used Agglomerative clustering which works in a bottom-up manner

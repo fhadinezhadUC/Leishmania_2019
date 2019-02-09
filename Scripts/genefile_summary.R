@@ -4,16 +4,16 @@ genefile.summary <- function(){
   genefilepath <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/integrated_tse_ara.txt"
   geneDF <- read.table(genefilepath, header = TRUE,colClasses = "character")
   # make a summary table for the 4 sets of genes found by ara, tse, their intersection, and union
-  summery_table(geneDF)
+  summerytable <- summery_table(geneDF,outputpath)
   
   # make a plot to show number of genes annotated for each genome,
   # make a plot to show which tRNA functional classes were not annotated by both TSE and ARA for each genome.
-  vidualization(geneDF)
+  vidualization(geneDF,outputpath)
   
   # make a plot to show TSE VS Ara gene displacement
-  endDisplacement(geneDF)
+  endDisplacement(geneDF,outputpath)
 }
-vidualization <- function(integrated_tse_ara){
+vidualization <- function(integrated_tse_ara,outputpath){
   
   genometRNAdf <-
     data.frame(
@@ -25,9 +25,6 @@ vidualization <- function(integrated_tse_ara){
   names(genometRNAdf) <- c("sourceOrg", "arafunc", "tsefunc","foundby")
   genome_list = split(genometRNAdf, f = genometRNAdf$sourceOrg)
   
-  
-  plotpath <-
-    "/home/fatemeh/Leishmania_Aug2018/phyloclassification/tsfminput_2019/"
   tRNAcountdf <- data.frame(names(genome_list))
   tRNAcountdf$aracounts <- 0
   tRNAcountdf$tsecounts <- 0
@@ -164,7 +161,7 @@ vidualization <- function(integrated_tse_ara){
   table(paste(inter_diff_type$arafunc,inter_diff_type$tsefunc,sep = "|"))
   
 }
-summery_table <- function(integrated_tse_ara) {
+summery_table <- function(integrated_tse_ara,outputpath) {
   #______________________________________________________________________________________________________________________________________________________
   # making a dataframe table with the four rows for each geneset of:
   # 1. tse2
@@ -778,9 +775,10 @@ summery_table <- function(integrated_tse_ara) {
     colnames = FALSE,
     file = paste(outputpath,"Gene_Summary_Table.txt",sep = "")
   )
+  summerytable
   #paste(summerytable[4,],collapse = " & ")
 }
-endDisplacement <- function(integrated_tse_ara){
+endDisplacement <- function(integrated_tse_ara,outputpath){
   library(ggplot2)
   library(dplyr)
   isboth <- integrated_tse_ara$foundby == "both"
@@ -880,3 +878,7 @@ endDisplacement <- function(integrated_tse_ara){
          width = 14,
          height = 7)
 }
+
+
+#D|I L|? L|E L|M N|Y O|M S|R W|G 
+#5   3   1   9  11   2   1   3 
