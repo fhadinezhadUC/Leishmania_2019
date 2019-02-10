@@ -53,6 +53,9 @@ Integrate_Tse_Ara <- function() {
   }
   integrated_tse_ara <- addfuncTypes(integrated_tse_ara)
   integrated_tse_ara <- initiatorDetecting(integrated_tse_ara)
+  
+  # decide about the functional class of genes found by both TSE and ARA with different identities. 
+  integrated_tse_ara <- fix.Mismatch.Identity(integrated_tse_ara)
   formatoutput(integrated_tse_ara,resultpath)
   # the out put is written in resultpath with name integrated_tse_ara.txt 
   # everytime we need the integrated file we can read is as this:
@@ -1195,4 +1198,17 @@ initiatorDetecting <- function(geneDF) {
   }
   summerytable$distanceRange[3] <- paste(min(distanceDF),max(distanceDF),sep = "-")
   geneDF
+}
+
+#______________________________________________________________________________________________________________________________________________________
+fix.Mismatch.Identity(geneDF) {
+  isboth <- geneDF$foundby == "both"
+  intersectDF <- geneDF[isboth,]
+  mismatchDF <- intersectDF[intersectDF$tsefunc!=intersectDF$arafunc,]
+  table(paste(mismatchDF$arafunc,mismatchDF$tsefunc,sep = "|"))
+  # D|I L|? L|E L|M N|Y O|M S|R W|G 
+  # 5   3   1   9  11   2   1   3 
+  D_df <- mismatchDF[mismatchDF$arafunc=="D",]
+  araD_df <- geneDF[geneDF$arafunc=="D",]
+  tseD_df <- geneDF[geneDF$tsefunc=="D",]
 }

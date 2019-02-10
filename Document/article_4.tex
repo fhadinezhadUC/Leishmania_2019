@@ -186,9 +186,37 @@ INTERSECTION & 3562 & 265160 & 74.44 & 68-89 & 32.01 & 26.13 & 23.22 & 18.64 &  
 \label{fig:types} 
 \end{figure}
 
+from figure ~\ref{fig:counts} we see that few of the 22 tRNA classes are not annotaded for all the genomes. To improve the annotation we included 33 gene annotated by both gene finders, with mismatched identity. you can see a summary of these genes in table \ref{table:3}. 
+To determind the identity of these genes we built a structural alignment of all the TryTryp tRNA genes from our intersection set and these 33 genes (We used TSE reported sequences over ARA for alignment, because TSE reports genes up to position 73, however ARA can report afew bases after 73. We used removed introns and other nucleotides in non-conserved positions, and variable arms prior to the alignment. We used covea v2.4.2 (Sean Eddy 1994) for the structural alignment and edited the alignment by removing sites with more than 99\% gap, genes with more than 8 gaps in their aligned sequence, and genes with N in their sequence.). Later, using only the intersection aligned genes we made a profile covariance model for 22 functional classes. We calculated the score of 33 genes for each of these 22 models. For each gene, we compared the score of two models made for the indentities reported by TSE and ARA and picked the one with higher score. you can see the result in this file. We were able to include 32 of these genes to our intersection set which improved the annotation of genomes as you can see in figure \ref{fig:typesimproved}
 
+
+\begin{table}[hbt]
+\caption{Table of 33 genes annotated by both TSE and ARA with mismatched identity}
+\begin{adjustbox}{center}
+%\caption{Table of Grades}
+%\centering
+\scalebox{0.7}{
+\begin{tabular}{|l|llllllll|}
+\hline
+ARA|TSE & D|I & L|? & L|E & L|M & N|Y & O|M & S|R & W|G\\
+\hline
+Number of genes &5  & 3  & 1 &  9 & 11 &  2 &  1 &  3 \\
+\hline
+\end{tabular}
+}
+\label{table:3}
+\end{adjustbox}
+\end{table}
+
+
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.8\columnwidth]{ara_funcPerc2.png} 
+\caption[Genome Comparison]{Percentage of 22 tRNA types annotated by both TSE and ARA for each TryTryp genomes after including 32 genes to intersection set. The label on top of each bar shows which tRNA classes are not annotated for the genome.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
+\label{fig:typesimproved} 
+\end{figure}
 %----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
+%	BIBLIOGRAPHYyour own dat
 %----------------------------------------------------------------------------------------
 \newpage
 \renewcommand{\refname}{\spacedlowsmallcaps{References}} % For modifying the bibliography heading
