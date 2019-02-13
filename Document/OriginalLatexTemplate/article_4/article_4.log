@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  13 FEB 2019 05:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  13 FEB 2019 04:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -962,113 +962,29 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 74.
 
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 74.
-) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
-)
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
-
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks31
-\XKV@tempa@toks=\toks32
-)
-\XKV@depth=\count130
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
-
-(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box31
-)
-\tc@llx=\dimen146
-\tc@lly=\dimen147
-\tc@urx=\dimen148
-\tc@ury=\dimen149
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen150
-\adjbox@Height=\dimen151
-\adjbox@Depth=\dimen152
-\adjbox@Totalheight=\dimen153
-
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
-\c@checkoddpage=\count131
-)
-(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box32
-\sift@deathcycles=\count132
-\@vwid@loff=\dimen154
-\@vwid@roff=\dimen155
-))
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen156
-\extrarowheight=\dimen157
-\NC@list=\toks33
-\extratabsurround=\skip100
-\backup@length=\skip101
-)
-\TX@col@width=\dimen158
-\TX@old@table=\dimen159
-\TX@old@col=\dimen160
-\TX@target=\dimen161
-\TX@delta=\dimen162
-\TX@cols=\count133
-\TX@ftn=\toks34
-)
-(/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen163
-\c@nlinenum=\count134
-\TeXr@lab=\toks35
-)
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count135
-)
-(./article_4.aux)
+) (./article_4.aux)
 \openout1 = `article_4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Try loading font information for T1+pplj on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 49.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
-\AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 34.
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring ON on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1076,34 +992,34 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count136
+\c@section@level=\count130
 LaTeX Info: Redefining \Ref on input line 513.
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+LaTeX Info: Redefining \nameref on input line 49.
 
 (./article_4.out) (./article_4.out)
 \@outlinefile=\write3
 \openout3 = `article_4.out'.
 
-LaTeX Info: Redefining \Ref on input line 34.
+LaTeX Info: Redefining \Ref on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count137
-\scratchdimen=\dimen164
-\scratchbox=\box34
-\nofMPsegments=\count138
-\nofMParguments=\count139
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count140
-\MPscratchDim=\dimen165
-\MPnumerator=\count141
-\makeMPintoPDFobject=\count142
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count131
+\scratchdimen=\dimen146
+\scratchbox=\box32
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen147
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks32
 )
-LaTeX Info: Redefining \microtypecontext on input line 34.
+LaTeX Info: Redefining \microtypecontext on input line 49.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1133,7 +1049,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for T1+iwona on input line 53.
+LaTeX Font Info:    Try loading font information for T1+iwona on input line 66.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/iwona/t1iwona.fd
@@ -1143,20 +1059,17 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `iwona' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package tocbasic Info: character protrusion at toc deactivated on input line 53
-.
- (./article_4.toc
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplj/m/sc/10'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+pplj on input line 1.
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <10> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 66.
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 66.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 )
-LaTeX Font Info:    Try loading font information for U+zeur on input line 1.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
@@ -1164,7 +1077,7 @@ File: uzeur.fd 2005/01/11 v4.0 (WaS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeus on input line 1.
+LaTeX Font Info:    Try loading font information for U+zeus on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
@@ -1172,12 +1085,13 @@ File: uzeus.fd 2005/01/11 v4.0 (WaS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 1.
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 66.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1192,134 +1106,143 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
+)
+Package tocbasic Info: character protrusion at toc deactivated on input line 69
+.
+ (./article_4.toc
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 1.
+)
 \tf@toc=\write4
 \openout4 = `article_4.toc'.
 
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Package tocbasic Info: character protrusion at lof deactivated on input line 71
+.
+ (./article_4.lof)
+\tf@lof=\write5
+\openout5 = `article_4.lof'.
 
-]
+Package tocbasic Info: character protrusion at lot deactivated on input line 73
+.
+ (./article_4.lot)
+\tf@lot=\write6
+\openout6 = `article_4.lot'.
+
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 87.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 89.
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-
-<Figures/GenomeComparisonV41.png, id=46, 1011.78pt x 505.89pt>
-File: Figures/GenomeComparisonV41.png Graphic file (type png)
-
-<use Figures/GenomeComparisonV41.png>
-Package pdftex.def Info: Figures/GenomeComparisonV41.png used on input line 76.
-
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
-LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <8> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 77.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <10> not available
-(Font)              Font shape `T1/iwona/b/n' tried instead on input line 81.
-
-Overfull \hbox (2.86848pt too wide) in paragraph at lines 98--101
-[]\T1/pplj/m/n/10 Initiator tDNA-iMet (CAT) from all do-mains dis-play the GGG 
-se-quence
+ [2]
+Overfull \hbox (4.76265pt too wide) in paragraph at lines 129--129
+[] []\T1/iwona/m/sc/10/80ls dif-fer-ent para-graph de-scrip-tion[] \T1/pplj/m/n
+/10 Pel-len-tesque habi-tant morbi tris-tique
  []
 
-[2 <./Figures/GenomeComparisonV41.png (PNG copy)>] [3]
-<Figures/EndDisplacement.png, id=78, 1011.78pt x 505.89pt>
-File: Figures/EndDisplacement.png Graphic file (type png)
+[3] <Figures/GalleriaStampe.jpg, id=74, 414.348pt x 409.53pt>
+File: Figures/GalleriaStampe.jpg Graphic file (type jpg)
 
-<use Figures/EndDisplacement.png>
-Package pdftex.def Info: Figures/EndDisplacement.png used on input line 178.
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
+<use Figures/GalleriaStampe.jpg>
+Package pdftex.def Info: Figures/GalleriaStampe.jpg used on input line 170.
+(pdftex.def)             Requested size: 168.0pt x 166.0462pt.
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <9> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 171.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 171.
 
-<Figures/intersecttRNAcounts.png, id=79, 1011.78pt x 505.89pt>
-File: Figures/intersecttRNAcounts.png Graphic file (type png)
+(/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 7.65005pt on input line 171.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `fvm' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [4 <./Figures/GalleriaStampe.jpg>]
+LaTeX Font Info:    Font shape `T1/iwona/bx/sc' in size <10> not available
+(Font)              Font shape `T1/iwona/b/sc' tried instead on input line 188.
 
-<use Figures/intersecttRNAcounts.png>
-Package pdftex.def Info: Figures/intersecttRNAcounts.png used on input line 185
-.
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
+ [5] <Figures/Lorem.jpg, id=101, 240.9pt x 180.675pt>
+File: Figures/Lorem.jpg Graphic file (type jpg)
 
-<Figures/ara_funcPerc.png, id=80, 1011.78pt x 505.89pt>
-File: Figures/ara_funcPerc.png Graphic file (type png)
+<use Figures/Lorem.jpg>
+Package pdftex.def Info: Figures/Lorem.jpg used on input line 233.
+(pdftex.def)             Requested size: 151.19897pt x 113.40128pt.
+LaTeX Font Info:    Font shape `T1/iwona/bx/n' in size <8> not available
+(Font)              Font shape `T1/iwona/b/n' tried instead on input line 233.
+ <Figures/Ipsum.jpg, id=102, 240.9pt x 180.675pt>
+File: Figures/Ipsum.jpg Graphic file (type jpg)
 
-<use Figures/ara_funcPerc.png>
-Package pdftex.def Info: Figures/ara_funcPerc.png used on input line 192.
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
- [4 <./Figures/EndDisplacement.png (PNG copy)> <./Figures/intersecttRNAcounts.p
-ng (PNG copy)>]
-<Figures/ara_funcPerc2.png, id=94, 1011.78pt x 505.89pt>
-File: Figures/ara_funcPerc2.png Graphic file (type png)
+<use Figures/Ipsum.jpg>
+Package pdftex.def Info: Figures/Ipsum.jpg used on input line 234.
+(pdftex.def)             Requested size: 151.19897pt x 113.40128pt.
+ <Figures/Dolor.jpg, id=103, 240.9pt x 180.675pt>
+File: Figures/Dolor.jpg Graphic file (type jpg)
 
-<use Figures/ara_funcPerc2.png>
-Package pdftex.def Info: Figures/ara_funcPerc2.png used on input line 222.
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
+<use Figures/Dolor.jpg>
+Package pdftex.def Info: Figures/Dolor.jpg used on input line 235.
+(pdftex.def)             Requested size: 151.19897pt x 113.40128pt.
+ <Figures/Sit.jpg, id=104, 240.9pt x 180.675pt>
+File: Figures/Sit.jpg Graphic file (type jpg)
 
-Overfull \hbox (4.9498pt too wide) in paragraph at lines 234--235
-\T1/pplj/m/n/10 or loss of func-tional in-for-ma-tion be-tween Hu-man and Try-T
-ryp genomes 
- []
-
-[5 <./Figures/ara_funcPerc.png (PNG copy)> <./Figures/ara_funcPerc2.png (PNG co
-py)>]
-Underfull \hbox (badness 10000) in paragraph at lines 271--271
-[]\T1/pplj/m/n/10 TcruziCLBrenerEsmeraldo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--271
-[]\T1/pplj/m/n/10 TcruziCLBrenerNon-
- []
-
-<Figures/tRNAcounts_clustered.png, id=107, 1011.78pt x 505.89pt>
-File: Figures/tRNAcounts_clustered.png Graphic file (type png)
-
-<use Figures/tRNAcounts_clustered.png>
-Package pdftex.def Info: Figures/tRNAcounts_clustered.png used on input line 30
-6.
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
-
-<Figures/funcPerc_clustered.png, id=108, 1011.78pt x 505.89pt>
-File: Figures/funcPerc_clustered.png Graphic file (type png)
-
-<use Figures/funcPerc_clustered.png>
-Package pdftex.def Info: Figures/funcPerc_clustered.png used on input line 313.
-
-(pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
- [6 <./Figures/tRNAcounts_clustered.png (PNG copy)>] (./article_4.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
- [7 <./Figures/funcPerc_clustered.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
-
-(./article_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+<use Figures/Sit.jpg>
+Package pdftex.def Info: Figures/Sit.jpg used on input line 236.
+(pdftex.def)             Requested size: 151.19897pt x 113.40128pt.
+ (./article_4.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
+ [6] [7 <./Figures/Lorem.jpg> <./Figures/Ipsum.jpg> <./Figures/Dolor.jpg> <./Fi
+gures/Sit.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
+ (./article_4.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
 Package rerunfilecheck Info: File `article_4.out' has not changed.
-(rerunfilecheck)             Checksum: 8A8D20A70D7A2EE23F75F98C489BDE07;450.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
+(rerunfilecheck)             Checksum: FE9633916C9423311803FE11A30450F1;417.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 16142 strings out of 493029
- 276570 string characters out of 6136233
- 590227 words of memory out of 5000000
- 19270 multiletter control sequences out of 15000+600000
- 79811 words of font info for 96 fonts, out of 8000000 for 9000
+ 14954 strings out of 493029
+ 260598 string characters out of 6136233
+ 552171 words of memory out of 5000000
+ 18130 multiletter control sequences out of 15000+600000
+ 130043 words of font info for 170 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 61i,22n,86p,1336b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texlive/texmf-dist/
-fonts/enc/dvips/iwona/ec-iwona-sc.enc}</usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/euler/eufm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/euler/eurm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/iwona/iwona
-b.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/nowacki/iwona/iwonari.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/palatino/uplri8a.pfb>
-Output written on article_4.pdf (7 pages, 2056403 bytes).
+ 60i,22n,82p,429b,620s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc}{/usr/share/texlive/t
+exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/euler/euex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/euler/eufm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/euler/eurm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/e
+uler/eurm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplbj8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/nowacki/iwona/iwonab.pfb></usr/share/texlive/texmf-dist/font
+s/type1/nowacki/iwona/iwonar.pfb></usr/share/texlive/texmf-dist/fonts/type1/now
+acki/iwona/iwonari.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on article_4.pdf (7 pages, 391952 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
- 82 named destinations out of 1000 (max. 500000)
- 14932 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 34898 words of extra memory for PDF output out of 35830 (max. 10000000)
 

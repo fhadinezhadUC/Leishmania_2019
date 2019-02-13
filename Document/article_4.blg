@@ -2,47 +2,54 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: article_4.aux
 The style file: unsrt.bst
-I found no \citation commands---while reading file article_4.aux
 Database file #1: sample.bib.bib
-You've used 0 entries,
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+You've used 4 entries,
             1791 wiz_defined-function locations,
-            445 strings with 3526 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            472 strings with 4495 characters,
+and the built_in function-call counts, 552 in all, are:
+= -- 48
+> -- 16
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 8
+- -- 4
+* -- 18
+:= -- 109
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 4
+duplicate$ -- 32
+empty$ -- 57
+format.name$ -- 4
+if$ -- 117
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 4
+pop$ -- 4
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 16
 stack$ -- 0
 substring$ -- 0
-swap$ -- 0
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 4
+width$ -- 5
+write$ -- 46
+(There were 4 error messages)
