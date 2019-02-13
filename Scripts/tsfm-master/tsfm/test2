@@ -1,0 +1,38 @@
+import pandas as pd
+import pandas as pd
+import numpy as np
+df = pd.DataFrame({'a': [1,2,3], 'b': [2,3,4], 'd':[5,9,0]})
+df['e'] = df.sum(axis=1)
+
+print(df)
+
+temp=df['e']
+df = df.drop('e', axis=1).div(df.drop('e', axis=1).sum(axis=1),axis=0)
+df['e']=temp
+print(df)
+
+
+for i, row in df.iterrows():
+    if row['d']==0:
+        print(row,"heh")
+
+tableDict={}
+nameSet = ["aa", "coord", "state", "fbits","fht", "gainbits", "gainfht", "lossbits", "lossfht", "convbits", "convfht", "x", "y", "sprinzl"]
+functionlist = ['a','g','d']
+
+for name in nameSet:
+    tableDict[name] = np.zeros(len(functionlist)*3*4, )
+tableDict['aa'] = [item for item in functionlist for i in range(3*4)]
+tableDict['coord'] = [item for item in range(3) for i in range(4)]*3
+states = ["A","C","G","T","-"]
+tableDict['state'] = [s for s in states if not "-" in s] * len(functionlist)*3
+pandasTable = pd.DataFrame(tableDict)
+#pandasTable = pd.DataFrame(tableDict)
+
+pandasTable['fbits'].loc[(pandasTable['coord'] == 1) & (pandasTable['state'] == 'A') ] = 'c'
+pandasTable['coord'] = pandasTable['coord']+1
+print(pandasTable)
+#np.savetxt(r'/home/fatemeh/Leishmania_Aug2018/phyloclassification/tsfm-master/tsfm/test2.txt', pandasTable.values, fmt='%s',   header=True)
+fore="homo"
+filename = fore+".txt"
+pandasTable.to_csv(filename, index=None, sep='\t')

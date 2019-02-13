@@ -24,7 +24,7 @@ readSeqsIntoDf <- function(dirpath) {
   CS <-
     grep("#=CS +",
          readLines(paste(
-           dirpath, "Trytryp_genes_NoVarIntron.covea", sep = ""
+           dirpath, "TryTrypHomoC.covea", sep = ""
          )),
          value = TRUE)
   CStemp <-
@@ -36,7 +36,7 @@ readSeqsIntoDf <- function(dirpath) {
   # read the name of the sequences into variable "seqnames"
   SQs <- grep("#=SQ +",
               readLines(paste(
-                dirpath, "Trytryp_genes_NoVarIntron.covea", sep = ""
+                dirpath, "TryTrypHomoC.covea", sep = ""
               )),
               value = TRUE)
   seqnames <- character(length = length(SQs))
@@ -54,7 +54,7 @@ readSeqsIntoDf <- function(dirpath) {
     myseq <-
       grep(pattern = pat,
            readLines(
-             paste(dirpath, "Trytryp_genes_NoVarIntron.covea", sep = "")
+             paste(dirpath, "TryTrypHomoC.covea", sep = "")
            ),
            value = TRUE)
     temp <-
@@ -74,7 +74,7 @@ readSeqsIntoDf <- function(dirpath) {
   
   SSs <- grep("#=SS +",
               readLines(paste(
-                dirpath, "Trytryp_genes_NoVarIntron.covea", sep = ""
+                dirpath, "TryTrypHomoC.covea", sep = ""
               )),
               value = TRUE)
   
@@ -128,7 +128,7 @@ writeCovea <- function(SSDB, seqDB, dirpath,cs) {
     data.frame(mynames,
                coveaseqs,
                coveass),
-    file = paste(dirpath, "EditedCovea.covea", sep = ""),
+    file = paste(dirpath, "TryTrypHomoC_EditedCovea.covea", sep = ""),
     sep = "\n",
     colnames = FALSE
   )
@@ -143,14 +143,14 @@ writeCovea <- function(SSDB, seqDB, dirpath,cs) {
   write.fwf(
     data.frame(paste(">", mynames, sep = ""),
                coveaseqs),
-    file = paste(dirpath, "EditedCovea.fasta", sep = ""),
+    file = paste(dirpath, "TryTrypHomoC_EditedCovea.fasta", sep = ""),
     sep = "\n",
     colnames = FALSE
   )
   
   #cs <- paste(seqDB$CS, collapse = '')
   write.fwf(data.frame(cs),
-    file = paste(dirpath, "struct_file.txt", sep = ""),
+    file = paste(dirpath, "TryTrypHomoC_struct_file.txt", sep = ""),
     colnames = FALSE
   )
   
@@ -174,7 +174,7 @@ editAlignment <- function(seqDB, SSDB, dirpath) {
         gapperc <-
           (temp[temp$Var1 == "TRUE", 2] / (temp[temp$Var1 == "TRUE", 2] + temp[temp$Var1 ==
                                                                                  "FALSE", 2])) * 100
-        if (gapperc > 99)
+        if (gapperc > 97)
         {
           delpos = c(delpos, i)
         }

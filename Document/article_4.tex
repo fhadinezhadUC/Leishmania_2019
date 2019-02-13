@@ -9,8 +9,15 @@ BCOR5mm, % Binding correction
 
 \input{structure.tex}
 \usepackage{adjustbox}
+\usepackage{booktabs}
 \hyphenation{Fortran hy-phen-ation} 
 \captionsetup{font=footnotesize}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tabularx, makecell}%
+\renewcommand\theadfont{\normalsize\bfseries}
+        \usepackage{etoolbox} %
+        \AtBeginEnvironment{tabularx}{\setlist[enumerate, 1]{wide, leftmargin=*, itemsep=0pt, before=\vspace{-\dimexpr\baselineskip +2 \partopsep}, after=\vspace{-\baselineskip}}}
 
 %----------------------------------------------------------------------------------------
 %	TITLE AND AUTHOR(S)
@@ -186,12 +193,12 @@ INTERSECTION & 3562 & 265160 & 74.44 & 68-89 & 32.01 & 26.13 & 23.22 & 18.64 &  
 \label{fig:types} 
 \end{figure}
 
-from figure ~\ref{fig:counts} we see that few of the 22 tRNA classes are not annotaded for all the genomes. To improve the annotation we included 33 gene annotated by both gene finders, with mismatched identity. you can see a summary of these genes in table \ref{table:3}. 
-To determind the identity of these genes we built a structural alignment of all the TryTryp tRNA genes from our intersection set and these 33 genes (We used TSE reported sequences over ARA for alignment, because TSE reports genes up to position 73, however ARA can report afew bases after 73. We used removed introns and other nucleotides in non-conserved positions, and variable arms prior to the alignment. We used covea v2.4.2 (Sean Eddy 1994) for the structural alignment and edited the alignment by removing sites with more than 99\% gap, genes with more than 8 gaps in their aligned sequence, and genes with N in their sequence.). Later, using only the intersection aligned genes we made a profile covariance model for 22 functional classes. We calculated the score of 33 genes for each of these 22 models. For each gene, we compared the score of two models made for the indentities reported by TSE and ARA and picked the one with higher score. you can see the result in this file. We were able to include 32 of these genes to our intersection set which improved the annotation of genomes as you can see in figure \ref{fig:typesimproved}
+from figure ~\ref{fig:counts} we see that few of the 22 tRNA classes are not annotaded for all the genomes. To improve the annotation we included 33 genes annotated by both gene finders, with mismatched identities. you can see a summary of these genes in table \ref{table:3}. 
+To determind the identity of these genes we built a structural alignment of all the TryTryp tRNA genes from our intersection set and 33 genes (We picked TSE reported sequences over ARA for alignment, because TSE reports genes up to position 73, however ARA can report a few bases after 73 as we see in figure \ref{fig:heatmap}. We used removed introns and other nucleotides in non-conserved positions, and variable arms prior to the alignment. We used covea v2.4.2 (Sean Eddy 1994) for the structural alignment and edited the alignment by removing sites with more than 99\% gap, genes with more than 8 gaps in their aligned sequence, and genes with letter N in their sequence.). Later, using only the intersection aligned genes we made a profile covariance model for 22 functional classes. We calculated the score of 33 genes for each of these 22 models. For each gene, we compared the score of two models made for the indentities reported by TSE and ARA and picked the one with higher score. you can see the result in this \href{https://github.com/fhadinezhadUC/Leishmania_2019/blob/master/Results/Integrated_Genes/UndetClassScore.txt} {file}. We were able to include 32 of these genes to our intersection set which improved the annotation of genomes as you can see in figure \ref{fig:typesimproved}
 
 
 \begin{table}[hbt]
-\caption{Table of 33 genes annotated by both TSE and ARA with mismatched identity}
+\caption{33 genes annotated by both TSE and ARA with mismatched identity}
 \begin{adjustbox}{center}
 %\caption{Table of Grades}
 %\centering
@@ -214,6 +221,98 @@ Number of genes &5  & 3  & 1 &  9 & 11 &  2 &  1 &  3 \\
 \includegraphics[width=0.8\columnwidth]{ara_funcPerc2.png} 
 \caption[Genome Comparison]{Percentage of 22 tRNA types annotated by both TSE and ARA for each TryTryp genomes after including 32 genes to intersection set. The label on top of each bar shows which tRNA classes are not annotated for the genome.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
 \label{fig:typesimproved} 
+\end{figure}
+
+\section{TryTryp Classification}
+
+
+We visualized differences in tRNA identity determinants between TryTryp and Human, and across TryTryp genomes, using four different Logos: 
+\begin{enumerate}[noitemsep]
+
+\item[1] Function Logos to estimate the potential identity determinants for each genome 
+\item[2] Information Difference logos (ID logos), to show the evolutionary gain or loss of functional information between Human and TryTryp genomes 
+\item[3] KullbackeLeibler divergence Difference logos (KLD logos) to show changes in the functional associations of features between Human and TryTryp genomes
+\item[4] Using Three Logos mentioned above, we made bubble plots to show gains and shifts in functions of tRNAs in Trypanosomea contrasted against human tRNAs.
+
+\end{enumerate}
+
+Using phylogenetic trees of Trypanosoma in these works [][][][], we grouped TryTryp genomes as table \ref{table:4}. figure \ref{fig:countsclustered} shows a summery of the number of tRNA genes for each cluster and figure \ref{fig:funcclustered} shows the tRNA functional classes not annotated for clusters of genome. we excluded genome PconfusumCUL13 from the study, until we find a well sequenced version of this genome for which we can annotate all 22 functional classes of tRNAs. The Logo data for All TryTryp genomes and Human can be found here. 
+In figure 8 you can see the bubble plots of each cluster in one page. in each page we have 22 models for each tRNA class. 
+\begin{table}[hbt] 
+\caption{Classification of TryTryp genomes. genomes not mentioned here are clustered as one genome.}
+\begin{adjustbox}{width=\columnwidth,center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \toprule LenriettiComplex & AfricanTrypanosome & AmericanTrypanosome & Leishmania1 & Leishmania2 &LDonovaniComplex & LMexicanaComplex & Lvianna \\\midrule
+        \parbox{.45\textwidth} {\begin{enumerate}
+            \item LspMARLEM2494
+            \item LenriettiiLEM3045
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+            \item TbruceigambienseDAL972
+            \item TbruceiLister427
+            \item TbruceiTREU927
+            \item TevansiSTIB805
+            \item TcongolenseIL3000
+            \item TvivaxY486
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+            \item TgrayiANR4
+            \item TrangeliSC58
+            \item TcruziCLBrener
+            \item TcruziCLBrenerEsmeraldo-like
+            \item TcruziCLBrenerNon-Esmeraldo-like
+            \item TcruzicruziDm28c
+            \item TcruziDm28c
+            \item TcruziEsmeraldo
+            \item TcruziJRcl4
+            \item TcruzimarinkelleiB7
+            \item TcruziSylvioX10-1
+            \item TcruziSylvioX10-1-2012
+            \item TcruziTulacl2
+            \item TtheileriEdinburgh
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+            \item CfasciculataCfCl
+            \item LseymouriATCC30220
+            \item LpyrrhocorisH10
+        \end{enumerate}}& \parbox{.45\textwidth}{\begin{enumerate}
+            \item LmajorFriedlin
+            \item LmajorLV39c5
+            \item LmajorSD75
+            \item LturanicaLEM423
+            \item LarabicaLEM1108
+            \item LtropicaL590
+            \item LaethiopicaL147
+            \item LgerbilliLEM452
+        \end{enumerate}}& \parbox{.45\textwidth}{\begin{enumerate}
+            \item LdonovaniBHU1220
+            \item LdonovaniBPK282A1
+            \item LinfantumJPCM5
+        \end{enumerate}}& \parbox{.45\textwidth}{\begin{enumerate}
+            \item Lamazonensis\\
+                  MHOMBR71973M2269
+            \item Lmexicana\\MHOMGT2001U1103
+        \end{enumerate}}& \parbox{.45\textwidth}{\begin{enumerate}
+            \item Lbraziliensis\\MHOMBR75M2904
+            \item Lbraziliensis\\MHOMBR75M2903
+            \item Lpanamensis\\MHOMPA94PSC1
+            \item Lpanamensis\\MHOMCOL81L13
+        \end{enumerate}}\\
+        \bottomrule
+\end{tabular}
+\label{table:4}
+\end{adjustbox}
+\end{table}
+
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.8\columnwidth]{tRNAcounts_clustered.png} 
+\caption[Number of Genes annotated]{Number of genes annotated by both TSE and ARA for each TryTryp cluster.}
+\label{fig:countsclustered} 
+\end{figure}
+
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.8\columnwidth]{funcPerc_clustered.png} 
+\caption[Genome Comparison]{Percentage of 22 tRNA types annotated by both TSE and ARA for each TryTryp cluster. The label on top of each bar shows which tRNA classes are not annotated for the genome.} 
+\label{fig:funcclustered} 
 \end{figure}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHYyour own dat

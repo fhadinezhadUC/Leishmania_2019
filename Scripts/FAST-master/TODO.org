@@ -1,0 +1,7 @@
+* Utilities to Write:
+** fasrand
+** alnrand
+** fasnl
+** fasgo
+** fasgosort
+

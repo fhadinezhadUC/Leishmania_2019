@@ -1199,7 +1199,6 @@ initiatorDetecting <- function(geneDF) {
   summerytable$distanceRange[3] <- paste(min(distanceDF),max(distanceDF),sep = "-")
   geneDF
 }
-
 #______________________________________________________________________________________________________________________________________________________
 fix.Mismatch.Identity(geneDF) {
   isboth <- geneDF$foundby == "both"

@@ -3,3 +3,4 @@
 \contentsline {subsubsection}{\numberline {1.1.1}tRNA gene prediction}{2}{subsubsection.1.1.1}
 \contentsline {subsubsection}{\numberline {1.1.2}Initiator tRNA prediction}{2}{subsubsection.1.1.2}
 \contentsline {subsection}{\numberline {1.2}\textbf {Summary of predicted TryTryp tRNA genes}}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}TryTryp Classification}{5}{section.2}
