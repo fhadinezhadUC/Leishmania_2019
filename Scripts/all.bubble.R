@@ -5,6 +5,12 @@
 ## COPYLEFT 2011 DAVID H. ARDELL
 ## ALL WRONGS REVERSED
 ## REVISED ON FEB 3 2019
+# library("RColorBrewer")
+# display.brewer.all()
+# display.brewer.pal(n = 8, name = 'RdBu')
+# brewer.pal(n = 8, name = "RdBu")
+# display.brewer.pal(n = 8, name = 'RdGy')
+#display.brewer.pal(n = 8, name = 'PRGn')
 bubble.main <- function(){
 library("heR.Misc"); ## THIS IS REQUIRED FOR THE BUBBLEPLOT FUNCTION AND MUST BE DOWNLOADED FROM
 ## http://exposurescience.org/her.html
@@ -14,7 +20,7 @@ library("heR.Misc"); ## THIS IS REQUIRED FOR THE BUBBLEPLOT FUNCTION AND MUST BE
 # THESE ARE THE COORDINATES FOR THE TRNA STRUCTURE BACKBONE IN THE FIGURES
 
 # positions x= 8.75 and y= 10.5 are manually added
-TableDir <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput/Logos/"
+TableDir <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output/Logos/"
 line.x <- c(6.875,6.500,6.125,5.750,5.375,5.000,4.625,4.625,5.000,5.000,2.375
             ,2.750,2.375,2.750,2.500,2.875,3.250,2.875,2.500,2.125,1.750,1.375,1.000
             ,0.625,0.250,0.625,1.000,1.500,1.125,1.500,1.125,1.500,1.125,1.500,1.125
@@ -60,9 +66,6 @@ rt <- c(6,8,10);
 rt.coord.labels <- coord.labels[rt];
 rt.coord.labels.x <- coord.labels.x[rt] + xbump;
 rt.coord.labels.y <- coord.labels.y[rt];
-
-
-
 
 tRNA_L_skel_df <-
   read.table(
@@ -112,18 +115,18 @@ for (i in 1:length(clusterdir)) {
 all.bubble <- function(df,name="bubble",clus_name,outputpath,alpha=0.5,fact=0.5,area=TRUE,legend=FALSE) { 
   gains <- (df$gainbits * df$gainfht);
   convs <- (df$convbits * df$convfht);
-  map2rgb <- function (c) { rgb(t(col2rgb(c))/255,alpha=alpha);}
+  map2rgb <- function (c) { rgb(t(col2rgb(c))/255,alpha=1);}
   colormap <- function (g,c) { 
      y <- rep(0,length(g));
-     y[g <  0.48            & c < 0.44]             <- rgb(t(col2rgb("white"))/255,alpha=alpha);
-     y[g >= 0.48 & g < 0.95 & c < 0.44]             <- rgb(t(col2rgb("darkred"))/255,alpha=alpha);
-     y[g >= 0.95            & c < 0.44]             <- rgb(t(col2rgb("red"))/255,alpha=alpha);
-     y[g <  0.48            & c >= 0.44 & c < 0.70] <- rgb(t(col2rgb("darkblue"))/255,alpha=alpha);
-     y[g >= 0.48 & g < 0.95 & c >= 0.44 & c < 0.70] <- rgb(t(col2rgb("darkmagenta"))/255,alpha=alpha);
-     y[g >= 0.95            & c >= 0.44 & c < 0.70] <- map2rgb("deeppink");
-     y[g <  0.48            & c >= 0.70]            <- map2rgb("blue");
-     y[g >= 0.48 & g < 0.95 & c >= 0.70]            <- map2rgb("blueviolet");
-     y[g >= 0.95            & c >= 0.70]            <- map2rgb("magenta");
+     y[g <  0.48            & c < 0.44]             <- "#D1E5F0"
+     y[g >= 0.48 & g < 0.95 & c < 0.44]             <- "#92C5DE"
+     y[g >= 0.95            & c < 0.44]             <- "#4393C3"
+     y[g <  0.48            & c >= 0.44 & c < 0.70] <- "#F4A582"
+     y[g >= 0.48 & g < 0.95 & c >= 0.44 & c < 0.70] <- "#D6604D"
+     y[g >= 0.95            & c >= 0.44 & c < 0.70] <- "#B2182B"
+     y[g <  0.48            & c >= 0.70]            <- "#A6DBA0"
+     y[g >= 0.48 & g < 0.95 & c >= 0.70]            <- "#5AAE61"
+     y[g >= 0.95            & c >= 0.70]            <- "#1B7837"
      y;
   }
   colors <- colormap(gains,convs);
@@ -146,8 +149,8 @@ all.bubble <- function(df,name="bubble",clus_name,outputpath,alpha=0.5,fact=0.5,
   )
   for (class in levels(df$aa)) {
     # add the first part of filename 
-    #filenm <- paste(outputpath,clus_name,"_",name,"_",class,".pdf",sep="");
-    #pdf(file=filenm,version="1.4");
+    # filenm <- paste(outputpath,clus_name,"_",name,"_",class,".pdf",sep="");
+    # pdf(file=filenm,version="1.4");
     bubbleplot(
              df$x[df$aa == class],
              df$y[df$aa == class],
