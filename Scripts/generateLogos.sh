@@ -3,8 +3,8 @@
 # for each genomes it will make a folder in each folder will make three folders: KLD,ID,Func, bubble_Table
 # are we looking to find differences between TryTryp genes themself or between them and human?
 
-folderpath="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput/"
-tsfmpath="/home/fatemeh/Leishmania_2019/Leishmania_2019/Scripts/tsfm-master/tsfm"
+folderpath="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/"
+tsfmpath="/home/fatemeh/Leishmania_Aug2018/phyloclassification/tsfm-master/tsfm"
 folders=$(ls -l $folderpath | grep "^d" | awk -F" " '{print $9}')
 
 

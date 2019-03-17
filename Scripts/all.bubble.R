@@ -20,7 +20,7 @@ library("heR.Misc"); ## THIS IS REQUIRED FOR THE BUBBLEPLOT FUNCTION AND MUST BE
 # THESE ARE THE COORDINATES FOR THE TRNA STRUCTURE BACKBONE IN THE FIGURES
 
 # positions x= 8.75 and y= 10.5 are manually added
-TableDir <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output/Logos/"
+TableDir <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output2/Logos/"
 line.x <- c(6.875,6.500,6.125,5.750,5.375,5.000,4.625,4.625,5.000,5.000,2.375
             ,2.750,2.375,2.750,2.500,2.875,3.250,2.875,2.500,2.125,1.750,1.375,1.000
             ,0.625,0.250,0.625,1.000,1.500,1.125,1.500,1.125,1.500,1.125,1.500,1.125
@@ -115,27 +115,27 @@ for (i in 1:length(clusterdir)) {
 all.bubble <- function(df,name="bubble",clus_name,outputpath,alpha=0.5,fact=0.5,area=TRUE,legend=FALSE) { 
   gains <- (df$gainbits * df$gainfht);
   convs <- (df$convbits * df$convfht);
-  map2rgb <- function (c) { rgb(t(col2rgb(c))/255,alpha=1);}
+  map2rgb <- function (c) {rgb(t(col2rgb(c))/255,alpha=1);}
   colormap <- function (g,c) { 
      y <- rep(0,length(g));
-     y[g <  0.48            & c < 0.44]             <- "#D1E5F0"
-     y[g >= 0.48 & g < 0.95 & c < 0.44]             <- "#92C5DE"
-     y[g >= 0.95            & c < 0.44]             <- "#4393C3"
-     y[g <  0.48            & c >= 0.44 & c < 0.70] <- "#F4A582"
-     y[g >= 0.48 & g < 0.95 & c >= 0.44 & c < 0.70] <- "#D6604D"
-     y[g >= 0.95            & c >= 0.44 & c < 0.70] <- "#B2182B"
-     y[g <  0.48            & c >= 0.70]            <- "#A6DBA0"
-     y[g >= 0.48 & g < 0.95 & c >= 0.70]            <- "#5AAE61"
-     y[g >= 0.95            & c >= 0.70]            <- "#1B7837"
+     y[g <  0.48            & c < 0.2]             <- "#D1E5F0"
+     y[g >= 0.48 & g < 0.95 & c < 0.2]             <- "#92C5DE"
+     y[g >= 0.95            & c < 0.2]             <- "#4393C3"
+     y[g <  0.48            & c >= 0.2 & c < 0.5] <- "#F4A582"
+     y[g >= 0.48 & g < 0.95 & c >= 0.2 & c < 0.5] <- "#D6604D"
+     y[g >= 0.95            & c >= 0.2 & c < 0.5] <- "#B2182B"
+     y[g <  0.48            & c >= 0.5]            <- "#A6DBA0"
+     y[g >= 0.48 & g < 0.95 & c >= 0.5]            <- "#5AAE61"
+     y[g >= 0.95            & c >= 0.5]            <- "#1B7837"
      y;
   }
   colors <- colormap(gains,convs);
   
   widthmap <- function (g,c) {
      y <- rep(1,length(g));
-     y[g < 0.48 & c < 0.44] <- 1;
-     y[g >= 0.48 | c >= 0.44] <- 2;
-     y[g >= 0.95 | c >= 0.70] <- 3;	
+     y[g < 0.48 & c < 0.2] <- 1;
+     y[g >= 0.48 | c >= 0.3] <- 2;
+     y[g >= 0.95 | c >= 0.6] <- 3;	
      y;
   }
   widths <- widthmap(gains,convs);

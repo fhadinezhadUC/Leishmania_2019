@@ -1,0 +1,23 @@
+Qestions about previous work:
+
+1. How did you select sites to include in analysis?
+2. How did you map sites to Sprinzl coordinates and validate your mapping?
+3. Which sites did you include and exclude?
+4. Were there sequences that should have been excluded from the input data?
+5. If you break your alignment up into separate alignments for specific functional classes (or compute their distance) and visualize those alignments or distances, are there obvious outlier sequences?
+6. Are those outlier sequences tRNA genes that might be the wrong class because of anticodon switching, or just junk sequences from the gene-finders? 
+What is the distribution of ambiguities in your sequence data? Are there sequences with high numbers of ambiguities?
+7. Do low-scoring tRNA genes negatively impact your alignment or the training data for the information stats? 
+8. How good is the alignment? Are there badly aligned regions of specific sequences that could introduce noise in your information statistics?  
+9. How about sequences found only by one of the gene-finders? Do we have evidence those should be included in analysis?
+10. What is different between how you calculated KLD and how we calculated it before?
+11. What would your info stats results look with my old work-flow?
+
+Create a document on Overleaf for thesis proposal and make Dave your collaborator on it. We can use Git and LaTeX to collaborate on the writing. 
+Aims for proposal:
+1. Create a tRNA identity classifier based on Bayesian Networks that accepts phylogenetically structured data as input and outputs posterior probabilities of functional identities for query tRNA sequences. Apply this algorithm to investigate anticodon shift/functional conversion events in tRNA genes of TryTrypDB, fly, yeast, worm, …? genomes (select one additional specific case besides TryTrypDB genomes) for analysis as part of three subaims.
+2. Develop algorithm(s) to reconstruct ancestral rearrangements of tRNA gene clusters in eukaryotic genomes, including functional conversions and genic sequence conversion events, and apply these to the above-named eukaryotic datasets to discover functionally converting genes in these datasets and predict boundaries of gene conversion events occurring in them. (I need to share with you the manuscript from Julie’s thesis on what we discovered in Drosophila, for you to fully see the significance of this proposed project). 
+
+3. Develop a machine learning framework to model the evolution of (either or both: {consensus structure, structure-function map}) of tRNA genes on an input phylogenetic tree, and use this framework to improve alignment and gene-finding of evolutionarily diverse tRNA gene-sets.
+
+

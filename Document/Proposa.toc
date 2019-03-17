@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Background}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}TryTryp Genomes}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}tRNA identity classifier}{2}{subsection.2.2}
+\contentsline {section}{\numberline {3}Specific Aims}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}tRNA identity classifier}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}reconstructing ancestral rearrangements of tRNA gene clusters in eukaryotic genomes}{2}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Developing a machine learning framework to model the evolution of tRNA genes on an input phylogenetic tree}{2}{subsection.3.3}
+\contentsline {section}{\numberline {4}Approach}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}tRNA identity classifier}{3}{subsection.4.1}
+\contentsline {section}{\numberline {5}Work to Date}{3}{section.5}
+\contentsline {subsection}{\numberline {5.1}tRNA identity classifier}{3}{subsection.5.1}
+\contentsline {section}{\numberline {6}Timeline and Milestones}{3}{section.6}
+\contentsline {section}{\numberline {7}Feasibility and Potential Pitfalls}{3}{section.7}
+\contentsline {section}{\numberline {8}Significance}{3}{section.8}
+\contentsline {subsection}{\numberline {8.1}tRNA identity classifier}{3}{subsection.8.1}

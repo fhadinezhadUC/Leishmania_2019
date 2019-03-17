@@ -2,8 +2,8 @@ covea: multiple sequence alignment to a covariance model
      release 2.4.4, January 1996
 
 ---------------------------------------------------
-Sequence data:          Integrated_Genes_NoVarIntron.fasta (3582 sequences)
-Covariance model:       TRNA2-euk.cm (72 nodes)
+Sequence data:          /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/Integrated_Genes_NoVarIntron.fasta (3580 sequences)
+Covariance model:       /home/fatemeh/Leishmania_2019/Leishmania_2019/Scripts/TRNA2-euk.cm (72 nodes)
 ---------------------------------------------------
 
 #=AU CM RNA automatic alignment
@@ -1902,7 +1902,6 @@ Covariance model:       TRNA2-euk.cm (72 nodes)
 #=SQ LtarentolaeParrotTarII_LtaP23_40_R                      1.0000 - - 0..0::0 
 #=SQ LtarentolaeParrotTarII_LtaP23_41_L                      1.0000 - - 0..0::0 
 #=SQ LtarentolaeParrotTarII_LtaP23_42_T                      1.0000 - - 0..0::0 
-#=SQ LtarentolaeParrotTarII_LtaP23_43_                       1.0000 - - 0..0::0 
 #=SQ LtarentolaeParrotTarII_LtaP23_44_K                      1.0000 - - 0..0::0 
 #=SQ LtarentolaeParrotTarII_LtaP23_45_G                      1.0000 - - 0..0::0 
 #=SQ LtarentolaeParrotTarII_LtaP23_46_W                      1.0000 - - 0..0::0 
@@ -3064,7 +3063,6 @@ Covariance model:       TRNA2-euk.cm (72 nodes)
 #=SQ TcruziSylvioX10-1_TcX10_chr5_66_N                       1.0000 - - 0..0::0 
 #=SQ TcruziSylvioX10-1_TcX10_chr5_67_T                       1.0000 - - 0..0::0 
 #=SQ TcruziSylvioX10-1_TcX10_chr5_68_P                       1.0000 - - 0..0::0 
-#=SQ TcruziSylvioX10-1_TcX10_chr7_70_                        1.0000 - - 0..0::0 
 #=SQ TcruziSylvioX10-1_TcX10_chr8_71_F                       1.0000 - - 0..0::0 
 #=SQ TcruziSylvioX10-1_TcX10_chr8_72_E                       1.0000 - - 0..0::0 
 #=SQ TcruziSylvioX10-1_TcX10_chr8_73_V                       1.0000 - - 0..0::0 
@@ -7381,8 +7379,6 @@ LtarentolaeParrotTarII_LtaP23_41_L                       GGCAAGAT.GGTCGAGT.GGT..
 #=SS                                                     >>>>>>>...>>>..............<<<.>>>>>.......<<<<<............
 LtarentolaeParrotTarII_LtaP23_42_T                       GGCCGCTT.AGCACAGT.GGC..A..GTGCACTGGTCTTGTAAACCAGGG..........
 #=SS                                                     >>>>>>>...>>>>............<<<<.>>>>>.......<<<<<............
-LtarentolaeParrotTarII_LtaP23_43_                        GGCCTCTT.GGCGCAAT.GGA..A..GCGCATCAGACTTCGG.TCTGAGG..........
-#=SS                                                     >>>>>>>...>>>>............<<<<.>>>>>.......<<<<<............
 LtarentolaeParrotTarII_LtaP23_44_K                       GCACTTCT.AGCTCAGTTGGT..A..GAGCGCGTGGCTTTTAACCTCGTG..........
 #=SS                                                     >>>>>>>...>>>>............<<<<.>>.>>.......<<.<<............
 LtarentolaeParrotTarII_LtaP23_45_G                       GCAATTGT.GGTCCAAC.GGT..A..AGATCCCCGCCTTCCAAGCGGGT...........
@@ -9705,8 +9701,6 @@ TcruziSylvioX10-1_TcX10_chr5_67_T                        GGCCGCTT.AGCACAGT.GGC..
 #=SS                                                     >>>>>>>...>>>>............<<<<.>>>>>.......<<<<<............
 TcruziSylvioX10-1_TcX10_chr5_68_P                        GGCCGCTT.GGTCTAGT.GGT..A..TGATTCCTGTTTCGGGTACAGGAG..........
 #=SS                                                     >>>>>>>...>>>..............<<<.>>>>>.......<<<<<............
-TcruziSylvioX10-1_TcX10_chr7_70_                         TCCGGTGT.GGTATAGT.GGC..A..GAACAAGCGGCTCTCA.CCGCTA...........
-#=SS                                                     >>>>>>>...>>.>............<.<<.>>>>>.......<<<<<............
 TcruziSylvioX10-1_TcX10_chr8_71_F                        GCCGCGAT.AGCTCAGTTGGG..A..GAGCGTCAGACTGAAGATCTGAAG..........
 #=SS                                                     >>>>>>>...>>>>............<<<<.>>>>>.......<<<<<............
 TcruziSylvioX10-1_TcX10_chr8_72_E                        TCCGATAT.GGTATAAC.GGT..A..GAACACCTGGCTTTCACCCAGGA...........
@@ -14547,8 +14541,6 @@ LtarentolaeParrotTarII_LtaP23_41_L                       .G.CGTGGGTTCAAACCCCA.C.
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 LtarentolaeParrotTarII_LtaP23_42_T                       .G.CCCGAGTTCAATTCTCG.G....AGTGGCCT
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
-LtarentolaeParrotTarII_LtaP23_43_                        .G.TGCAGGTTCGAGTCCTG.C....AGGGGTCG
-#=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 LtarentolaeParrotTarII_LtaP23_44_K                       .G.CGTGGGTTCGAGCCCCA.C....GGAGTGCG
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 LtarentolaeParrotTarII_LtaP23_45_G                       .G.CCCGGGTTCGACTCCCG.G....CAATTGCA
@@ -16871,8 +16863,6 @@ TcruziSylvioX10-1_TcX10_chr5_67_T                        .G.CGCGAGTTCGATTCTCG.C.
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 TcruziSylvioX10-1_TcX10_chr5_68_P                        .G.CACGGGTTCAATTCCCG.T....AGCGGCCC
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
-TcruziSylvioX10-1_TcX10_chr7_70_                         .G.CCCGGGTTCGATCCCCG.G....CATCGGAA
-#=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 TcruziSylvioX10-1_TcX10_chr8_71_F                        .G.CCCTGGTTCGATCCCGG.G....TCGCGGCA
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 TcruziSylvioX10-1_TcX10_chr8_72_E                        .G.TCCGGGTTCGATTCCCG.G....TATCGGAA
@@ -17922,4 +17912,4 @@ TvivaxY486_TvY486_bin_archived_contig_8227_106_Q         .A.TCTGAGTTCAAATCTCG.G.
 TvivaxY486_TvY486_bin_archived_contig_975_108_R          .G.TGCAGGTTCGAGCCCTG.C....CGGGATCG
 #=SS                                                     ....>>>>>.......<<<<.<....<<<<<<<.
 
-Overall alignment score: 70.39
+Overall alignment score: 70.40

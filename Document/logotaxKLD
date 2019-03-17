@@ -1,0 +1,26 @@
+```
+p1 = posterior probability of foreground
+p2 = prior probability of foreground
+q1 = posterior probability of background
+q2 = prior probability of background 
+
+logotype=="KL"
+  (p1/p2)log[(p1/p2)/(q1/q2)]
+  (pseudo counts are only added to p1 and q1 which are the posterior pribabilities of foreground and background, and not prior)
+
+logotype.find("KL") == 0
+  pseudocounts are used for both prior and posterior
+  if logotype == "KLdiff"
+     p1log(p1/p2) - q1log(q1/q2)
+
+  if logotype == "KLdiffss"
+     max{p1log(p1/p2) - sample_size_correction(N[][][],p2)} - max{q1log(q1/q2) - sample_size_correction(N[][][],q2),0}
+
+  if logotype == "KL2"
+     p1log(p1/q1)
+
+  if logotype == "KLdiff2"
+     p1log(p1/q1) - p2log(p2/q2) - sample_size_correction(N[][][],p2)
+
+```
+

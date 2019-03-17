@@ -1,0 +1,17 @@
+Add one section to the Document for the alignment method and validation. and integrate the whole pipeline into one script 
+0. removed the intron, insertions, and variable arms ( Details:detecting introns,detecting insertions: detecting variable arms: ) and sequences with more than three loops
+1. call covea to do the first alignment on the intersection of the genes. (should I remove noises before running covea? will it affect the alignment? Use the union for the alignment or intersection?) 
+2. using covea's secondary structure, 
+3. using the results, we removed the sites that had more than 99% gap. removed the sequences with more than 8 gaps. 
+4. mapping the results to sprinzl using the final structure of sequences after filtering. How to do that. by eye?! 
+5. validating the result. (use a sample set which had been aligned and filtered before and do the same thing on them and compare the results.)
+6. integrate the codes for step 2, 3 and 4
+7. How good is the alignment? does covea gives us a number?
+8. what is the distribution of scores for tRNAscan-SE and Aragorn? normal?
+9. what is the zscore of the sequences that have anticodon shifts? 
+
+1. in big clusters, what are the different models that we have? 
+2. when making the profiles 
+use p-value and z-score 
+
+>>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.

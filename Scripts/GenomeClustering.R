@@ -220,13 +220,110 @@ split_tRNAgene_with_clustername <- function() {
   vidualization(genome_list)
    
 }
+split_tRNAgene_into2Cluster <- function(){
+  library(gdata)
+  fastafile <-
+    read.table(
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TryTrypHomoC_EditedCovea.fasta",
+      sep = "\n"
+    )
+  fastafile2 <- as.character(fastafile$V1)
+  sequences <-
+    as.character(fastafile2[seq(2, length(fastafile2), 2)])
+  headers <- as.character(fastafile2[seq(1, length(fastafile2), 2)])
+  
+  genomenames2 <-
+    lapply(X = headers , function(X)
+      gsub("HOMO", "HOMO_", X, fixed = TRUE))
+  genomenames2 <- as.character(genomenames2)
+  genomenames3 <-
+    lapply(X = genomenames2 , function(X)
+      gsub(">", "", X, fixed = TRUE))
+  genomenames3 <- as.character(genomenames3)
+  genomenames4 <-
+    lapply(X = genomenames3, function(X)
+      unlist(strsplit(X, split = "_"))[1])
+  genomenames4 <- as.character(genomenames4)
+  
+  # we will split genomes based on clusters of genomes
+  # add another column "clustername" to tRNAdf to assign the new names to each cluster of genomes:
+  # Leishmania : genomes with name starting with L
+  # Trypanosoma: genomes with name starting with T
+
+  clusNames <- character(length = length(headers))
+  clusNames <- genomenames4
+  
+  for (i in 1:length(clusNames)) {
+    clusternames <- clusNames[i]
+    firstchar <- substr(clusternames,1,1)
+    # if cluster names starts with L 
+    if(firstchar == "L")
+      clusNames[i] <- "Leishmania"
+    else if(firstchar == "T")
+      clusNames[i] <- "Trypanosoma"
+
+    # won't include Leptomonas seymouri, Leptomonas pyrrhocoris ,Endotrypanum monterogeii, 
+    # Paratrypanosoma confusum CUL13, Crithidia fasciculata, Blechomonas ayalai
+    # if (clusternames == "EmonterogeiiLV88" |
+    #     clusternames == "CfasciculataCfCl"|"BayalaiB08-376" |"PconfusumCUL13"|"HOMO")
+    #   clusNames[i] <- "LenriettiComplex"
+  }
+  
+  headers <- gsub("\\s", "", headers)
+  functionalclasses <-
+    lapply(X = headers, function(X)
+      unlist(strsplit(X, split = "_"))[length(unlist(strsplit(X, split = "_")))])
+  
+  functionalclasses <- as.character(functionalclasses)
+  
+  tRNAdf <-
+    data.frame(genomenames4, sequences, genomenames2, functionalclasses,clusNames)
+  names(tRNAdf) <-
+    c("genomename", "sequence", "headers", "funclass","clusNames")
+  
+  genome_list = split(tRNAdf, f = tRNAdf$clusNames)
+  
+  homo <-
+    genome_list[names(genome_list) == "HOMO"][[1]]
+  homo$funclass <-
+    as.character(lapply(X = homo$headers , function(X)
+      substr(X, 7, 7)))
+  homo$funclass <- gsub("\\s", "", homo$funclass)
+  homo$headers <- gsub("\\s", "", homo$headers)
+  
+  homoheader <- paste(homo$headers, homo$funclass, sep = "")
+  genome_list[names(genome_list) == "HOMO"][[1]]$headers <-
+    homoheader
+  
+  # make a file for each genome and put the genomes in there
+  for (i in 1:length(genome_list)) {
+    # write the DF in a file to be processed by the bash
+    filepath <-
+      paste(
+        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/",
+        names(genome_list[i]),
+        ".fasta",
+        sep = ""
+      )
+    
+    write.fwf(
+      data.frame(genome_list[[i]]$headers,
+                 genome_list[[i]]$sequence),
+      filepath,
+      sep = "\n",
+      colnames = FALSE
+    )
+  }
+  vidualization(genome_list)
+  
+}
 # some statistics on TryTryp genes _________________________________________________________
 vidualization <- function(genome_list) {
   # This function will vidualize:
   # 1. number of tRNA genes in HomoC and TryTryp genomes
   # 2. Percentage of 21 tRNA functional classes covered by each genome
   plotpath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput/"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/"
   tRNAcountdf <- data.frame(names(genome_list))
   # I used genomeorder <- tRNAcountdf$genome from vidualization of integrate_Te_Ara.R to be able to compare them
   #tRNAcountdf <- data.frame(genomeorder)

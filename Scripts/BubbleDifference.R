@@ -1,6 +1,6 @@
 BubbleDifference <- function() {
   TableDir <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output/Logos/"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output2/Logos/"
   dirpath <- TableDir
   clusterdir <- list.dirs(path = dirpath, recursive = FALSE)
   #_______________________________________________________________
@@ -92,7 +92,7 @@ visualize.diff <- function(df) {
   
   set.seed(42)
   filepath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output/BubblePlots/"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/output2/BubblePlots/"
 
   for (class in levels(df$aa)) {
     filenm <- paste(filepath, "Differences_", class, ".pdf", sep = "")

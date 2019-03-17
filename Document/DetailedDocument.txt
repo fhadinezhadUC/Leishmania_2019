@@ -47,3 +47,4 @@ cat EditedCovea.fasta HomoC_reduced.fas > TryTrypHomoC.fasta
 4. extract the Homo file 
 
 
+
