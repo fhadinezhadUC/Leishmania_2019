@@ -1,160 +1,92 @@
-# This function will make a model for each functional class and saves the results in a list of dataframes called profile_list
-# Later, we align the new undet identity genes (last part of their geneID has _undet) with the aligned file EditedCovea.fasta
-# initiators are not added yet!!!
+# This function will read the outlier.fasta file and subtract the from the intersection gene file. 
+# Make a model for each functional class and saves the results in a list of dataframes called profile_list
 # At the end will also look at the distribution of the scores for each model and make sure that they are normally distributed 
 classifier <- function() {
-  # seperate undet genes from det genes as training set and test
-  dirpath <-
+  genedirpath <-
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTryp_EditedCovea.fasta"
+  outlierpath <-
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTrypgenemodel_Intersection/TriTryp_EditedCovea/outlier/outliers.txt"
+  outputdir <-
     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
+  trainDF <- read.genefile(genedirpath) # 3543 genes
+  # gaps are removed from outier sequences by OD-seq package
+  outlierDF <- read.genefile(outlierpath) # 39 outier
+  trainDF <- remove.outliers(trainDF, outlierDF) # 3504 genes left
+  trainDF <- make.clusters(trainDF)
+  # make the 22 models
+  #trainDF <- trainDF[trainDF$cluster == "T", ]
+  profile_list <- profile.cm(trainDF)
+  # print(paste("we have", length(names(profile_list)), "functional classes:"))
+  # print(names(profile_list))
+  # use the trainDF as the undet class for now
+  scoresdf <- find.seqScore(profile_list, trainDF)
+  score.dist(scoresdf, trainDF$funclass)
+  
+  zscores <- find.Zscore(scoresdf, trainDF$funclass)
+  zscores <- round(zscores)
+  trainDF
+}
+
+make.clusters <- function(trainDF){
+  trainDF$cluster <- ""
+  for (i in 1:nrow(trainDF)) {
+    firstletter <- substr(trainDF$geneid[i],1,1)
+    if(firstletter=="L")
+      trainDF$cluster[i] <- "L"
+    if(firstletter=="T")
+      trainDF$cluster[i] <- "T"
+  }
+  trainDF
+}
+#__________________________________________________________________________________________
+remove.outliers <- function(trainDF,outlierDF){
+  isoutlier <- trainDF$geneid %in% outlierDF$geneid
+  trainDF <- trainDF[!isoutlier,] 
+}
+#__________________________________________________________________________________________
+read.genefile <- function(genedirpath){
+  # this function read the gene file into a dataframe as teh training set with columns: "header" "sequences" "funclass" "geneid"
+  # at the end it will remove sequences of undet model
   coveadf <-
-    read.table(paste(dirpath, "EditedCovea.fasta", sep = ""))
+    read.table(genedirpath)
   coveaArr <- as.character(coveadf$V1)
   headers <- coveaArr[seq(1, length(coveaArr), 2)]
   sequences <- coveaArr[seq(2, length(coveaArr), 2)]
   funclass <- character(length = length(headers))
-  cluster <- character(length = length(headers))
-  # assign clusters 
-  for (i in 1:length(funclass)) {
-    #print(i)
+  geneid <- character(length = length(headers))
+  for (i in 1:length(headers)) {
     temp <- unlist(strsplit(headers[i], split = "_"))
-    firstchar <- substr(temp[1], 2, 2)
-    if (firstchar == "L")
-      cluster[i] = "L"
-    if (firstchar == "T")
-      cluster[i] = "T"
-    funclass[i] <- temp[length(temp)]
-    if (substring(headers[i], nchar(headers[i]), nchar(headers[i])) == "_")
-    {
-      funclass[i] <- "undet"
-      headers[i] <- paste(headers[i], "undet", sep = "")
-    }
-  }
-  coveaDF <- data.frame(headers, sequences, funclass, cluster)
-  for (i in 1:ncol(coveaDF)) {
-    coveaDF[, i] <- as.character(coveaDF[, i])
-  }
-  trainDF <-
-    coveaDF[(coveaDF$funclass != "undet"),]# & (coveaDF$cluster == "T"), ]
-  
-  # make the 22 models 
-  seqlength <- nchar(sequences[1])
-  profile_list <- profile.cm(trainDF, seqlength)
-  
-  print(paste("we have", length(names(profile_list)), "functional classes:"))
-  print(names(profile_list))
-  #______________________________________________________________________________________
-  # use the trainDF as the undet class for now
-  trainDF$geneid <- ""
-  for (i in 1:nrow(trainDF)) {
-    myhead <- trainDF$headers[i]
-    temp <- unlist(strsplit(myhead, split = "_"))
-    geneid <-
+    geneid[i] <-
       gsub(">", "", paste(temp[1:length(temp) - 1], collapse = "_"))
-    trainDF$geneid[i] <- geneid
+    funclass[i] <- temp[length(temp)]
   }
-  scoresdf <- find.seqScore(profile_list, trainDF)
-  
-  zscores <- find.Zscore(scoresdf,trainDF$funclass)
-  zscores <- round(zscores)
-  scoresdf <- round(scoresdf)
-  trainDF$Score1 <- -999
-  trainDF$Model1 <- ""
-  trainDF$Zscore <- -999
-  trainDF$ModelZ <- ""
-  trainDF$funcscore <- ""
-  for (i in 1:nrow(scoresdf)) {
-    trainDF$funcscore[i] <- scoresdf[i,names(scoresdf)==trainDF$funclass[i]]
-    trainDF$Model1[i] <- names(which.max(scoresdf[i, ]))
-    trainDF$Score1[i] <- scoresdf[i, which.max(scoresdf[i, ])[1]]
-    trainDF$Zscore[i] <- zscores[i, which.max(zscores[i, ])[1]]
-    trainDF$ModelZ[i] <- names(which.max(zscores[i, ]))
+  GeneDF <- data.frame(headers, sequences, funclass, geneid)
+  for (i in 1:ncol(GeneDF)) {
+    GeneDF[, i] <- as.character(GeneDF[, i])
   }
-  # # all the Leishmania genomes had the highest score with their prediceted model
-  # table(trainDF$Model1 == trainDF$funclass)
-  # table(trainDF$ModelZ == trainDF$funclass)
-  # table(trainDF$ModelZ == trainDF$Model1)
-  
-  # combine those with model1 or modelZ different from the predicted model 
-  
-  diffrent <- (trainDF$Model1 != trainDF$funclass) #| (trainDF$ModelZ != trainDF$funclass)
-  
-  diffrentDF <- trainDF[diffrent, ]
-  diffscores <- scoresdf[diffrent, ]
-  diffzscores <- zscores[diffrent, ]
-  
-  # write two files : 1. the diffrentDF with first three columns
-  # 2. the diffscores with the headers
-  # 2. diffzscores with the headers
-  # find the class function of those sequences that did not have same func between tse and ara
-  undetDF<- data.frame(diffrentDF$geneid,diffrentDF$sequences,diffrentDF$funclass,diffrentDF$funcscore)
-  names(undetDF) <- c("geneid","sequence","func","func_score")
-  # add one column as potential shifts 
-  # undetDF$pot_shifts_z <- ""
-  # for (i in 1:nrow(diffzscores)) {
-  #   undetDF$pot_shifts_z[i] <- paste(names(diffzscores)[ which(diffzscores[i, ] == max(diffzscores[i, ]))],collapse = " " , sep = " ")
-  # }
-  # 
-  undetDF$pot_shifts <- ""
-  undetDF$pot_shifts_s <- ""
-  for (i in 1:nrow(diffzscores)) {
-    undetDF$pot_shifts[i] <- paste(names(diffscores)[ which(diffscores[i, ] == max(diffscores[i, ]))],collapse = " " , sep = " ")
-    undetDF$pot_shifts_s[i] <- paste(diffscores[i, which(diffscores[i, ] == max(diffscores[i, ]))],collapse = " " , sep = " ")
-  }
-  
-  undetDF <- find.anticodon(undetDF)
-  names <- data.frame("geneid","func","func_score","pot_shifts","pot_shifts_s","tseac","araac")
-  names(names) <- c("geneid","func","func_score","pot_shifts","pot_shifts_s","tseac","araac")
-  library(gdata)
-  
-  write.fwf(
-    rbind(names,undetDF[,-(2)]),
-    width = c(45, 7,10,10,12,7,7),
-    file = paste(dirpath, "undetDF2.txt", sep = ""),
-    colnames = FALSE
-  )
-  
-  diffscores$geneid <- undetDF$geneid
-  diffzscores$geneid <- undetDF$geneid
-  
-  n <- data.frame(t(names(diffscores)))
-  names(n) <- names(diffscores)
-  for (i in 1:ncol(n)) {
-    n[,i] <- as.character(n[,i])
-  }
-  
-  write.fwf(
-    rbind(n,diffscores),
-    width = c(rep(4,ncol(diffscores)-1),70),
-    file = paste(dirpath, "undetDFscores.txt", sep = ""),
-    colnames = FALSE
-  )
-  
-  n <- data.frame(t(names(diffzscores)))
-  names(n) <- names(diffzscores)
-  for (i in 1:ncol(n)) {
-    n[,i] <- as.character(n[,i])
-  }
-  write.fwf(
-    rbind(n,diffzscores),
-    width = c(rep(4,ncol(diffzscores)-1),70),
-    file = paste(dirpath, "undetDFzscores.txt", sep = ""),
-    colnames = FALSE
-  )
-  
-  # find the anticodon for these genes
-  
-  trainDF
+  GeneDF <-
+    GeneDF[(GeneDF$funclass != "undet"), ]# & (GeneDF$cluster == "T"), ]
+  GeneDF
 }
-
 #__________________________________________________________________________________________
 score.dist <- function(scoresdf,trainDF_Fun){
 
-  par(mfrow=c(4,6))
+  par(mfrow = c(4, 6))
   for (i in 1:ncol(scoresdf)) {
-       samemodel <- names(scoresdf)[i] == trainDF_Fun
-       currentmodel <- scoresdf[samemodel, i]
-       hist(currentmodel, freq = FALSE)
-       #plot(density(currentmodel))
+    samemodel <- names(scoresdf)[i] == trainDF_Fun
+    currentmodel_score <- scoresdf[samemodel, i]
+    hist(
+      currentmodel_score, 
+      prob=TRUE, 
+      main = "",
+      xlab = paste(
+        "score against model",
+        names(scoresdf)[i],
+        sep = " "),
+        ylab = paste("freq (total=", length(currentmodel_score), ")", sep = "")
+      )
+    lines(density(currentmodel_score), col="blue", lwd=2)
+    #plot(density(currentmodel))
   }
   #par(mar=c(0.5, 0.5, 0.5, 0.5))
   # plotlist <- list()
@@ -290,18 +222,10 @@ update.genefiles <- function() {
   )
   
 }
-
 #___________________________________________________________________________________________
-
 find.seqScore <- function(profile_list, undetClass) {
-  # also, calculate the z-score here
+  # this function will score each sequence against all the models using leave one out method
   # the final scores are saved in scoresdf
-  # each column in scoresdf is for one model
-  # those entries in that column that have the funcclass same as the name of the column
-  # calculate the mean and std for that model and save it
-  
-  # resultfunc <- character(length = length(undetClass$sequences))
-  # make a dataframe ncol = length(profile_list)), number of rows is nrow(undetClass)
   m <- matrix(ncol = length(profile_list),
               nrow = nrow(undetClass),
               0)
@@ -315,13 +239,13 @@ find.seqScore <- function(profile_list, undetClass) {
       currentDF <- profile_list[[j]]
       # total is sum of any column in our profile
       total <- sum(currentDF[, 1])
+      # if this sequence was annotated as a sequence of model names(profile_list[j]) then total = total - 1
       if (undetClass$funclass[x] == names(profile_list[j]))
         total = total - 1
       for (i in 1:ncol(currentDF)) {
         currChar <- substring(myseq, i, i)
         if (currChar == "-")
           currChar <- "gap"
-        # if this sequence was annotated as a sequence of model names(profile_list[j]) then total = total - 1
         model_freq <- currentDF[currChar, i]
         if (undetClass$funclass[x] == names(profile_list[j]))
           model_freq <- currentDF[currChar, i] - 1
@@ -332,18 +256,18 @@ find.seqScore <- function(profile_list, undetClass) {
     }
     
     #undetClass$funclass[x] <- types[scores == max(scores)]
-    scoresdf[x, ] <- scores
+    scoresdf[x,] <- scores
     
   }
   scoresdf
 }
-
 #___________________________________________________________________________________________
-profile.cm <- function(trainDF, seqlength) {
+profile.cm <- function(trainDF) {
   # used psedo counts to avoid zero for cells
   # read in the aligned sequences from file EditedCovea.fasta
   func_list <- split(trainDF, f = trainDF$funclass)
   # for each Df make a dataframe to keep the profile cm
+  seqlength <- nchar(trainDF$sequences[1])
   m <- matrix(nrow = 5, ncol = seqlength)
   prf <- data.frame(m)
   rownames(prf) <- c("A", "C", "G", "T", "gap")

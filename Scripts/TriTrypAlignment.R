@@ -30,7 +30,8 @@ TriTrypAlignment <- function() {
   fasta_filename <- "TriTryp_EditedCovea.fasta"
   CS_filename <- "TriTryp_structfile.txt"
   editAlignment(seqDB, SSDB, dirpath, fasta_filename, CS_filename)
-  map2sprinzle(dirpath,fasta_filename,CS_filename)
+  #map2sprinzle(dirpath,fasta_filename,CS_filename)
+  # Use Script for clustering the 
   }
 
 write.genefile <- function(geneDF_Int_noVar_noIntron) {
@@ -442,7 +443,7 @@ editAlignment <- function(seqDB, SSDB, dirpath,fasta_filename,CS_filename) {
   
 }
 
-map2sprinzle(dirpath,fasta_filename,CS_filename){
+map2sprinzle <- function(dirpath,fasta_filename,CS_filename){
   # this function will read the final aigned sequences with their secondary structure
   # assignes positions to each base according to sprinzle
   seqdf <-

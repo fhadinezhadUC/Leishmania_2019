@@ -10,8 +10,44 @@ Add one section to the Document for the alignment method and validation. and int
 8. what is the distribution of scores for tRNAscan-SE and Aragorn? normal?
 9. what is the zscore of the sequences that have anticodon shifts? 
 
+find the outliers in each model
+
+
+
 1. in big clusters, what are the different models that we have? 
 2. when making the profiles 
 use p-value and z-score 
 
->>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+1. for each model find the outliers using OD-seq
+   The disribution of number of outliers for each model from total
+2. concatenate all the outlier sequences and remove them from the main fasta file. 
+3. using the new fasta file make the profiles 
+4. calculate the scores of all the sequences
+5. visuaize the distribution of the scores of sequences in each model to see if they fallow normal distriution
+6. saw that some of the distributions are bimodal which is because we need to cluster the genomes before making the model.
+
+
+make two clusters, then make the models
+look at the distribution, are they normal? continue clustering until it gets normal?
+should I continue clustering untill the distribution gets normal? 
+if now the distribution is normal:
+assign clusters to the outlier sequences. 
+find the score of each outlier sequence against all models of that cluster
+calculate the z-score
+find the one with highest z-score, is it same as the model assigned to the sequence? if not... maybe anticodon shift?
+
+I should probably extract the outliers in each model for each cluster seperately??
+
+BayalaiB08-376_Baya_001_4_S
+">>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<."
+"GTCACCATACCCAAGTGGTtACGGGGACTGACTAGAAATCAGTTGCGATCTCGCGCGCAGGTTCGAATCCTGCTGGTGACG"
+after removing variable arm:
+"GTCACCATACCCAAGTGGTtACGGGGACTGACTAGAAATCAGTTGCGCAGGTTCGAATCCTGCTGGTGACG"
+">>>>>>>..>>>..........<<<.>>>>>.......<<<<<...>>>>>.......<<<<<<<<<<<<."
+ 	
+CfasciculataCfCl_CfaC1_25_76_Y
+"CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGagttagcagatATCACAGGGtCGCTGGTTCGATTCCGGCCGGAAGGA"
+">>>>>>>..>>>>........<<<<.>>>>>..................<<<<<.....>>>>>.......<<<<<<<<<<<<."
+
+after removing the introns and insertions:
+"CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGATCACAGGGCGCTGGTTCGATTCCGGCCGGAAGGA"
