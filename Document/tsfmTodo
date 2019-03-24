@@ -1,0 +1,5 @@
+1. move ID logo and KLD logo to distance class
+   make an object of class DistanceCalculator callded id_distance
+   
+   call get_distance with it to calculate the panda table for both dataset? or
+   make a new function to calculate the calculate_logoID_infos and calculate_logoID_heights

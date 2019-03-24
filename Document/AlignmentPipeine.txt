@@ -38,16 +38,3 @@ find the one with highest z-score, is it same as the model assigned to the seque
 
 I should probably extract the outliers in each model for each cluster seperately??
 
-BayalaiB08-376_Baya_001_4_S
-">>>>>>>..>>>..........<<<.>>>>>.......<<<<<.>>>....<<<..>>>>>.......<<<<<<<<<<<<."
-"GTCACCATACCCAAGTGGTtACGGGGACTGACTAGAAATCAGTTGCGATCTCGCGCGCAGGTTCGAATCCTGCTGGTGACG"
-after removing variable arm:
-"GTCACCATACCCAAGTGGTtACGGGGACTGACTAGAAATCAGTTGCGCAGGTTCGAATCCTGCTGGTGACG"
-">>>>>>>..>>>..........<<<.>>>>>.......<<<<<...>>>>>.......<<<<<<<<<<<<."
- 	
-CfasciculataCfCl_CfaC1_25_76_Y
-"CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGagttagcagatATCACAGGGtCGCTGGTTCGATTCCGGCCGGAAGGA"
-">>>>>>>..>>>>........<<<<.>>>>>..................<<<<<.....>>>>>.......<<<<<<<<<<<<."
-
-after removing the introns and insertions:
-"CCTTCTGTAGCTCAATTGGTAGAGCATGTGACTGTAGATCACAGGGCGCTGGTTCGATTCCGGCCGGAAGGA"
