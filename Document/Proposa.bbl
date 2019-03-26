@@ -91,4 +91,41 @@ Helena Taquist, Yuanyuan Cui, and David Ardell.
 \newblock Tfam 1.0: an online trna function classifier.
 \newblock {\em Nucleic acids research}, 35:W350--3, 08 2007.
 
+\bibitem{shifts1}
+L~H~Schulman and H~Pelka.
+\newblock The anticodon contains a major element of the identity of arginine
+  transfer rnas.
+\newblock {\em Science (New York, N.Y.)}, 246:1595--7, 01 1990.
+
+\bibitem{shifts2}
+L~Pallanck and L~H~Schulman.
+\newblock Anticodon-dependent aminoacylation of a noncognate trna with
+  isoleucine, valine, and phenylalanine in vivo.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 88:3872--6, 06 1991.
+
+\bibitem{Rogers2014tRNAAS}
+Hubert~H. Rogers and Sam Griffiths-Jones.
+\newblock trna anticodon shifts in eukaryotic genomes.
+\newblock {\em RNA}, 20 3:269--81, 2014.
+
+\bibitem{Resistance1}
+Simon~L. Croft, Shyam Sundar, and Alan~H. Fairlamb.
+\newblock Drug resistance in leishmaniasis.
+\newblock {\em Clinical Microbiology Reviews}, 19(1):111--126, 2006.
+
+\bibitem{Resistance2}
+Alicia Ponte-Sucre, Francisco Gamarro, Jean-Claude Dujardin, Michael~P.
+  Barrett, Rogelio López-Vélez, Raquel García-Hernández, Andrew~W.
+  Pountain, Roy Mwenechanya, and Barbara Papadopoulou.
+\newblock Drug resistance and treatment failure in leishmaniasis: A 21st
+  century challenge.
+\newblock {\em PLOS Neglected Tropical Diseases}, 11:1--24, 12 2017.
+
+\bibitem{aaRS}
+Paul Schimmel, JS~Tao, and Jason Hill.
+\newblock Aminoacyl trna synthetases as targets for new anti-infectives.
+\newblock {\em FASEB journal : official publication of the Federation of
+  American Societies for Experimental Biology}, 12:1599--609, 01 1999.
+
 \end{thebibliography}

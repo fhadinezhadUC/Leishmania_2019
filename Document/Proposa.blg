@@ -11,45 +11,45 @@ Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapa
 while executing---line 944 of file unsrt.bst
 Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
 while executing---line 944 of file unsrt.bst
-You've used 15 entries,
+You've used 21 entries,
             1791 wiz_defined-function locations,
-            554 strings with 6480 characters,
-and the built_in function-call counts, 3053 in all, are:
-= -- 271
-> -- 127
+            599 strings with 7794 characters,
+and the built_in function-call counts, 4498 in all, are:
+= -- 395
+> -- 202
 < -- 0
-+ -- 49
-- -- 34
-* -- 216
-:= -- 520
-add.period$ -- 46
-call.type$ -- 15
-change.case$ -- 15
++ -- 76
+- -- 55
+* -- 334
+:= -- 759
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 129
-empty$ -- 298
-format.name$ -- 34
-if$ -- 660
+cite$ -- 21
+duplicate$ -- 183
+empty$ -- 432
+format.name$ -- 55
+if$ -- 975
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 79
-num.names$ -- 15
-pop$ -- 14
+int.to.str$ -- 21
+missing$ -- 21
+newline$ -- 109
+num.names$ -- 21
+pop$ -- 20
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 56
+skip$ -- 77
 stack$ -- 0
-substring$ -- 201
-swap$ -- 15
+substring$ -- 316
+swap$ -- 21
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 27
-width$ -- 17
-write$ -- 169
+while$ -- 40
+width$ -- 23
+write$ -- 235
 (There were 4 error messages)
