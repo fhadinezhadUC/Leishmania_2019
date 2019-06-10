@@ -5,7 +5,7 @@ TbruceiTREU927_Tb927_11_bin_v5.1_74           H       -122       W          -105
 TbruceiTREU927_Tb927_11_bin_v5.1_76           P       -139       R          -118         TGG     (tgg)   R(TCG) > P(TGG)  	1
 TcruziCLBrener_Tcruzi_11019_2                 I       -116       M W        -102 -102    GAT     (gat)   M(CAT) > I(GAT)  	1
 TcruziCLBrener_Tcruzi_20084_17                C       -122       S          -116         GCA     (gca)   S(GCT/GGA) > C(GCA)	1
-TcruziCLBrener_Tcruzi_22215_21                M       -143       C          -86          CAT     (cat)   C > M(CAT) 		3              I(GAT) > M(CAT)
+TcruziCLBrener_Tcruzi_22215_21                M       -143       C          -86          CAT     (cat)   C > M(CAT) 		3
 TcruziCLBrener_Tcruzi_22215_22                M       -103       I M        -103 -103    CAT     (cat)   I(GAT) > M(CAT)	1
 TcruziCLBrener_Tcruzi_22215_24                P       -144       W          -97          TGG     (tgg)   H(ATG) > P(TGG)	2
 TcruziCLBrener_Tcruzi_22215_25                S       -136       T          -116         TGA     (tga)   T(TGT) > S(TGA)	1
@@ -20,4 +20,4 @@ TcruziTulacl2_KB851446.1_107                  V       -58        G          -31 
 TvivaxY486_TvY486_bin_archived_contig_1183_36 K       -110       R          -94          TTT     (ttt)   R(TCT)/I(TAT) > K(TTT) 1  
 TvivaxY486_TvY486_bin_archived_contig_3413_48 H       -123       V          -121         GTG     (gtg)   V(GTC) > H(GTG)	1
 TvivaxY486_TvY486_bin_archived_contig_3413_51 K       -110       R          -94          TTT     (ttt)   R(TCT)/I(TAT) > K(TTT) 1
-TvivaxY486_TvY486_bin_archived_contig_4539_66 N       -118       R          -106         GTT     (gtt)   R(TCT/CCT) > N(GTT)    3 	        I(GAT) / K(TTT)
+TvivaxY486_TvY486_bin_archived_contig_4539_66 N       -118       R          -106         GTT     (gtt)   R(TCT/CCT) > N(GTT)    3

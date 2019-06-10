@@ -3,53 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Proposa.aux
 The style file: unsrt.bst
 Database file #1: sample.bib.bib
-Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
-while executing---line 944 of file unsrt.bst
-Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
-while executing---line 944 of file unsrt.bst
-Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
-while executing---line 944 of file unsrt.bst
-Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
-while executing---line 944 of file unsrt.bst
-You've used 21 entries,
+You've used 18 entries,
             1791 wiz_defined-function locations,
-            599 strings with 7794 characters,
-and the built_in function-call counts, 4498 in all, are:
-= -- 395
-> -- 202
+            579 strings with 7138 characters,
+and the built_in function-call counts, 4136 in all, are:
+= -- 347
+> -- 206
 < -- 0
-+ -- 76
-- -- 55
-* -- 334
-:= -- 759
-add.period$ -- 64
-call.type$ -- 21
-change.case$ -- 21
++ -- 75
+- -- 57
+* -- 328
+:= -- 692
+add.period$ -- 55
+call.type$ -- 18
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 183
-empty$ -- 432
-format.name$ -- 55
-if$ -- 975
+cite$ -- 18
+duplicate$ -- 163
+empty$ -- 396
+format.name$ -- 57
+if$ -- 902
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 21
-newline$ -- 109
-num.names$ -- 21
-pop$ -- 20
+int.to.str$ -- 18
+missing$ -- 18
+newline$ -- 94
+num.names$ -- 18
+pop$ -- 23
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 77
+skip$ -- 63
 stack$ -- 0
-substring$ -- 316
-swap$ -- 21
+substring$ -- 295
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 40
-width$ -- 23
-write$ -- 235
-(There were 4 error messages)
+while$ -- 34
+width$ -- 20
+write$ -- 201

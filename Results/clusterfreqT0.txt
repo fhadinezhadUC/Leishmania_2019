@@ -1,0 +1,10 @@
+cluster&dir&Perc1&Perc2\\
+NARKR&+-+++&55&0\\
+IQVKGLTRKR&-++++--++-&35&0\\
+GLTR&++-+&30&0\\
+EMSV&-+-+&20&0\\
+IQVK&-+++&20&0\\
+ILQQI&+--++&15&0\\
+LSMEMYV&-+-++-+&15&0\\
+RKRTLGKVQI&+--++----+&15&0\\
+LSMEMYV&-+--+-+&10&0\\

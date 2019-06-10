@@ -52,6 +52,7 @@ Integrate_Tse_Ara <- function() {
       rbind(integrated_tse_ara, temp_integrated)
   }
   integrated_tse_ara <- addfuncTypes(integrated_tse_ara)
+  # I think I did the alignment before this initiator detection step!
   integrated_tse_ara <- initiatorDetecting(integrated_tse_ara)
   
   # decide about the functional class of genes found by both TSE and ARA with different identities. 
@@ -832,7 +833,7 @@ making_tse_df <- function(tse_filename, tse_ss_filename) {
 }
 
 #_______________________________________________________________________________________________________________________________________________________
-addfuncTypes <- function(integrated_tse_ara){
+addfuncTypes <- function(integrated_tse_ara) {
   integrated_tse_ara$arafunc <- ''
   integrated_tse_ara$tsefunc <- ''
   for (i in 1:nrow(integrated_tse_ara)) {
@@ -961,22 +962,29 @@ initiatorDetecting <- function(geneDF) {
   library(cluster)    # clustering algorithms
   library(factoextra) # clustering visualization
   library(dendextend) # for comparing two dendrograms
-  
+  # GeneDF from the function profile_cm
   # the input is the filtered gene file from Integrate_Tse_Ara script. (geneDF6)
-  iscat <- geneDF$araac == "(cat)" & geneDF$tseac == "CAT"
+  #GeneDF$headers <- gsub(">","",GeneDF$headers)
+  
+  GeneDF$araac <- genefile[genefile$geneid %in% GeneDF$geneid,]$araac
+  GeneDF$tseac <- genefile[genefile$geneid %in% GeneDF$geneid,]$tseac
+  GeneDF$foundby <- genefile[genefile$geneid %in% GeneDF$geneid,]$foundby
+  GeneDF$tseidentity <- genefile[genefile$geneid %in% GeneDF$geneid,]$tseidentity
+  geneDF <- GeneDF
+  iscat <- geneDF$araac == "(cat)" | geneDF$tseac == "CAT"
   catDF <- geneDF[iscat, ]
-  # we have 173 cat genes found by both ara and tse
-  # we have 4 cat ara genes not detected by tse
-  # we have 2 genes found by both ara and tse but they are cat in tse and cta in ara
-  # what to do with these 6 genes ?
+  #table(catDF$foundby)
+  #ara both 
+  #1  184 
+  
   geneseqs <- character(length = nrow(catDF))
   for (i in 1:nrow(catDF)) {
     if (catDF$foundby[i] == "both")
-      geneseqs[i] <- catDF$tsegeneseq[i]
+      geneseqs[i] <- catDF$sequences[i]
     else if (catDF$foundby[i] == "tse")
-      geneseqs[i] <- catDF$tsegeneseq[i]
+      geneseqs[i] <- catDF$sequences[i]
     else if (catDF$foundby[i] == "ara")
-      geneseqs[i] <- catDF$arageneseq[i]
+      geneseqs[i] <- catDF$sequences[i]
   }
   m <- matrix(nrow = nrow(catDF), ncol = nrow(catDF))
   distanceDF <- as.data.frame(m)
@@ -988,16 +996,16 @@ initiatorDetecting <- function(geneDF) {
   
   # m <- matrix(nrow = nrow(clus1DF), ncol = nrow(clus1DF))
   # distanceDF <- as.data.frame(m)
-  # for (i in 1:length(clus1DF$tsegeneseq)) {
-  #   for (j in 1:length(clus1DF$tsegeneseq)) {
-  #     distanceDF[i, j] <- adist(clus1DF$tsegeneseq[i], clus1DF$tsegeneseq[j])
+  # for (i in 1:length(clus1DF$sequences)) {
+  #   for (j in 1:length(clus1DF$sequences)) {
+  #     distanceDF[i, j] <- adist(clus1DF$sequences[i], clus1DF$sequences[j])
   #   }
   # }
   # m <- matrix(nrow = nrow(clus2DF), ncol = nrow(clus2DF))
   # distanceDF <- as.data.frame(m)
-  # for (i in 1:length(clus2DF$tsegeneseq)) {
-  #   for (j in 1:length(clus2DF$tsegeneseq)) {
-  #     distanceDF[i, j] <- adist(clus2DF$tsegeneseq[i], clus2DF$tsegeneseq[j])
+  # for (i in 1:length(clus2DF$sequences)) {
+  #   for (j in 1:length(clus2DF$sequences)) {
+  #     distanceDF[i, j] <- adist(clus2DF$sequences[i], clus2DF$sequences[j])
   #   }
   # }
   ####################################################### Hierarchical Cluster Analysis ######################################
@@ -1067,97 +1075,134 @@ initiatorDetecting <- function(geneDF) {
   summerytable[, 1] <- c("Cluster1", "Cluster2", "Cluster3")
   summerytable[, 2] <- c(nrow(clus1DF), nrow(clus2DF), nrow(clus3DF))
   GC1 = 0
+  #>>>>>>>..>>>>........<<<<.>>>>>.......<<<<<....>>>>>.......<<<<<<<<<<<<.
+  #
   for (i in 1:nrow(clus1DF)) {
-    if ((substring(clus1DF$tsegeneseq[i], 11, 11) == "C") &
-        (substring(clus1DF$tsegeneseq[i], 23, 23) == "G"))
+    if ((substring(clus1DF$sequences[i], 11, 11) == "C") &
+        (substring(clus1DF$sequences[i], 24, 24) == "G"))
       GC1 <- GC1 + 1
   }
   GC2 = 0
   for (i in 1:nrow(clus2DF)) {
-    if ((substring(clus2DF$tsegeneseq[i], 11, 11) == "C") &
-        (substring(clus2DF$tsegeneseq[i], 24, 24) == "G"))
+    if ((substring(clus2DF$sequences[i], 11, 11) == "C") &
+        (substring(clus2DF$sequences[i], 24, 24) == "G"))
       GC2 <- GC2 + 1
   }
   GC3 = 0
+  for (i in 1:nrow(clus3DF)) {
+    if ((substring(clus3DF$sequences[i], 11, 11) == "C") &
+        (substring(clus3DF$sequences[i], 24, 24) == "G"))
+      GC3 <- GC3 + 1
+  }
+  
   summerytable[, 3] <- c(GC1, GC2, GC3)
   
   AA1 = 0
   for (i in 1:nrow(clus1DF)) {
-    if (((substring(clus1DF$tsegeneseq[i], 53, 53) == "A") &
-         (substring(clus1DF$tsegeneseq[i], 59, 59) == "A")) |
-        ((substring(clus1DF$tsegeneseq[i], 53, 53) == "T") &
-         (substring(clus1DF$tsegeneseq[i], 59, 59) == "T")))
+    if (((substring(clus1DF$sequences[i], 53, 53) == "A") &
+         (substring(clus1DF$sequences[i], 59, 59) == "A")) |
+        ((substring(clus1DF$sequences[i], 53, 53) == "T") &
+         (substring(clus1DF$sequences[i], 59, 59) == "T")))
       AA1 <- AA1 + 1
   }
   AA2 = 0
   for (i in 1:nrow(clus2DF)) {
-    if (((substring(clus2DF$tsegeneseq[i], 54, 54) == "A") &
-         (substring(clus2DF$tsegeneseq[i], 60, 60) == "A")) |
-        (substring(clus2DF$tsegeneseq[i], 54, 54) == "T") &
-        (substring(clus2DF$tsegeneseq[i], 60, 60) == "T"))
+    if (((substring(clus2DF$sequences[i], 53, 53) == "A") &
+         (substring(clus2DF$sequences[i], 59, 59) == "A")) |
+        (substring(clus2DF$sequences[i], 53, 53) == "T") &
+        (substring(clus2DF$sequences[i], 59, 59) == "T"))
       AA2 <- AA2 + 1
   }
   AA3 = 0
+  for (i in 1:nrow(clus3DF)) {
+    if (((substring(clus3DF$sequences[i], 53, 53) == "A") &
+         (substring(clus3DF$sequences[i], 59, 59) == "A")) |
+        (substring(clus3DF$sequences[i], 53, 53) == "T") &
+        (substring(clus3DF$sequences[i], 59, 59) == "T"))
+      AA3 <- AA3 + 1
+  }
   
   summerytable[, 4] <- c(AA1, AA2, AA3)
   
   AT1 = 0
   for (i in 1:nrow(clus1DF)) {
-    if ((substring(clus1DF$tsegeneseq[i], 1, 1) == "A") &
-        (substring(clus1DF$tsegeneseq[i], 71, 71) == "T"))
+    if ((substring(clus1DF$sequences[i], 1, 1) == "A") &
+        (substring(clus1DF$sequences[i], 71, 71) == "T"))
       AT1 <- AT1 + 1
   }
   AT2 = 0
   for (i in 1:nrow(clus2DF)) {
-    if ((substring(clus2DF$tsegeneseq[i], 1, 1) == "A") &
-        (substring(clus2DF$tsegeneseq[i], 72, 72) == "T"))
+    if ((substring(clus2DF$sequences[i], 1, 1) == "A") &
+        (substring(clus2DF$sequences[i], 71, 71) == "T"))
       AT2 <- AT2 + 1
   }
   AT3 = 0
-  
+  for (i in 1:nrow(clus3DF)) {
+    if ((substring(clus3DF$sequences[i], 1, 1) == "A") &
+        (substring(clus3DF$sequences[i], 71, 71) == "T"))
+      AT3 <- AT3 + 1
+  }
   summerytable[, 5] <- c(AT1, AT2, AT3)
   
   GGG1 = 0
   for (i in 1:nrow(clus1DF)) {
-    if ((substring(clus1DF$tsegeneseq[i], 28, 30) == "GGG"))
+    if ((substring(clus1DF$sequences[i], 29, 31) == "GGG"))
       GGG1 <- GGG1 + 1
   }
   GGG2 = 0
   for (i in 1:nrow(clus2DF)) {
-    if ((substring(clus2DF$tsegeneseq[i], 28, 30) == "GGG"))
+    if ((substring(clus2DF$sequences[i], 29, 31) == "GGG"))
       GGG2 <- GGG2 + 1
   }
   GGG3 = 0
+  for (i in 1:nrow(clus3DF)) {
+    if ((substring(clus3DF$sequences[i], 29, 31) == "GGG"))
+      GGG3 <- GGG3 + 1
+  }
   summerytable[, 6] <- c(GGG1, GGG2, GGG3)
   
   CCC1 = 0
   for (i in 1:nrow(clus1DF)) {
-    if ((substring(clus1DF$tsegeneseq[i], 38, 40) == "CCC") |
-        (substring(clus1DF$tsegeneseq[i], 38, 40) == "CCT"))
+    if ((substring(clus1DF$sequences[i], 39, 41) == "CCC") |
+        (substring(clus1DF$sequences[i], 39, 41) == "CCT"))
       CCC1 <- CCC1 + 1
   }
   CCC2 = 0
   for (i in 1:nrow(clus2DF)) {
-    if ((substring(clus2DF$tsegeneseq[i], 40, 42) == "CCC") |
-        (substring(clus2DF$tsegeneseq[i], 40, 42) == "CCT"))
+    if ((substring(clus2DF$sequences[i], 39, 41) == "CCC") |
+        (substring(clus2DF$sequences[i], 39, 41) == "CCT"))
       CCC2 <- CCC2 + 1
   }
   CCC3 = 0
+  for (i in 1:nrow(clus3DF)) {
+    if ((substring(clus3DF$sequences[i], 39, 41) == "CCC") |
+        (substring(clus3DF$sequences[i], 39, 41) == "CCT"))
+      CCC3 <- CCC3 + 1
+  }
   summerytable[, 7] <- c(CCC1, CCC2, CCC3)
   
-  summerytable[, 8] <- c(7, 8, "8/9")
+  summerytable[, 8] <- c(7, 8, 1)
   
   
   A120 = 0
   for (i in 1:nrow(clus1DF)) {
-    if ((substring(clus1DF$tsegeneseq[i], 19, 19) == "A"))
+    if ((substring(clus1DF$sequences[i], 20, 20) == "A"))
       A120 <- A120 + 1
   }
+  
   A220 = 0
+  for (i in 1:nrow(clus2DF)) {
+    if ((substring(clus2DF$sequences[i], 20, 20) == "A"))
+      A220 <- A220 + 1
+  }
   A320 = 0
+  for (i in 1:nrow(clus3DF)) {
+    if ((substring(clus3DF$sequences[i], 20, 20) == "A"))
+      A320 <- A320 + 1
+  }
   summerytable[, 9] <- c(A120, A220, A320)
   
-  summerytable[3, ] <- c("Cluster3", 2, 2, 2, 0, 0, 0, "8/9", 0)
+  #summerytable[3, ] <- c("Cluster3", 2, 2, 2, 0, 0, 0, "8/9", 0)
   for (i in 1:nrow(clus1DF)) {
     geneDF[geneDF$geneid == clus1DF$geneid[i], ]$arafunc <- "X"
     geneDF[geneDF$geneid == clus1DF$geneid[i], ]$tsefunc <- "X"
@@ -1168,32 +1213,32 @@ initiatorDetecting <- function(geneDF) {
   summerytable$distanceRange <- ""
   m <- matrix(nrow = nrow(clus1DF), ncol = nrow(clus1DF))
   distanceDF <- as.data.frame(m)
-  for (i in 1:length(clus1DF$tsegeneseq)) {
-    for (j in 1:length(clus1DF$tsegeneseq)) {
-      distanceDF[i, j] <- adist(clus1DF$tsegeneseq[i], clus1DF$tsegeneseq[j])
+  for (i in 1:length(clus1DF$sequences)) {
+    for (j in 1:length(clus1DF$sequences)) {
+      distanceDF[i, j] <- adist(clus1DF$sequences[i], clus1DF$sequences[j])
     }
   }
   summerytable$distanceRange[1] <- paste(min(distanceDF),max(distanceDF),sep = "-")
   m <- matrix(nrow = nrow(clus2DF), ncol = nrow(clus2DF))
   distanceDF <- as.data.frame(m)
-  for (i in 1:length(clus2DF$tsegeneseq)) {
-    for (j in 1:length(clus2DF$tsegeneseq)) {
-      distanceDF[i, j] <- adist(clus2DF$tsegeneseq[i], clus2DF$tsegeneseq[j])
+  for (i in 1:length(clus2DF$sequences)) {
+    for (j in 1:length(clus2DF$sequences)) {
+      distanceDF[i, j] <- adist(clus2DF$sequences[i], clus2DF$sequences[j])
     }
   }
   summerytable$distanceRange[2] <- paste(min(distanceDF),max(distanceDF),sep = "-")
   m <- matrix(nrow = nrow(clus1DF), ncol = nrow(clus1DF))
   distanceDF <- as.data.frame(m)
-  for (i in 1:length(clus1DF$tsegeneseq)) {
-    for (j in 1:length(clus1DF$tsegeneseq)) {
-      distanceDF[i, j] <- adist(clus1DF$tsegeneseq[i], clus1DF$tsegeneseq[j])
+  for (i in 1:length(clus1DF$sequences)) {
+    for (j in 1:length(clus1DF$sequences)) {
+      distanceDF[i, j] <- adist(clus1DF$sequences[i], clus1DF$sequences[j])
     }
   }
   m <- matrix(nrow = nrow(clus3DF), ncol = nrow(clus3DF))
   distanceDF <- as.data.frame(m)
-  for (i in 1:length(clus3DF$tsegeneseq)) {
-    for (j in 1:length(clus3DF$tsegeneseq)) {
-      distanceDF[i, j] <- adist(clus3DF$tsegeneseq[i], clus3DF$tsegeneseq[j])
+  for (i in 1:length(clus3DF$sequences)) {
+    for (j in 1:length(clus3DF$sequences)) {
+      distanceDF[i, j] <- adist(clus3DF$sequences[i], clus3DF$sequences[j])
     }
   }
   summerytable$distanceRange[3] <- paste(min(distanceDF),max(distanceDF),sep = "-")

@@ -1,25 +1,23 @@
 \begin{thebibliography}{10}
 
-\bibitem{El-Sayed409}
-Najib~M. El-Sayed and et~al. Myler.
-\newblock The genome sequence of trypanosoma cruzi, etiologic agent of chagas
-  disease.
-\newblock {\em Science}, 309(5733):409--415, 2005.
+\bibitem{Resistance1}
+Simon~L. Croft, Shyam Sundar, and Alan~H. Fairlamb.
+\newblock Drug resistance in leishmaniasis.
+\newblock {\em Clinical Microbiology Reviews}, 19(1):111--126, 2006.
 
-\bibitem{Berriman416}
-Matthew Berriman and et~al. Ghedin.
-\newblock The genome of the african trypanosome trypanosoma brucei.
-\newblock {\em Science}, 309(5733):416--422, 2005.
+\bibitem{Resistance2}
+Alicia Ponte-Sucre, Francisco Gamarro, Jean-Claude Dujardin, Michael~P.
+  Barrett, Rogelio López-Vélez, Raquel García-Hernández, Andrew~W.
+  Pountain, Roy Mwenechanya, and Barbara Papadopoulou.
+\newblock Drug resistance and treatment failure in leishmaniasis: A 21st
+  century challenge.
+\newblock {\em PLOS Neglected Tropical Diseases}, 11:1--24, 12 2017.
 
-\bibitem{Ivens436}
-Alasdair~C. Ivens and et~al. Peacock.
-\newblock The genome of the kinetoplastid parasite, leishmania major.
-\newblock {\em Science}, 309(5733):436--442, 2005.
-
-\bibitem{jackson_2015}
-ANDREW~P. JACKSON.
-\newblock Genome evolution in trypanosomatid parasites.
-\newblock {\em Parasitology}, 142(S1):S40–S56, 2015.
+\bibitem{aaRS}
+Paul Schimmel, JS~Tao, and Jason Hill.
+\newblock Aminoacyl trna synthetases as targets for new anti-infectives.
+\newblock {\em FASEB journal : official publication of the Federation of
+  American Societies for Experimental Biology}, 12:1599--609, 01 1999.
 
 \bibitem{Freyhult2006VisualizingBT}
 Eva Freyhult, Vincent Moulton, and David~H. Ardell.
@@ -39,32 +37,10 @@ Eva Freyhult, Yuanyuan Cui, Olle Nilsson, and David~H. Ardell.
 \newblock {\em Biochimie}, 89(10):1276 -- 1288, 2007.
 \newblock Functional diversity of RNA.
 
-\bibitem{Souza:2018dg}
-Denise Andréa Silva. et~al. de~Souza.
-\newblock Evolutionary analyses of myosin genes in trypanosomatids show a
-  history of expansion, secondary losses and neofunctionalization.
-\newblock {\em Scientific Reports}, 8, 2018.
-
-\bibitem{Hughes:2003}
-Helen Hughes, Austin L.~Piontkivska.
-\newblock Molecular phylogenetics of trypanosomatidae: contrasting results from
-  18s rrna and protein phylogenies.
-\newblock {\em PubMed}, 2, 2003.
-
-\bibitem{Pothirat:2014}
-Chaiwarith R Jariyapan N Wannasan A Siriyasatien P et~al. Pothirat~T,
-  Tantiworawit~A.
-\newblock First isolation of leishmania from northern thailand: Case report,
-  identification as leishmania martiniquensis and phylogenetic position within
-  the leishmania enriettii complex.
-\newblock {\em PLoS Negl Trop Dis}, 12, 2014.
-
-\bibitem{Kelly:2017}
-Steven. et~al. Kelly.
-\newblock An alternative strategy for trypanosome survival in the mammalian
-  bloodstream revealed through genome and transcriptome analysis of the
-  ubiquitous bovine parasite trypanosoma (megatrypanum) theileri.
-\newblock {\em Genome biology and evolution}, 9, 2017.
+\bibitem{Aslett2010TriTrypDBAF}
+et~al. Aslett~M, Aurrecoechea~C.
+\newblock Tritrypdb: a functional genomic resource for the trypanosomatidae.
+\newblock In {\em Nucleic Acids Research}, 2010.
 
 \bibitem{trnascan}
 Todd Lowe and S~R~Eddy.
@@ -78,6 +54,13 @@ Dean Laslett and Björn Canbäck.
   sequences.
 \newblock {\em Nucleic acids research}, 32:11--6, 02 2004.
 
+\bibitem{tRNomics}
+Christian Marck and Henri Grosjean.
+\newblock trnomics: Analysis of trna genes from 50 genomes of eukarya, archaea,
+  and bacteria reveals anticodon-sparing strategies and domain-specific
+  features.
+\newblock {\em RNA (New York, N.Y.)}, 8:1189--232, 11 2002.
+
 \bibitem{PadillaIntron}
 Norma~E. Padilla-Mej{\'i}a, Luis~E. Florencio-Mart{\'i}nez, Elisa~E.
   Figueroa-Angulo, Rebeca~G. Manning-Cela, Rosaura Hern{\'a}ndez-Rivas,
@@ -86,10 +69,22 @@ Norma~E. Padilla-Mej{\'i}a, Luis~E. Florencio-Mart{\'i}nez, Elisa~E.
   trypanosomatid parasites.
 \newblock {\em BMC Genomics}, 10(1):232, May 2009.
 
-\bibitem{tfam}
-Helena Taquist, Yuanyuan Cui, and David Ardell.
-\newblock Tfam 1.0: an online trna function classifier.
-\newblock {\em Nucleic acids research}, 35:W350--3, 08 2007.
+\bibitem{Sprinzl}
+Anatoli Ioudovitch, Sergey Steinberg, Carsten Horn, Melissa Brown, and Mathias
+  Sprinzl.
+\newblock {Compilation of tRNA sequences and sequences of tRNA genes}.
+\newblock {\em Nucleic Acids Research}, 26(1):148--153, 01 1998.
+
+\bibitem{ODseq}
+Peter Jehl, Fabian Sievers, and Desmond~G. Higgins.
+\newblock Od-seq: outlier detection in multiple sequence alignments.
+\newblock {\em BMC Bioinformatics}, 16(1):269, Aug 2015.
+
+\bibitem{Ardell2006TFAMDC}
+David~H. Ardell and Siv G.~E. Andersson.
+\newblock Tfam detects co-evolution of trna identity rules with lateral
+  transfer of histidyl-trna synthetase.
+\newblock {\em Nucleic Acids Research}, 34:893 -- 904, 2006.
 
 \bibitem{shifts1}
 L~H~Schulman and H~Pelka.
@@ -104,28 +99,14 @@ L~Pallanck and L~H~Schulman.
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 88:3872--6, 06 1991.
 
+\bibitem{tfam}
+Helena Taquist, Yuanyuan Cui, and David Ardell.
+\newblock Tfam 1.0: an online trna function classifier.
+\newblock {\em Nucleic acids research}, 35:W350--3, 08 2007.
+
 \bibitem{Rogers2014tRNAAS}
 Hubert~H. Rogers and Sam Griffiths-Jones.
 \newblock trna anticodon shifts in eukaryotic genomes.
 \newblock {\em RNA}, 20 3:269--81, 2014.
-
-\bibitem{Resistance1}
-Simon~L. Croft, Shyam Sundar, and Alan~H. Fairlamb.
-\newblock Drug resistance in leishmaniasis.
-\newblock {\em Clinical Microbiology Reviews}, 19(1):111--126, 2006.
-
-\bibitem{Resistance2}
-Alicia Ponte-Sucre, Francisco Gamarro, Jean-Claude Dujardin, Michael~P.
-  Barrett, Rogelio López-Vélez, Raquel García-Hernández, Andrew~W.
-  Pountain, Roy Mwenechanya, and Barbara Papadopoulou.
-\newblock Drug resistance and treatment failure in leishmaniasis: A 21st
-  century challenge.
-\newblock {\em PLOS Neglected Tropical Diseases}, 11:1--24, 12 2017.
-
-\bibitem{aaRS}
-Paul Schimmel, JS~Tao, and Jason Hill.
-\newblock Aminoacyl trna synthetases as targets for new anti-infectives.
-\newblock {\em FASEB journal : official publication of the Federation of
-  American Societies for Experimental Biology}, 12:1599--609, 01 1999.
 
 \end{thebibliography}

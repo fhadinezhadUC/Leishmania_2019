@@ -1,52 +1,188 @@
-# This function will read the outlier.fasta file and subtract the from the intersection gene file. 
+# This function will read the outlier.fasta file and subtract the from the intersection gene file.
 # Make a model for each functional class and saves the results in a list of dataframes called profile_list
-# At the end will also look at the distribution of the scores for each model and make sure that they are normally distributed 
+# At the end will also look at the distribution of the scores for each model and make sure that they are normally distributed
 classifier <- function() {
   genedirpath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTryp_EditedCovea.fasta"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTryp_EditedCovea_union.fasta"
   outlierpath <-
     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTrypgenemodel_Intersection/TriTryp_EditedCovea/outlier/outliers.txt"
   outputdir <-
     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
   trainDF <- read.genefile(genedirpath) # 3543 genes
+  undetDF <-
+    trainDF[(trainDF$funclass == "undet"),]
+  trainDF <-
+    trainDF[(trainDF$funclass != "undet"),]# & (GeneDF$cluster == "T"), ]
+  araonlyDF <- trainDF[nchar(trainDF$funclass) > 1, ]
   # gaps are removed from outier sequences by OD-seq package
-  outlierDF <- read.genefile(outlierpath) # 39 outier
-  trainDF <- remove.outliers(trainDF, outlierDF) # 3504 genes left
+  #outlierDF <- read.genefile(outlierpath) # 39 outier
+  #trainDF <- remove.outliers(trainDF, outlierDF) # 3504 genes left
+  trainDF_intersection <- trainDF[nchar(trainDF$funclass) == 1, ]
+  pos_neg_list <- create.profile(trainDF_intersection)
+  scoresdf_train <-
+    calculate.score(pos_neg_list, undetDF, 1)
+  araonlyDF$funclass <- gsub("ara", "", araonlyDF$funclass)
+  #araonlyDF$funclass[araonlyDF$funclass=="M"] <- "X"
+  scoresdf_araonly <- calculate.score(pos_neg_list, araonlyDF, 1)
+  score.dist(
+    scoresdf_train,
+    trainDF_intersection$funclass,
+    scoresdf_araonly,
+    araonlyDF$funclass
+  )
+  
+  # mark ara only genes whose score is  higher than the range of the scores of each model
+  #find.true.aragenes(scoresdf_train, scoresdf_araonly)
+  
+  trainDF_Fun <- trainDF_intersection$funclass
+  
+  minscore_fore <- numeric(length = ncol(scoresdf_train))
+  maxscore_back <- numeric(length = ncol(scoresdf_train))
+  truegene <- logical(length = nrow(scoresdf_araonly))
+  for (i in 1:ncol(scoresdf_train)) {
+    foremodel <- names(scoresdf_train)[i] == trainDF_Fun
+    foremodel_score <- scoresdf_train[foremodel, i]
+    backmodel <- names(scoresdf_train)[i] != trainDF_Fun
+    backmodel_score <- scoresdf_train[backmodel, i]
+    # find the min of each model's foreground score
+    minscore_fore[i] <- min(foremodel_score)
+    maxscore_back[i] <- max(backmodel_score)
+  }
+  
+  scoresdf_araonly_logical <-
+    as.data.frame(matrix(
+      data = FALSE,
+      nrow = nrow(scoresdf_araonly),
+      ncol = ncol(scoresdf_araonly)
+    ))
+  names(scoresdf_araonly_logical) <- names(scoresdf_araonly)
+  for (i in 1:nrow(scoresdf_araonly)) {
+    scoresdf_araonly_logical[i, ] <-
+      (scoresdf_araonly[i, ] > minscore_fore) &
+      (scoresdf_araonly[i, ] > maxscore_back)
+    if (sum(scoresdf_araonly_logical[i, ] == TRUE) > 1)
+    {
+      print(sum(scoresdf_araonly_logical[i, ] == TRUE))
+      print(names(scoresdf_araonly_logical)[scoresdf_araonly_logical[i, ] ==
+                                              TRUE])
+      print(araonlyDF$funclass[i])
+      print(scoresdf_araonly[i, ])
+      # make sure that it matched only one of the functions and that is the one the gene is marked with by aragorn
+      
+    }
+    if ((sum(scoresdf_araonly_logical[i, ] == TRUE) == 1)) {
+      if (araonlyDF$funclass[i] == names(scoresdf_araonly_logical)[scoresdf_araonly_logical[i, ] ==
+                                                                   TRUE])
+        truegene[i] <- TRUE
+    }
+  }
+  
+  maxfun <- character(length = nrow(scoresdf))
+  maxarr <- numeric(length = nrow(scoresdf))
+  for (i in 1:nrow(scoresdf)) {
+    maxfun[i] <- names(scoresdf)[scoresdf[i, ] == max(scoresdf[i, ])]
+    maxarr[i] <- max(scoresdf[i, ])
+  }
+  maxfunara <- paste("ara", maxfun, sep = "")
+  maxarr[maxfunara == araonlyDF$funclass]
+  araonlyDF[maxfunara == araonlyDF$funclass, ]
+  
+  outliersDF <- trainDF[maxfun != trainDF$funclass, ]
+  trainDF <- remove.outliers(trainDF, outliersDF)
+  table(maxfun == trainDF$funclass)
+  types[scoresdf == maxarr]
+  
   trainDF <- make.clusters(trainDF)
   # make the 22 models
-  #trainDF <- trainDF[trainDF$cluster == "T", ]
+  # trainDF <- trainDF[trainDF$cluster == "T", ]
   profile_list <- profile.cm(trainDF)
   # print(paste("we have", length(names(profile_list)), "functional classes:"))
   # print(names(profile_list))
   # use the trainDF as the undet class for now
   scoresdf <- find.seqScore(profile_list, trainDF)
-  score.dist(scoresdf, trainDF$funclass)
   
   zscores <- find.Zscore(scoresdf, trainDF$funclass)
   zscores <- round(zscores)
   trainDF
 }
 
-make.clusters <- function(trainDF){
+# find.true.aragenes(scoresdf_train, trainDF_Fun, scoresdf_araonly, ara_Fun) {
+#   minscore <- numeric(length = ncol(scoresdf_train))
+#   truegene <- logical(length = ncol(scoresdf_train))
+#   for (i in 1:ncol(scoresdf_train)) {
+#     foremodel <- names(scoresdf_train)[i] == trainDF_Fun
+#     foremodel_score <- scoresdf_train[foremodel, i]
+#     # find the min of each model's foreground score
+#     minscore[i] <- min(foremodel_score[, i])
+#   }
+#   for (i in 1:nrow(scoresdf_araonly)) {
+#     scoresdf_araonly[i, ] > minscore
+#   }
+# }
+#__________________________________________________________________________________________
+calculate.score <- function(pos_neg_list, trainDF, araonly) {
+  pos_profile_list <- pos_neg_list[[1]]
+  neg_profile_list <- pos_neg_list[[2]]
+  m <- matrix(ncol = length(pos_profile_list),
+              nrow = nrow(trainDF),
+              0)
+  scoresdf <- as.data.frame(m)
+  types <- names(pos_profile_list)
+  names(scoresdf) <- types
+  
+  for (x in 1:length(trainDF$sequences)) {
+    myseq <- trainDF$sequences[x]
+    scores <- integer(length = length(types))
+    for (j in 1:length(types)) {
+      current_posDF <- pos_profile_list[[j]]
+      current_negDF <- neg_profile_list[[j]]
+      for (i in 1:ncol(current_posDF)) {
+        currChar <- substring(myseq, i, i)
+        if (currChar == "-")
+          currChar <- "gap"
+        if (araonly == 0)
+          #substr(trainDF$funclass[x], 1, 3) != "ara")
+        {
+          if (trainDF$funclass[x] == names(pos_profile_list[j]))
+            scores[j] <-
+              scores[j] + log((current_posDF[currChar, i] - 1) / current_negDF[currChar, i])
+          else
+            scores[j] <-
+              scores[j] + log(current_posDF[currChar, i] / (current_negDF[currChar, i] -
+                                                              1))
+        }
+        else
+          scores[j] <-
+            scores[j] + log(current_posDF[currChar, i] / current_negDF[currChar, i])
+      }
+    }
+    scoresdf[x, ] <- scores
+  }
+  scoresdf
+}
+#__________________________________________________________________________________________
+make.clusters <- function(trainDF) {
   trainDF$cluster <- ""
   for (i in 1:nrow(trainDF)) {
-    firstletter <- substr(trainDF$geneid[i],1,1)
-    if(firstletter=="L")
+    firstletter <- substr(trainDF$geneid[i], 1, 1)
+    if (firstletter == "L")
       trainDF$cluster[i] <- "L"
-    if(firstletter=="T")
+    if (firstletter == "T")
       trainDF$cluster[i] <- "T"
   }
   trainDF
 }
 #__________________________________________________________________________________________
-remove.outliers <- function(trainDF,outlierDF){
+remove.outliers <- function(trainDF, outlierDF) {
   isoutlier <- trainDF$geneid %in% outlierDF$geneid
-  trainDF <- trainDF[!isoutlier,] 
+  trainDF <- trainDF[!isoutlier, ]
 }
 #__________________________________________________________________________________________
-read.genefile <- function(genedirpath){
+read.genefile <- function(genedirpath) {
   # this function read the gene file into a dataframe as teh training set with columns: "header" "sequences" "funclass" "geneid"
   # at the end it will remove sequences of undet model
+  #genedirpath <-
+  #  "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTryp_EditedCovea_Initiator.fasta"
   coveadf <-
     read.table(genedirpath)
   coveaArr <- as.character(coveadf$V1)
@@ -64,55 +200,104 @@ read.genefile <- function(genedirpath){
   for (i in 1:ncol(GeneDF)) {
     GeneDF[, i] <- as.character(GeneDF[, i])
   }
-  GeneDF <-
-    GeneDF[(GeneDF$funclass != "undet"), ]# & (GeneDF$cluster == "T"), ]
+  #GeneDF <-
+  #  GeneDF[(GeneDF$funclass != "undet"),]# & (GeneDF$cluster == "T"), ]
   GeneDF
 }
 #__________________________________________________________________________________________
-score.dist <- function(scoresdf,trainDF_Fun){
-
-  par(mfrow = c(4, 6))
-  for (i in 1:ncol(scoresdf)) {
-    samemodel <- names(scoresdf)[i] == trainDF_Fun
-    currentmodel_score <- scoresdf[samemodel, i]
-    hist(
-      currentmodel_score, 
-      prob=TRUE, 
-      main = "",
-      xlab = paste(
-        "score against model",
-        names(scoresdf)[i],
-        sep = " "),
-        ylab = paste("freq (total=", length(currentmodel_score), ")", sep = "")
+score.dist <- 
+  function(scoresdf,
+           trainDF_Fun ,
+           scoresdf_araonly,
+           ara_Fun) {
+    par(mfrow = c(4, 6))
+    for (i in 1:ncol(scoresdf)) {
+      print(i)
+      foremodel <- names(scoresdf)[i] == trainDF_Fun
+      foremodel_score <- scoresdf[foremodel, i]
+      #currentmodel_score <- scoresdf[, i]
+      backmodel <- names(scoresdf)[i] != trainDF_Fun
+      backmodel_score <- scoresdf[backmodel, i]
+      
+      foremodel_ara <- names(scoresdf)[i] == ara_Fun
+      foremodel_score_ara <- scoresdf_araonly[foremodel_ara, i]
+      #currentmodel_score <- scoresdf[, i]
+      backmodel_ara <- names(scoresdf)[i] != ara_Fun
+      backmodel_score_ara <- scoresdf_araonly[backmodel_ara, i]
+      
+      hist(
+        foremodel_score,
+        prob = TRUE,
+        main = "",
+        xlab = paste("score against model",
+                     names(scoresdf)[i],
+                     sep = " "),
+        ylab = paste("freq (total=", length(foremodel_score), ")", sep = ""),
+        col = "blue"
       )
-    lines(density(currentmodel_score), col="blue", lwd=2)
-    #plot(density(currentmodel))
+      #lines(density(foremodel_score), col="blue", lwd=2)
+      
+      hist(backmodel_score,
+           prob = TRUE,
+           add = T,
+           col = "red")
+      #lines(density(backmodel_score), col="red", lwd=2)
+      c1 = rgb(255,
+               255,
+               0,
+               max = 255,
+               alpha = 100,
+               names = "yellow")
+      c2 = rgb(0,
+               100,
+               0,
+               max = 255,
+               alpha = 80,
+               names = "lt.yellow")
+      if (length(foremodel_score_ara) == 0)
+        next
+      hist(
+        foremodel_score_ara,
+        prob = TRUE,
+        add = T,
+        col = c1
+      )
+      #lines(density(foremodel_score_ara), col="green", lwd=2)
+      # if(length(backmodel_score_ara)==0)
+      #   next
+      # hist(
+      #   backmodel_score_ara,
+      #   prob=TRUE,
+      #   add=T,col=c2
+      # )
+      #lines(density(backmodel_score_ara), col="black", lwd=2)
+      #plot(density(currentmodel))
+    }
+    #par(mar=c(0.5, 0.5, 0.5, 0.5))
+    # plotlist <- list()
+    # count = 1
+    # filenm <- paste("/home/fatemeh/Leishmania_2019/Leishmania_2019/Document/","modeldistribution", ".pdf", sep = "")
+    # for (i in 1:ncol(scoresdf)) {
+    #   samemodel <- names(scoresdf)[i] == trainDF_Fun
+    #   currentmodel <- scoresdf[samemodel, i]
+    #   currentmdf <- data.frame(currentmodel,seq(1,length(currentmodel),1))
+    #   names(currentmdf) <- c("score","index")
+    #   p <- ggplot(currentmdf, aes(x=currentmdf$score)) +
+    #     geom_histogram(aes(y=..density..),
+    #                    binwidth=.5,
+    #                    colour="black", fill="white") +
+    #     geom_density(alpha=.2, fill="#FF6666")
+    #   plotlist[[count]] <-  p
+    #   count <- count + 1
+    # }
+    # ml <- do.call("grid.arrange", c(plotlist, ncol = 4))
+    # ggsave(ml,
+    #        width = 20,
+    #        height = 30,
+    #        filename = "")
   }
-  #par(mar=c(0.5, 0.5, 0.5, 0.5))
-  # plotlist <- list()
-  # count = 1
-  # filenm <- paste("/home/fatemeh/Leishmania_2019/Leishmania_2019/Document/","modeldistribution", ".pdf", sep = "")
-  # for (i in 1:ncol(scoresdf)) {
-  #   samemodel <- names(scoresdf)[i] == trainDF_Fun
-  #   currentmodel <- scoresdf[samemodel, i]
-  #   currentmdf <- data.frame(currentmodel,seq(1,length(currentmodel),1))
-  #   names(currentmdf) <- c("score","index")
-  #   p <- ggplot(currentmdf, aes(x=currentmdf$score)) + 
-  #     geom_histogram(aes(y=..density..),  
-  #                    binwidth=.5,
-  #                    colour="black", fill="white") +
-  #     geom_density(alpha=.2, fill="#FF6666") 
-  #   plotlist[[count]] <-  p
-  #   count <- count + 1
-  # }
-  # ml <- do.call("grid.arrange", c(plotlist, ncol = 4))
-  # ggsave(ml,
-  #        width = 20,
-  #        height = 30,
-  #        filename = "")
-}
 # ___________________________________________________________________________________________
-find.anticodon <- function(undetDF){
+find.anticodon <- function(undetDF) {
   genefilepath <-
     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/integrated_tse_ara.txt"
   geneDF <-
@@ -120,13 +305,14 @@ find.anticodon <- function(undetDF){
   undetDF$tseac <- ""
   undetDF$araac <- ""
   for (i in 1:nrow(undetDF)) {
-    undetDF$tseac[i] <- geneDF[undetDF$geneid[i]==geneDF$geneid,]$tseac
-    undetDF$araac[i] <- geneDF[undetDF$geneid[i]==geneDF$geneid,]$araac
+    undetDF$tseac[i] <- geneDF[undetDF$geneid[i] == geneDF$geneid, ]$tseac
+    undetDF$araac[i] <-
+      geneDF[undetDF$geneid[i] == geneDF$geneid, ]$araac
   }
   undetDF
 }
 # ___________________________________________________________________________________________
-find.Zscore <- function(scoresdf,trainDF_Fun){
+find.Zscore <- function(scoresdf, trainDF_Fun) {
   stats <-
     data.frame(names(scoresdf), rep(0, ncol(scoresdf)), rep(0, ncol(scoresdf)))
   names(stats) <- c("FUNC", "mean", "std")
@@ -195,14 +381,14 @@ update.genefiles <- function() {
     else if (undetClassScoreDF$TseFuncScore[i] <  undetClassScoreDF$AraFuncScore[i])
       FUNC = undetClassScoreDF$AraFunc[i]
     
-    coveaDF[coveaDF$coveageneid == undetClassScoreDF$geneid[i],]$headers <-
-      paste(">", coveaDF[coveaDF$coveageneid == undetClassScoreDF$geneid[i],]$coveageneid, "_", FUNC, sep = "")
-    geneDF[geneDF$geneid == undetClassScoreDF$geneid[i],]$Func <-
+    coveaDF[coveaDF$coveageneid == undetClassScoreDF$geneid[i], ]$headers <-
+      paste(">", coveaDF[coveaDF$coveageneid == undetClassScoreDF$geneid[i], ]$coveageneid, "_", FUNC, sep = "")
+    geneDF[geneDF$geneid == undetClassScoreDF$geneid[i], ]$Func <-
       FUNC
     # make undet sequences to remove out of this loop
     if (FUNC == "undet")
       coveaDF <-
-      coveaDF[!(coveaDF$coveageneid == undetClassScoreDF$geneid[i]),]
+      coveaDF[!(coveaDF$coveageneid == undetClassScoreDF$geneid[i]), ]
     
   }
   
@@ -256,12 +442,64 @@ find.seqScore <- function(profile_list, undetClass) {
     }
     
     #undetClass$funclass[x] <- types[scores == max(scores)]
-    scoresdf[x,] <- scores
+    scoresdf[x, ] <- scores
     
   }
   scoresdf
 }
 #___________________________________________________________________________________________
+create.profile <- function(trainDF) {
+  seqlength <- nchar(trainDF$sequences[1])
+  m <- matrix(nrow = 5, ncol = seqlength)
+  prf <- data.frame(m)
+  rownames(prf) <- c("A", "C", "G", "T", "gap")
+  functions <- unique(trainDF$funclass)
+  pos_profile_list <- rep(list(prf), length(functions))
+  neg_profile_list <- rep(list(prf), length(functions))
+  names(pos_profile_list) <- functions
+  names(neg_profile_list) <- functions
+  for (i in 1:length(functions)) {
+    m <- matrix(nrow = 5, ncol = seqlength)
+    pos_prf <- data.frame(m)
+    rownames(pos_prf) <- c("A", "C", "G", "T", "gap")
+    neg_prf <- data.frame(m)
+    rownames(neg_prf) <- c("A", "C", "G", "T", "gap")
+    for (j in 1:seqlength) {
+      # pseudo counts of one for each cell
+      # go over all the sequences and see how many of them are A,C,G,T in their jth position
+      isA = substring(trainDF$sequences, j, j) == "A"
+      poscounts <- sum(trainDF[isA, ]$funclass == functions[i])
+      negcounts <- sum(trainDF[isA, ]$funclass != functions[i])
+      pos_prf[1, j] <- (poscounts + 1)
+      neg_prf[1, j] <- negcounts + 1
+      isC = substring(trainDF$sequences, j, j) == "C"
+      poscounts <- sum(trainDF[isC, ]$funclass == functions[i])
+      negcounts <- sum(trainDF[isC, ]$funclass != functions[i])
+      pos_prf[2, j] <- (poscounts + 1)
+      neg_prf[2, j] <- negcounts + 1
+      isG = substring(trainDF$sequences, j, j) == "G"
+      poscounts <- sum(trainDF[isG, ]$funclass == functions[i])
+      negcounts <- sum(trainDF[isG, ]$funclass != functions[i])
+      pos_prf[3, j] <- (poscounts + 1)
+      neg_prf[3, j] <- negcounts + 1
+      isT = substring(trainDF$sequences, j, j) == "T"
+      poscounts <- sum(trainDF[isT, ]$funclass == functions[i])
+      negcounts <- sum(trainDF[isT, ]$funclass != functions[i])
+      pos_prf[4, j] <- (poscounts + 1)
+      neg_prf[4, j] <- negcounts + 1
+      isGap = substring(trainDF$sequences, j, j) == "-"
+      poscounts <- sum(trainDF[isGap, ]$funclass == functions[i])
+      negcounts <- sum(trainDF[isGap, ]$funclass != functions[i])
+      pos_prf[5, j] <- (poscounts + 1)
+      neg_prf[5, j] <- negcounts + 1
+    }
+    pos_profile_list[[i]] <- pos_prf
+    neg_profile_list[[i]] <- neg_prf
+    names(pos_profile_list[i]) == functions[i]
+  }
+  pos_neg_list <- list(pos_profile_list, neg_profile_list)
+  pos_neg_list
+}
 profile.cm <- function(trainDF) {
   # used psedo counts to avoid zero for cells
   # read in the aligned sequences from file EditedCovea.fasta

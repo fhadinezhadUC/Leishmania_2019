@@ -1,0 +1,49 @@
+
+check the dir for the big clusters
+revise the axis label
+
+##########################
+NARKR	      Homo1: TevansiSTIB805, TbruceiLister427, TbruceiTREU927, TbruceigambienseDAL972 *
+	      Homo2: TcruziSylvioX10-1-2012, TcruziCLBrenerNon-Esmeraldo-like, TcruziCLBrenerEsmeraldo-like
+
+ILQQI       3 TbruceiLister427,TbruceiTREU927,TevansiSTIB805  *
+------- 
+IQVKGLTRKR  7   TcruziCLBrenerEsmeraldolike,TcruziCLBrenerNonEsmeraldolike *
+-------
+IVQRLTKGW   1   LtarentolaeParrotTarII
+IVQRLTRKGW  18 LaethiopicaL147,LarabicaLEM1108,LbraziliensisMHOMBR75M2903,LbraziliensisMHOMBR75M2904,LdonovaniBHU1220,
+	       LdonovaniBPK282A1,LenriettiiLEM3045,LgerbilliLEM452,LinfantumJPCM5,LmajorFriedlin,LmajorLV39c5,LmajorSD75,LmexicanaMHOMGT2001U1103,
+               LpanamensisMHOMCOL81L13,LpanamensisMHOMPA94PSC1,LspMARLEM2494,LtropicaL590,LturanicaLEM423 *
+IVQRLTRWKG  2  CfasciculataCfCl
+	       LseymouriATCC30220 (not Homogenous)               
+-------
+LSMEMYV     7 Homo: TcruziCLBrenerEsmeraldo-like,TcruziCLBrenerNon-Esmeraldo-like *
+	      not-Homo: TcruzicruziDm28c,TcruziEsmeraldo,TcruziSylvioX10-1-2012
+-------
+NYTPN      16 Homo1: TbruceigambienseDAL972,TbruceiLister427,TbruceiTREU927, TevansiSTIB805 *
+	      Homo2: TcruziCLBrenerEsmeraldo-like, TcruziCLBrenerNon-Esmeraldo-like *
+-------
+NPTYN	   8  Homo1:LpanamensisMHOMCOL81L13,LpanamensisMHOMPA94PSC1, LbraziliensisMHOMBR75M2903,LbraziliensisMHOMBR75M2904 *
+	      Homo2:LdonovaniBHU1220,LdonovaniBPK282A1, LaethiopicaL147 *
+-------
+PGTTG	    4 Homo1: LbraziliensisMHOMBR75M2903,LbraziliensisMHOMBR75M2904, LpanamensisMHOMCOL81L13
+-------
+RKRTLGKVQI  3 no Homo
+-------
+SLMIV	    3 Homo: LarabicaLEM1108,LgerbilliLEM452,LturanicaLEM423
+-------
+VIMLS	   18 Homo1: LinfantumJPCM5,LmajorFriedlin,LmajorLV39c5,LmajorSD75, LdonovaniBHU1220,LdonovaniBPK282A1, LenriettiiLEM3045, LspMARLEM2494,LtarentolaeParrotTarII, LtropicaL590
+	      Homo2: LbraziliensisMHOMBR75M2903,LbraziliensisMHOMBR75M2904, LpanamensisMHOMCOL81L13,LpanamensisMHOMPA94PSC1
+
+		
+
+Summaty of Plots: plot the clusters of these genomes and color big clusters
+
+Group1 (bigClus: NARKR, ILQQI, NYTPN ): TbruceigambienseDAL972,TbruceiLister427,TbruceiTREU927, TevansiSTIB805
+
+Group2 (bigClus: LSMEMYV, NARKR, IQVKGLTRKR): TcruziCLBrenerNon-Esmeraldo-like, TcruziCLBrenerEsmeraldo-like
+
+Group3: (bigClus: IVQRLTRKGW, NPTYN, NYTPN, PGTTG, SLMIV, VIMLS) LaethiopicaL147,LarabicaLEM1108,LbraziliensisMHOMBR75M2903,LbraziliensisMHOMBR75M2904,LdonovaniBHU1220,
+	       LdonovaniBPK282A1,LenriettiiLEM3045,LgerbilliLEM452,LinfantumJPCM5,LmajorFriedlin,LmajorLV39c5,LmajorSD75,LmexicanaMHOMGT2001U1103,
+               LpanamensisMHOMCOL81L13,LpanamensisMHOMPA94PSC1,LspMARLEM2494,LtropicaL590,LturanicaLEM423
+

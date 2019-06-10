@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+
+\bibitem{Souza:2018dg}
+Denise Andréa Silva. et~al. de~Souza.
+\newblock Evolutionary analyses of myosin genes in trypanosomatids show a
+  history of expansion, secondary losses and neofunctionalization.
+\newblock {\em Scientific Reports}, 8, 2018.
+
+\bibitem{Hughes:2003}
+Helen Hughes, Austin L.~Piontkivska.
+\newblock Molecular phylogenetics of trypanosomatidae: contrasting results from
+  18s rrna and protein phylogenies.
+\newblock {\em PubMed}, 2, 2003.
+
+\bibitem{Pothirat:2014}
+Chaiwarith R Jariyapan N Wannasan A Siriyasatien P et~al. Pothirat~T,
+  Tantiworawit~A.
+\newblock First isolation of leishmania from northern thailand: Case report,
+  identification as leishmania martiniquensis and phylogenetic position within
+  the leishmania enriettii complex.
+\newblock {\em PLoS Negl Trop Dis}, 12, 2014.
+
+\bibitem{Kelly:2017}
+Steven. et~al. Kelly.
+\newblock An alternative strategy for trypanosome survival in the mammalian
+  bloodstream revealed through genome and transcriptome analysis of the
+  ubiquitous bovine parasite trypanosoma (megatrypanum) theileri.
+\newblock {\em Genome biology and evolution}, 9, 2017.
+
+\bibitem{Aslett2010TriTrypDBAF}
+et~al. Aslett~M, Aurrecoechea~C.
+\newblock Tritrypdb: a functional genomic resource for the trypanosomatidae.
+\newblock In {\em Nucleic Acids Research}, 2010.
+
+\bibitem{trnascan}
+Todd Lowe and S~R~Eddy.
+\newblock trnascan-se: A program for improved detection of transfer rna genes
+  in genomic sequence.
+\newblock {\em Nucleic Acids Res}, 25, 01 1997.
+
+\bibitem{aragorn}
+Dean Laslett and Björn Canbäck.
+\newblock Aragorn, a program to detect trna genes and tmrna genes in nucleotide
+  sequences.
+\newblock {\em Nucleic acids research}, 32:11--6, 02 2004.
+
+\bibitem{tRNomics}
+Christian Marck and Henri Grosjean.
+\newblock trnomics: Analysis of trna genes from 50 genomes of eukarya, archaea,
+  and bacteria reveals anticodon-sparing strategies and domain-specific
+  features.
+\newblock {\em RNA (New York, N.Y.)}, 8:1189--232, 11 2002.
+
+\end{thebibliography}

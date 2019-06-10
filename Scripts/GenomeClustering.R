@@ -13,17 +13,20 @@ split_tRNAgene_with_genomename <- function() {
   library(gdata)
   fastafile <-
     read.table(
-      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TryTrypHomoC_EditedCovea.fasta",
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/tsfm_finalinput_HomoC_EditedCovea.fasta",
       sep = "\n"
     )
   fastafile2 <- as.character(fastafile$V1)
   sequences <-
     as.character(fastafile2[seq(2, length(fastafile2), 2)])
   headers <- as.character(fastafile2[seq(1, length(fastafile2), 2)])
+  headers <- gsub("_ara","_",headers)
   
   genomenames2 <-
     lapply(X = headers , function(X)
-      gsub("HOMO", "HOMO_", X, fixed = TRUE))
+      gsub("Homo", "HOMO_", X, fixed = TRUE))
+  
+  
   genomenames2 <- as.character(genomenames2)
   genomenames3 <-
     lapply(X = genomenames2 , function(X)
@@ -35,6 +38,8 @@ split_tRNAgene_with_genomename <- function() {
   genomenames4 <- as.character(genomenames4)
   
   headers <- gsub("\\s", "", headers)
+  headers <- gsub("_ara","_",headers)
+  
   functionalclasses <-
     lapply(X = headers, function(X)
       unlist(strsplit(X, split = "_"))[length(unlist(strsplit(X, split = "_")))])
@@ -64,7 +69,7 @@ split_tRNAgene_with_genomename <- function() {
     # write the DF in a file to be processed by the bash
     filepath <-
       paste(
-        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput/",
+        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputsfiles/",
         names(genome_list[i]),
         ".fasta",
         sep = ""
@@ -224,18 +229,21 @@ split_tRNAgene_into2Cluster <- function(){
   library(gdata)
   fastafile <-
     read.table(
-      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TryTrypHomoC_EditedCovea.fasta",
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/tsfm_finalinput_HomoC_EditedCovea.fasta",
       sep = "\n"
     )
   fastafile2 <- as.character(fastafile$V1)
   sequences <-
     as.character(fastafile2[seq(2, length(fastafile2), 2)])
   headers <- as.character(fastafile2[seq(1, length(fastafile2), 2)])
+  headers <- gsub("_ara","_",headers)
   
   genomenames2 <-
     lapply(X = headers , function(X)
-      gsub("HOMO", "HOMO_", X, fixed = TRUE))
+      gsub("Homo", "HOMO_", X, fixed = TRUE))
   genomenames2 <- as.character(genomenames2)
+  genomenames2 <- gsub("_ara","_",genomenames2)
+  
   genomenames3 <-
     lapply(X = genomenames2 , function(X)
       gsub(">", "", X, fixed = TRUE))
@@ -270,6 +278,7 @@ split_tRNAgene_into2Cluster <- function(){
   }
   
   headers <- gsub("\\s", "", headers)
+  headers <- gsub("_ara","_",headers)
   functionalclasses <-
     lapply(X = headers, function(X)
       unlist(strsplit(X, split = "_"))[length(unlist(strsplit(X, split = "_")))])
@@ -290,6 +299,7 @@ split_tRNAgene_into2Cluster <- function(){
       substr(X, 7, 7)))
   homo$funclass <- gsub("\\s", "", homo$funclass)
   homo$headers <- gsub("\\s", "", homo$headers)
+  homo$headers <- gsub("_ara","_",homo$headers)
   
   homoheader <- paste(homo$headers, homo$funclass, sep = "")
   genome_list[names(genome_list) == "HOMO"][[1]]$headers <-
@@ -300,7 +310,7 @@ split_tRNAgene_into2Cluster <- function(){
     # write the DF in a file to be processed by the bash
     filepath <-
       paste(
-        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/",
+        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputfiles2/",
         names(genome_list[i]),
         ".fasta",
         sep = ""
@@ -453,3 +463,99 @@ vidualization <- function(genome_list) {
   # barplot(table(as.character(tRNAdf$funclass[nonhomo])), xlab = "functional class", ylab = "frequency in TryTryp Genomes")
   #_____________________________________________________________________________________________
 }
+
+# assign identity to Homo genes
+fastafile <-
+  read.table(
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputfiles2/HOMO.fasta",
+    sep = "\n"
+  )
+fastafile2 <- as.character(fastafile$V1)
+sequences <-
+  as.character(fastafile2[seq(2, length(fastafile2), 2)])
+headers <- as.character(fastafile2[seq(1, length(fastafile2), 2)])
+identities <- substr(headers,21,23)
+
+#identities
+#Ala Arg Asn Asp Cys Gln Glu Gly His Ile iMe Leu Lys Met Phe Pro SeC Ser Thr Trp Tyr Val 
+#38  28  25  13  29  19  16  28   9  23   9  32  27  11  10  20   1  25  20   7  14  28 
+funcClasses <- identities
+for (i in 1:length(identities)) {
+  id <- identities[i]
+  id <- tolower(id)
+  if (id == "ala")
+    funcClasses[i] <- "A"
+  if (id == "arg")
+    funcClasses[i] <- "R"
+  if (id == "asn")
+    funcClasses[i] <- "N"
+  if (id == "asp")
+    funcClasses[i] <- "D"
+  if (id == "cys")
+    funcClasses[i] <- "C"
+  if (id == "gln")
+    funcClasses[i] <- "Q"
+  if (id == "glu")
+    funcClasses[i] <- "E"
+  if (id == "gly")
+    funcClasses[i] <- "G"
+  if (id == "his")
+    funcClasses[i] <- "H"
+  if (id == "ile")
+    funcClasses[i] <- "I"
+  if (id == "start")
+    funcClasses[i] <- "start"
+  if (id == "leu")
+    funcClasses[i] <- "L"
+  if (id == "lys")
+    funcClasses[i] <- "K"
+  if (id == "met")
+    funcClasses[i] <- "M"
+  if (id == "phe")
+    funcClasses[i] <- "F"
+  if (id == "pro")
+    funcClasses[i] <- "P"
+  if (id == "ser")
+    funcClasses[i] <- "S"
+  if (id == "thr")
+    funcClasses[i] <- "T"
+  if (id == "trp")
+    funcClasses[i] <- "W"
+  if (id == "tyr")
+    funcClasses[i] <-
+    "Y"
+  if (id == "val")
+    funcClasses[i] <-
+    "V"
+  if (id == "sec")
+    funcClasses[i] <-
+    "Z"
+  if (id == "stop")
+    funcClasses[i] <-
+    "#"
+  if (id == "sup")
+    funcClasses[i] <-
+    "?"
+  if (id == "pyl")
+    funcClasses[i] <-
+    "O"
+  if (id == "ime")
+    funcClasses[i] <-
+    "X"
+}
+
+#funcClasses
+#A  C  D  E  F  G  H  I  K  L  M  N  P  Q  R  S  T  V  W  X  Y  Z 
+#38 29 13 16 10 28  9 23 27 32 11 25 20 19 28 25 20 28  7  9 14  1
+
+#Gene Length & 70  &71&72&73&74&75
+#Gene Length & 1   &20& 151& 118& 60& 1
+headers <- paste(headers,funcClasses,sep="")
+headers <- gsub("\\s", "", headers)
+write.fwf(
+  data.frame(headers,
+             sequences),
+  "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputfiles2/HOMO2.fasta",
+  sep = "\n",
+  colnames = FALSE
+)

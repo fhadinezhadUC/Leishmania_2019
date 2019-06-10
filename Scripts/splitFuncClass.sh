@@ -5,7 +5,9 @@
 # we need to go through all the files in this path and split the functional class
 
 #filenames=$(ls /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/*.fasta)
-pathstring="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTrypgenemodel_Intersection/"
+#pathstring="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTrypgenemodel_Intersection/"
+pathstring="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputsfiles/"
+
 filenames=$(ls "${pathstring}"*.fasta)
 array=(A R N D C Q E G H I L K M X F P S T W Y V X)
 

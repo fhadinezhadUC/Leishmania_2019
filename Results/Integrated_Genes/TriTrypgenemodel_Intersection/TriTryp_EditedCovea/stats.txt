@@ -9,7 +9,7 @@ model     outlier#/total
  G           1/342
  H           1/120
  I           2/256
- L           0/504
+ L           27/504
  K           19/274
  M           1/145
  X           0/114
@@ -21,4 +21,4 @@ model     outlier#/total
  Y           0/117
  V           1/361
  X           0/114
- total number of outliers = 39
+ total number of outliers = 66

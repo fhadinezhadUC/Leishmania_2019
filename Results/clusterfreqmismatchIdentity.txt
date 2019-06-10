@@ -1,0 +1,13 @@
+cluster&dir&Perc1&Perc2\\
+d&5&I&I\\
+l&10&M,E&ME\\
+LSMEMnV&5&L,S,M,E,M,Y,V&LSMEMYV\\
+LSMEMSMnV&1&L,S,M,E,M,S,M,Y,V&LSMEMSMYV\\
+lV&3&?,V&?V\\
+nV&1&Y,V&YV\\
+o&2&M&M\\
+sV&1&R,V&RV\\
+Vn&1&V,Y&VY\\
+VnMEMSL&3&V,Y,M,E,M,S,L&VYMEMSL\\
+Vw&1&V,G&VG\\
+wV&2&G,V&GV\\

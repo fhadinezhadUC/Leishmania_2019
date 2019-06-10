@@ -2,59 +2,120 @@ TriTrypAlignment <- function() {
   library(gdata)
   library(readr)
   library(Hmisc)
-  
-  geneDF <- read.input()
+  library(stringr)
+  geneDF <- read.input2()
   geneDF_Int_noVar <-
-    remove.Vararm.Intersection(geneDF[geneDF$foundby == "both",])
+    remove.Vararm(geneDF)
   geneDF_Int_noVar_noIntron <-
-    remove.Intron.Intersection(geneDF_Int_noVar)
-  write.genefile(geneDF_Int_noVar_noIntron)
+    remove.Intron(geneDF_Int_noVar)
+  # for initiators I only aligned the intersection set with 4 cat genes found only by ara
+  # cataraifs<- paste(catDF[catDF$foundby=="ara",]$geneid,"araM",sep = "_")
+  # aracatsGenes <- geneDF_Int_noVar_noIntron[geneDF_Int_noVar_noIntron$GeneID %in% cataraifs,]
+  # finalgene_initiators <- geneDF_Int_noVar_noIntron[geneDF_Int_noVar_noIntron$foundby=="both" | (geneDF_Int_noVar_noIntron$GeneID %in% cataraifs),]
+  write.genefile(geneDF_Int_noVar_noIntron,resultpath,"tsfm_input_geneset_NoVarIntron.fasta")
+  # remove sequences that has n in them before the alignment 
   # run covea
   system(
-    "covea /home/fatemeh/Leishmania_2019/Leishmania_2019/Scripts/TRNA2-euk.cm /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/Integrated_Genes_NoVarIntron.fasta > /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/Trytryp_genes_NoVarIntron.covea"
+    "covea /home/fatemeh/Leishmania_2019/Leishmania_2019/Scripts/TRNA2-euk.cm /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset_NoVarIntron.fasta > /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset.covea"
   )
   # covea processing
   
+  # if we are using the merged file of Tritryp and homo:
   dirpath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
-  covea_filename <- "Trytryp_genes_NoVarIntron.covea"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/"
+  covea_filename <- "tsfm_finalinput_HomoC.covea"
+  
+  # dirpath <-
+  #   "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
+  # covea_filename <- "tsfm_input_geneset.covea"
   
   readSeqsIntoDf(dirpath, covea_filename)
-  
   seqDB <-
     read_csv(paste(dirpath, "coveaDF.txt", sep = ""),
              col_types = cols(.default = col_character()))
   SSDB <-
     read_csv(paste(dirpath, "coveaDF_SS.txt", sep = ""))
   
-  fasta_filename <- "TriTryp_EditedCovea.fasta"
-  CS_filename <- "TriTryp_structfile.txt"
+  fasta_filename <- "tsfm_finalinput_HomoC_EditedCovea.fasta"
+  CS_filename <- "tsfm_finalinput_HomoC_structfile.txt"
+  
+  # fasta_filename <- "tsfm_input_geneset_EditedCovea.fasta"
+  # CS_filename <- "tsfm_input_geneset_structfile.txt"
+  
   editAlignment(seqDB, SSDB, dirpath, fasta_filename, CS_filename)
   #map2sprinzle(dirpath,fasta_filename,CS_filename)
   # Use Script for clustering the 
   }
 
-write.genefile <- function(geneDF_Int_noVar_noIntron) {
+write.genefile <- function(geneDF_Int_noVar_noIntron,resultpath,filename) {
   # this function will write the genefile with removed variable arm and removed intron into a fasta file format called Integrated_Genes_NoVarIntron.fasta
+  geneDF_Int_noVar_noIntron$GeneSeq <- geneDF_Int_noVar_noIntron$GeneSeqTse
+  geneDF_Int_noVar_noIntron[geneDF_Int_noVar_noIntron$foundby=="ara",]$GeneSeq <- geneDF_Int_noVar_noIntron[geneDF_Int_noVar_noIntron$foundby=="ara",]$GeneSeqAra
   write.fwf(
     data.frame(
       paste(">", geneDF_Int_noVar_noIntron$GeneID, sep = ""),
       geneDF_Int_noVar_noIntron$GeneSeq
     ),
-    file = paste(resultpath, "Integrated_Genes_NoVarIntron.fasta", sep = ""),
+    file = paste(resultpath, filename, sep = ""),
     sep = "\n",
     colnames = FALSE
   )
 }
 
+read.input2 <- function() {
+  # this function will read the prepared gene file as input for creating CIFs from tsfm_input_geneset.txt
+  # For genes found by ony ara, it will add _ara<genemodel> at the end of gene id (36 genes)
+  # keep all the information needed to make a fasta file for doing the alignment
+  
+  resultpath <-
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
+  genefilepath <-
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset.txt"
+  genefile <-
+    read.table(genefilepath, header = TRUE, colClasses = "character")
+  
+  araonly <- genefile$foundby == "ara"
+  genefile$geneid[araonly] <-
+    paste(genefile$geneid[araonly], "_ara", genefile$arafunc[araonly], sep = "")
+  genefile$geneid[!araonly] <-
+    paste(genefile$geneid[!araonly], "_", genefile$arafunc[!araonly], sep = "")
+  
+  geneseq <- character(length = length(genefile$geneid))
+  geness <- character(length = length(genefile$geneid))
+  geneDF_fasta <-
+    data.frame(
+      genefile$geneid,
+      genefile$tsegeneseq,
+      genefile$arageneseq,
+      genefile$tsegeness,
+      genefile$arageness,
+      genefile$foundby
+    )
+  names(geneDF_fasta) <-
+    c("GeneID",
+      "GeneSeqTse",
+      "GeneSeqAra",
+      "SSTSE",
+      "SSARA",
+      "foundby")
+  
+  genefile$arageneseq <- as.character(genefile$arageneseq)
+  genefile$tsegeneseq <- as.character(genefile$tsegeneseq)
+  geneDF_fasta$GeneID <- as.character(geneDF_fasta$GeneID)
+  geneDF_fasta$GeneSeqTse <- as.character(geneDF_fasta$GeneSeqTse)
+  geneDF_fasta$GeneSeqAra <- as.character(geneDF_fasta$GeneSeqAra)
+  geneDF_fasta$SSARA <- as.character(geneDF_fasta$SSARA)
+  geneDF_fasta$SSTSE <- as.character(geneDF_fasta$SSTSE)
+  geneDF_fasta
+}
 read.input <- function() {
   # this function will read integrated_Tse_Ara gene file (output of Integrate_Tse_Ara script)
   # Dismiss genes with no identity assigned to them (15 genes) the detected anticodon for these were either 2bp or NNN
   # Dismiss genes that are marked as pseudo or truncated by tse. (39 genes 17 of them found only by tse and 8 found by both ara and tse)
   # for genes in intersection of two genefinders with same predicted identity, add the model at the end of gene id. (3560 genes)
   # for those with different predicted identity it will add _undet at the end of geneid (33  genes)
-  # for genes found by ony tse, it will add _tse<genemodel> at the end of gene id. (6)
-  # for genes found by ony tse, it will add _ara<genemodel> at the end of gene id. (741)
+  # for genes found by only tse, it will add _tse<genemodel> at the end of gene id. (6)
+  # for genes found by only ara, it will add _ara<genemodel> at the end of gene id. (741)
   # keep all the information needed to make a fasta file for doing the alignment
   resultpath <-
     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
@@ -116,36 +177,57 @@ read.input <- function() {
   geneDF_fasta
 }
 
-remove.Vararm.Intersection <- function(geneDF_both) {
+remove.Vararm <- function(geneDF) {
   # This function will remove the variable arms from both secondary structure and sequence
   # For genes found by both genefinders or tseonly: we use the TSE sequences as reference which is always reported up to base 73.
-  # We will count number of arms by counting number of occuances of "><" in function countarms. if we had 4 arms, we remove tha third arm starting ">" and ending with "<"
+  # We will count number of arms by counting number of occurances of "><" in function countarms. if we had 4 arms, we remove tha third arm starting ">" and ending with "<"
   
-  for (i in 1:nrow(geneDF_both)) {
+  for (i in 1:nrow(geneDF)) {
     # count number of "><"
-    numarms <- countarms(geneDF_both[i,]$SSTSE)
+    
+    geneSS <- geneDF[i, ]$SSTSE
+    if (geneDF$foundby[i] == "ara")
+      geneSS <- geneDF[i, ]$SSARA
+    numarms <- countarms(geneSS)
     if (numarms == 4)
     {
+      geneseq <- geneDF[i, ]$GeneSeqTse
+      geness <- geneDF[i, ]$SSTSE
+      
+      if (geneDF$foundby[i] == "ara")
+      {
+        geneseq <- geneDF[i, ]$GeneSeqAra
+        geness <- geneDF[i, ]$SSARA
+      }
       varcor <-
-        removearm(geneDF_both[i,]$GeneSeqTse, geneDF_both[i,]$SSTSE)
+        removearm(geneseq, geness, as.character(geneDF$foundby[i]))
       firstchunk <-
-        substring(geneDF_both$GeneSeqTse[i], 1, varcor[1] - 1)
-      SSTSE_firstchunk <-
-        substring(geneDF_both$SSTSE[i], 1, varcor[1] - 1)
+        substring(geneseq, 1, varcor[1] - 1)
+      SS_firstchunk <-
+        substring(geness, 1, varcor[1] - 1)
       
       secondchunk <-
-        substring(geneDF_both$GeneSeqTse[i],
+        substring(geneseq,
                   varcor[2] + 1,
-                  nchar(geneDF_both$GeneSeqTse[i]))
-      SSTSE_secondchunk <-
-        substring(geneDF_both$SSTSE[i],
+                  nchar(geneseq))
+      SS_secondchunk <-
+        substring(geness,
                   varcor[2] + 1,
-                  nchar(geneDF_both$SSTSE[i]))
-      
-      geneDF_both$GeneSeqTse[i] <-
-        paste(firstchunk, secondchunk, sep = "")
-      geneDF_both$SSTSE[i] <-
-        paste(SSTSE_firstchunk, SSTSE_secondchunk, sep = "")
+                  nchar(geness))
+      if (geneDF$foundby[i] == "both")
+      {
+        geneDF$GeneSeqTse[i] <-
+          paste(firstchunk, secondchunk, sep = "")
+        geneDF$SSTSE[i] <-
+          paste(SS_firstchunk, SS_secondchunk, sep = "")
+      }
+      if (geneDF$foundby[i] == "ara")
+      {
+        geneDF$GeneSeqAra[i] <-
+          paste(firstchunk, secondchunk, sep = "")
+        geneDF$SSARA[i] <-
+          paste(SS_firstchunk, SS_secondchunk, sep = "")
+      }
     }
     
     if (numarms < 3)
@@ -153,28 +235,38 @@ remove.Vararm.Intersection <- function(geneDF_both) {
       print("We have genes with unusual structure which need to be removed!")
     }
   }
-  geneDF_both
+  geneDF
 }
 
-remove.Intron.Intersection <-  function(geneDF_Int_noVar) {
+remove.Intron <-  function(geneDF_Int_noVar) {
   # This function will remove the introns from both secondary structure and sequence
   # For genes found by both genefinders: we use the TSE sequences as reference which is always reported up to base 73.
   # Based on TSE manuscript, in genes found by tse nucleotides matching the "consensus" tRNA model used in Cove analysis appear in upper case,
   # while introns and other nucleotides in non-conserved positions are printed in lower-case letters. So, we will remove all the lower case letters
   # the result will be saved in a dataframe with only two columns "geneid" and "geneseq"
-  noVar_noIntron_df <-
-    data.frame(geneDF_Int_noVar$GeneID, geneDF_Int_noVar$GeneSeqTse)
-  names(noVar_noIntron_df) <- c("GeneID", "GeneSeq")
-  noVar_noIntron_df$GeneID <- as.character(noVar_noIntron_df$GeneID)
-  noVar_noIntron_df$GeneSeq <-
-    as.character(noVar_noIntron_df$GeneSeq)
-  
+  # for genes found by aragorn, remove sites that are marked as i in their secondary structure, and reports genes up to position 73
   for (i in 1:nrow(geneDF_Int_noVar)) {
-    noVar_noIntron_df$GeneSeq[i] <-
-      gsub("[[:lower:]]", "", noVar_noIntron_df$GeneSeq[i])
+    if (geneDF_Int_noVar$foundby[i] == "both") {
+      geneDF_Int_noVar$GeneSeqTse[i] <-
+        gsub("[[:lower:]]", "", geneDF_Int_noVar$GeneSeqTse[i])
+    }
+    if (geneDF_Int_noVar$foundby[i] == "ara") {
+      geness <- geneDF_Int_noVar$SSARA[i]
+      geness_arr <-
+        substring(geness, seq(1, nchar(geness), 1), seq(1, nchar(geness), 1))
+      gene <- geneDF_Int_noVar$GeneSeqAra[i]
+      p73 <- str_sub(gene, nchar(geness) + 1, nchar(geness) + 1)
+      gene <- str_sub(gene, 1, nchar(geness))
+      gene_arr <-
+        substring(gene, seq(1, nchar(gene), 1), seq(1, nchar(gene), 1))
+      isintron <- geness_arr == "i"
+      geneDF_Int_noVar$GeneSeqAra[i] <-
+        paste(paste(gene_arr[!isintron], collapse = ""), p73, sep = "")
+      geneDF_Int_noVar$SSARA[i] <-
+        paste(geness_arr[!isintron], collapse = "")
+    }
   }
-  
-  noVar_noIntron_df
+  geneDF_Int_noVar
 }
 
 countarms <- function(geneSS) {
@@ -184,47 +276,55 @@ countarms <- function(geneSS) {
   flag = 0
   vararmend = 0
   for (i in 1:length(geneSSarr)) {
-    if (geneSSarr[i] == "<" & flag == 0)
+    if ((geneSSarr[i] == "<" | geneSSarr[i] == ")") & flag == 0)
     {
       counter <- counter + 1
       flag = 1
       
     }
-    if (geneSSarr[i] == ">")
+    if (geneSSarr[i] == ">" | geneSSarr[i] == "(")
       flag = 0
   }
   
   counter
 }
 
-removearm <- function(geneSeq, geneSS) {
+removearm <- function(geneSeq, geneSS,foundby) {
   flag = 0
   counter = 0
   forward = 1
   varbeg = 0
   varend = 0
+  armS=">"
+  armE="<"
+  if(foundby == "ara")
+  {
+    armS="("
+    armE=")"
+  }
   geneSSarr <-
     substring(geneSS, seq(1, nchar(geneSS), 1), seq(1, nchar(geneSS), 1))
   for (i in 1:length(geneSSarr)) {
-    if (geneSSarr[i] == ">" & flag == 0)
+    if ((geneSSarr[i] == armS) & flag == 0)
     {
       counter <- counter + 1
       flag = 1
       if (counter == 3)
       {
+        print(i)
         # this is the begining of the variable arm
         # count howmany > you have
         # go forward untill you see that many <
         forward = 0
         varbeg = i
-        while (geneSSarr[i] != "<")
+        while (geneSSarr[i] != armE)
         {
-          if (geneSSarr[i] == ">")
+          if (geneSSarr[i] == armS)
             forward = forward + 1
           i = i + 1
         }
         while (forward != 0) {
-          if (geneSSarr[i] == "<")
+          if (geneSSarr[i] == armE)
             forward = forward - 1
           
           i = i + 1
@@ -232,7 +332,7 @@ removearm <- function(geneSeq, geneSS) {
         varend = i - 1
       }
     }
-    if (geneSSarr[i] == "<")
+    if (geneSSarr[i] == armE)
       flag = 0
   }
   # print(varend)
@@ -328,9 +428,9 @@ writeCovea <- function(SSDB, seqDB, dirpath,cs,fasta_filename,CS_filename) {
   SSDB <- SSDB[, -ncol(SSDB)]
   for (i in 1:(length(coveaseqs))) {
     coveaseqs[i] <-
-      paste((as.data.frame(seqDB[, i])[, 1]), collapse = '')
+      as.character(paste((as.data.frame(seqDB[, i])[, 1]), collapse = ''))
     coveass[i] <-
-      paste((as.data.frame(SSDB[, i])[, 1]), collapse = '')
+      as.character(paste((as.data.frame(SSDB[, i])[, 1]), collapse = ''))
     
   }
   
@@ -347,7 +447,7 @@ writeCovea <- function(SSDB, seqDB, dirpath,cs,fasta_filename,CS_filename) {
   
   # remove "."s from sequences and write them in a fasta file to run with covea
   for (i in 1:length(coveaseqs)) {
-    coveaseqs[i] <- translate(coveaseqs[i], "[.]", "-")
+    coveaseqs[i] <- gsub("[.]", "-",coveaseqs[i])
   }
   
   write.fwf(
@@ -386,7 +486,7 @@ editAlignment <- function(seqDB, SSDB, dirpath,fasta_filename,CS_filename) {
         gapperc <-
           (temp[temp$Var1 == "TRUE", 2] / (temp[temp$Var1 == "TRUE", 2] + temp[temp$Var1 ==
                                                                                  "FALSE", 2])) * 100
-        if (gapperc > 99)
+        if (gapperc > 98)#####################
         {
           delpos = c(delpos, i)
         }
@@ -399,6 +499,7 @@ editAlignment <- function(seqDB, SSDB, dirpath,fasta_filename,CS_filename) {
     }
   }
   delpos <- delpos[2:length(delpos)]
+  delpos <- unique(delpos)
   delpos = as.integer(delpos)
   seqDB <- seqDB[-delpos,]
   SSDB <- SSDB[-delpos,]
@@ -410,8 +511,14 @@ editAlignment <- function(seqDB, SSDB, dirpath,fasta_filename,CS_filename) {
   flag = 0
   for (i in 1:ncol(seqDB)) {
     temp <- data.frame(table(seqDB[, i] == "."))
+    tempseq <- paste((as.data.frame(seqDB[, i])[, 1]), collapse = '')
+    if (length(grep("\\.\\.\\.", tempseq)) == 1)
+    {
+      if (names(seqDB[, i]) != "CS")
+        delpos = c(delpos, i)
+    }
     if (length(temp[temp$Var1 == "TRUE", 2]) != 0)
-      if (temp[temp$Var1 == "TRUE", 2] > 8)
+      if (temp[temp$Var1 == "TRUE", 2] > 3)
       {
         if (names(seqDB[, i]) != "CS")
           delpos = c(delpos, i)
@@ -430,6 +537,7 @@ editAlignment <- function(seqDB, SSDB, dirpath,fasta_filename,CS_filename) {
   if (length(delpos) > 1)
   {
     delpos <- delpos[2:length(delpos)]
+    delpos <- unique(delpos)
     delpos = as.integer(delpos)
     seqDB <- seqDB[,-delpos]
     SSDB <- SSDB[,-delpos]

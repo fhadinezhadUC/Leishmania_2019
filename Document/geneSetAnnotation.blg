@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: geneSetAnnotation.aux
+The style file: unsrt.bst
+Database file #1: sample.bib.bib
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Pothirat T, Tantiworawit A, Chaiwarith R, Jariyapan N, Wannasan A, Siriyasatien P, et al." for entry Pothirat:2014
+while executing---line 944 of file unsrt.bst
+You've used 8 entries,
+            1791 wiz_defined-function locations,
+            501 strings with 5208 characters,
+and the built_in function-call counts, 1302 in all, are:
+= -- 112
+> -- 44
+< -- 0
++ -- 19
+- -- 11
+* -- 62
+:= -- 231
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 70
+empty$ -- 140
+format.name$ -- 11
+if$ -- 287
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 8
+newline$ -- 43
+num.names$ -- 8
+pop$ -- 14
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 32
+stack$ -- 0
+substring$ -- 36
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 10
+width$ -- 9
+write$ -- 89
+(There were 4 error messages)

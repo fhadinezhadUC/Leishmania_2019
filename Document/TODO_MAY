@@ -1,0 +1,21 @@
+Visualizations: 
+		       1: scores of ara-only genes vs aragorn scores in intersection (relatively low) 
+		       2: Look at genes within clusters (clusters are genes within distance of 5k):
+			  Clusters that include ara only genes are visualized. 
+			  (Genes colored with blue are found by both ara and tse, genes colored red are found only by ara. 
+			  We had 30 clusters of length more than 1 which include 82 out of 741 ara-only genes. 659 ara-only genes were single genes not close to other genes.)
+			  Notes: 
+			  a) most of the clusters visualized have repeated genes, So they might be in repeat regions (does it mean they are redundant and pseudo?!)
+			    (use MUMMER to find all the repeat regions in these genomes! Use R GRanges to see how many of these genes are within repeat regions)
+			  b) visualize clusters of length more than one or two in two genomes that have ara-only genes
+			  c) 
+		        3: Their secondary structure > table (average length of three loops, location/length of intron, average length of arms, insertions?) 
+
+
+1. Pick a gene set including the high-confidence ara-only genes as an input for tsfm
+2. Document: 
+		1. TSE bugs
+		2. if I see clusters similar between genomes
+		3. 
+
+

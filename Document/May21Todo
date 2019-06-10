@@ -1,0 +1,40 @@
+Tuesday: 
+
+Leish:
+	 0. Make a final gene set including some of the aragorn genes
+	    a) Use score cutoff
+            b) keep ara-only genes that are similar to gene models in intersection
+	    b) keep pseudo genes with normal ss structure (summerize the SS of ara-only genes)
+	 
+	 After first round of finalizing the gene set:
+	 1. Implement a method to find the distance of clusters:
+	    a) Assign clusters to the genes
+	    b) Create a new dataframe with columns: "sourceOrg","soureSeq","clusterID","clusterSeq", "clusterBegin","clusterEnd","clusterDir"
+	    c) Keep clusters with more than 2 genes. 
+	    ***
+	    d) make a matrix to keep the parwise distance of clusters. group clusters. each group has a distance of max 1.
+	       Report clusters of distance 0, 
+	    e) Look for the cluster of genes with potential anticodon switching
+	    f) implement an script:
+	       for clusters that are in more than one genomes 
+               look for the closest gene clusters around these clusters and see if they match 
+	  2. find the repeat regions using MUMMER. 
+	     find overlaps of cluster and repeat regions using R GRanges
+
+TSFM:
+ 	 1. Decide about the final gene set and have explanations for the genes that you include
+	    exclude: pseudo genes, genes with antocodon swithing, 
+
+
+
+
+
+
+
+Read about Trductive genome evolution
+            What is known about repetative elements in TryTryp!
+
+*** 
+prepare the tsfm geneset and run the KLD ID logo 
+
+
