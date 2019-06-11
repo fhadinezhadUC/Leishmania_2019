@@ -92,6 +92,7 @@ for (i in 1:length(clusterdir)) {
     )
   df <- read.table(tablepath, header = TRUE)
   df <- match_bubble_coords(df, tRNA_L_skel_df)
+  # write the tables 
   outputpath <-
     paste(
       TableDir,
@@ -99,6 +100,12 @@ for (i in 1:length(clusterdir)) {
       "/Bubble/",
       sep = ""
     )
+  write.fwf(
+    df,
+    width = rep(8,14),
+    colnames = FALSE,
+    file = paste("/home/fatemeh/Leishmania_2019/LeishLatex/tables/",paste(clus_name,"_df",sep = ""))
+  )
   all.bubble(
     df,
     name = "bubble",
@@ -258,6 +265,7 @@ all.bubble <- function(df,name="bubble",clus_name,outputpath,alpha=0.5,fact=0.5,
   }
   dev.off();
 }
+
 
 match_bubble_coords <- function(df, tRNA_L_skel_df) {
   for (i in 1:nrow(tRNA_L_skel_df)) {
