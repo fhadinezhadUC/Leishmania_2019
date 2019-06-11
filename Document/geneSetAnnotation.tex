@@ -674,19 +674,20 @@ We made the final gene set data by removing genes with TSE score of less than 50
 % Deviations between two gene finders
 %------------------------------------------------------------------------------------------------------
 
-\newpage
 \subsection{2.1 Criteria for filtering out untrusted genes}
-For the purpose of creating CIFs, genes marked with "??" were removed and the remain were aligned using the alignment pipeline described in section 3. 
+For the purpose of creating CIFs, genes marked with "??" were removed and the remain were aligned using the alignment pipeline described in section 3. Further, to inspect whether our genefinders annotated tRNA genes of all 22 functional classes for
+each genome, we visualized number of genes annotated for each genome in Figure
+table \ref{fig:types} and tRNA functional classes by both TSE and ARA for each genome in Figure table \ref{fig:counts}
 From GtRNAdb, we downloaded the last version of Homo sapiens High confidence tRNA sequences which include 430 genes with functional class distribution shown in table\ref{table:homo1} and length size distribution shown in table \ref{table:homo2}.
 \begin{table}[htbp]
   \caption{}
   \begin{adjustbox}{width=15cm,center}
     \begin{tabular}{|l|c c c c c c c c c c c c c c c c c c c c c c|}
-        \hline
- Functional Class  & A&C&D&E&F&G&H&I&K&L&M&N&P&Q&R&S&T&V&W&X&Y&Z\\
+      \hline
+      Functional Class & A  & C  & D  & E  & F  & G  & H & I  & K  & L  & M  & N  & P  & Q  & R  & S  & T  & V  & W & X & Y  & Z \\
 
-Frequency &38&29&13&16&10&28&9&23&27&32&11&25&20&19&28&25&20&28&7&9&14&1\\
- \hline
+      Frequency        & 38 & 29 & 13 & 16 & 10 & 28 & 9 & 23 & 27 & 32 & 11 & 25 & 20 & 19 & 28 & 25 & 20 & 28 & 7 & 9 & 14 & 1 \\
+      \hline
     \end{tabular}
     \label{table:homo1}
   \end{adjustbox}
@@ -697,21 +698,102 @@ Frequency &38&29&13&16&10&28&9&23&27&32&11&25&20&19&28&25&20&28&7&9&14&1\\
   \caption{}
   \begin{adjustbox}{width=7cm,center}
     \begin{tabular}{|l|c c c c c c|}
-        \hline
-Gene Length & 70  &71&72&73&74&75\\
-Frequency & 1   &20& 151& 118& 60& 1\\
- \hline
+      \hline
+      Gene Length & 70 & 71 & 72  & 73  & 74 & 75 \\
+      Frequency   & 1  & 20 & 151 & 118 & 60 & 1  \\
+      \hline
     \end{tabular}
     \label{table:homo2}
   \end{adjustbox}
 \end{table}
+
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=\columnwidth]{tRNAcounts_clustered.png}
+  \caption[Number of Genes annotated]{Number of genes annotated by for each TryTryp genome.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
+  \label{fig:counts}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=\columnwidth]{funcPerc_clustered.png}
+  \caption[Genome Comparison]{Percentage of 22 tRNA types annotated for each TryTryp genomes. The label on top of each bar shows which tRNA classes are not annotated for the genome.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
+  \label{fig:types}
+\end{figure}
 %------------------------------------------------------------------------------------------------------
 % Deviations between two gene finders
 %------------------------------------------------------------------------------------------------------
+\section{TryTryp Classification}
 
-\subsubsection{2.1.1 summery of final gene set}
-...\\
-...
+Using phylogenetic trees of Trypanosoma from these works \cite{Souza:2018dg,Hughes:2003,Pothirat:2014,Kelly:2017}, we grouped TryTryp genomes as table \ref{table:Genomeclusters1}. Based on tree in \cite{Souza:2018dg} Leishmania genomes are are first splitted based on nodes 9, %figure \ref{fig:countsclustered} shows a summery of the number of tRNA genes for each cluster and figure \ref{fig:funcclustered} shows the tRNA functional classes not annotated for clusters of genome. we excluded genome PconfusumCUL13 from the study, until we find a well sequenced version of this genome for which we can annotate all 22 functional classes of tRNAs. The Logo data for TryTryp genomes and Human can be found \href{https://github.com/fhadinezhadUC/Leishmania_2019/tree/master/Results/tsfmInput-output/output/Logos}{here}. you can find the bubble plots for each cluster \href{https://github.com/fhadinezhadUC/Leishmania_2019/tree/master/Results/tsfmInput-output/output/BubblePlots}{here}. we have 11 pages and each page has 21 models for all tRNA classes in a cluster.
+\begin{table}[hbt]
+  \caption{Classification of TryTryp genomes. genomes not mentioned here are clustered as one genome.}
+  \begin{adjustbox}{width=\columnwidth,center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \toprule LenriettiComplex                           & AfricanTrypanosome (T1)                              & AmericanTrypanosome (T2)                               & Leishmania1                                        & Leishmania2                                        & Leishmania3                                        & Leishmania4                                        & Leishmania5 (Lvianna)                              \\\midrule
+      \parbox{.45\textwidth} {\begin{enumerate}
+          \item LspMARLEM2494
+          \item LenriettiiLEM3045
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+          \item TbruceigambienseDAL972
+          \item TbruceiLister427
+          \item TbruceiTREU927
+          \item TevansiSTIB805
+          \item TcongolenseIL3000
+          \item TvivaxY486
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+          \item TgrayiANR4
+          %\item TrangeliSC58
+          %\item TcruziCLBrener
+          \item TcruziCLBrenerEsmeraldo-like
+          \item TcruziCLBrenerNon-Esmeraldo-like
+          \item TcruzicruziDm28c
+          \item TcruziDm28c
+          \item TcruziEsmeraldo
+          \item TcruziJRcl4
+          \item TcruzimarinkelleiB7
+          \item TcruziSylvioX10-1
+          \item TcruziSylvioX10-1-2012
+          \item TcruziTulacl2
+          %\item TtheileriEdinburgh
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+          \item CfasciculataCfCl
+          \item LseymouriATCC30220
+          \item LpyrrhocorisH10
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}
+          \item Lamazonensis\\
+                MHOMBR71973M2269
+          \item Lmexicana\\MHOMGT2001U1103
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}  % trusted
+          \item LmajorFriedlin
+          \item LmajorLV39c5
+          \item LmajorSD75
+          \item LturanicaLEM423
+          \item LarabicaLEM1108
+          \item LtropicaL590
+          \item LaethiopicaL147
+          \item LgerbilliLEM452
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate} % trusted
+          \item LdonovaniBHU1220
+          \item LdonovaniBPK282A1
+          \item LinfantumJPCM5
+        \end{enumerate}} & \parbox{.45\textwidth}{\begin{enumerate}  % trusted
+          \item Lbraziliensis\\MHOMBR75M2904
+          \item Lbraziliensis\\MHOMBR75M2903
+          \item Lpanamensis\\MHOMPA94PSC1
+          \item Lpanamensis\\MHOMCOL81L13
+        \end{enumerate}} \\
+      \bottomrule
+    \end{tabular}
+    \label{table:Genomeclusters1}
+  \end{adjustbox}
+\end{table}
+
+\newpage
+%\subsubsection{2.1.1 summery of final gene set}
+%...\\
+%...
 %------------------------------------------------------------------------------------------------------
 % Deviations between two gene finders
 %------------------------------------------------------------------------------------------------------

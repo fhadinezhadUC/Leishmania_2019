@@ -90,14 +90,15 @@ split_tRNAgene_with_clustername <- function() {
   library(gdata)
   fastafile <-
     read.table(
-      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TryTrypHomoC_EditedCovea.fasta",
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/tsfm_finalinput_HomoC_EditedCovea.fasta",
       sep = "\n"
     )
   fastafile2 <- as.character(fastafile$V1)
   sequences <-
     as.character(fastafile2[seq(2, length(fastafile2), 2)])
   headers <- as.character(fastafile2[seq(1, length(fastafile2), 2)])
-
+  headers <- gsub("_ara","_",headers)
+  headers <- gsub("\\s", "", headers)
   genomenames2 <-
     lapply(X = headers , function(X)
       gsub("HOMO", "HOMO_", X, fixed = TRUE))
@@ -135,9 +136,8 @@ split_tRNAgene_with_clustername <- function() {
         clusternames == "TcongolenseIL3000" |
         clusternames == "TvivaxY486")
       clusNames[i] <- "AfricanTrypanosome"
-    if (clusternames == "TgrayiANR4" |
-        clusternames == "TrangeliSC58" |
-        clusternames == "TcruziCLBrener" |
+    #clusternames == "TcruziCLBrener" clusternames == "TrangeliSC58" removed
+    if (clusternames == "TgrayiANR4" |  
         clusternames == "TcruziCLBrenerEsmeraldo-like" |
         clusternames == "TcruziCLBrenerNon-Esmeraldo-like" |
         clusternames == "TcruzicruziDm28c" |
@@ -147,8 +147,7 @@ split_tRNAgene_with_clustername <- function() {
         clusternames == "TcruzimarinkelleiB7" |
         clusternames == "TcruziSylvioX10-1" |
         clusternames == "TcruziSylvioX10-1-2012" |
-        clusternames == "TcruziTulacl2" |
-        clusternames == "TtheileriEdinburgh")
+        clusternames == "TcruziTulacl2") # clusternames == "TtheileriEdinburgh"
     clusNames[i] <- "AmericanTrypanosome"
     if (clusternames == "CfasciculataCfCl" |
         clusternames == "LseymouriATCC30220" |
@@ -162,19 +161,19 @@ split_tRNAgene_with_clustername <- function() {
         clusternames == "LtropicaL590" |
         clusternames == "LaethiopicaL147" |
         clusternames == "LgerbilliLEM452")
-      clusNames[i] <- "Leishmania2"
+      clusNames[i] <- "Leishmania3"
     if (clusternames == "LdonovaniBHU1220" |
         clusternames == "LdonovaniBPK282A1" |
         clusternames == "LinfantumJPCM5")
-      clusNames[i] <- "LDonovaniComplex"
+      clusNames[i] <- "Leishmania4"
     if (clusternames == "LamazonensisMHOMBR71973M2269" |
         clusternames == "LmexicanaMHOMGT2001U1103")
-      clusNames[i] <- "LMexicanaComplex"
+      clusNames[i] <- "Leishmania2"
     if (clusternames == "LbraziliensisMHOMBR75M2904" |
         clusternames == "LbraziliensisMHOMBR75M2903" |
         clusternames == "LpanamensisMHOMPA94PSC1" |
         clusternames == "LpanamensisMHOMCOL81L13")
-      clusNames[i] <- "Lvianna"
+      clusNames[i] <- "Leishmania5"
   }
   
   headers <- gsub("\\s", "", headers)
@@ -192,7 +191,7 @@ split_tRNAgene_with_clustername <- function() {
   genome_list = split(tRNAdf, f = tRNAdf$clusNames)
   
   homo <-
-    genome_list[names(genome_list) == "HOMO"][[1]]
+    genome_list[names(genome_list) == "Homo"][[1]]
   homo$funclass <-
     as.character(lapply(X = homo$headers , function(X)
       substr(X, 7, 7)))
@@ -200,7 +199,7 @@ split_tRNAgene_with_clustername <- function() {
   homo$headers <- gsub("\\s", "", homo$headers)
   
   homoheader <- paste(homo$headers, homo$funclass, sep = "")
-  genome_list[names(genome_list) == "HOMO"][[1]]$headers <-
+  genome_list[names(genome_list) == "Homo"][[1]]$headers <-
     homoheader
   
   # make a file for each genome and put the genomes in there
@@ -208,7 +207,7 @@ split_tRNAgene_with_clustername <- function() {
     # write the DF in a file to be processed by the bash
     filepath <-
       paste(
-        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput/",
+        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/",
         names(genome_list[i]),
         ".fasta",
         sep = ""
@@ -333,7 +332,7 @@ vidualization <- function(genome_list) {
   # 1. number of tRNA genes in HomoC and TryTryp genomes
   # 2. Percentage of 21 tRNA functional classes covered by each genome
   plotpath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/"
   tRNAcountdf <- data.frame(names(genome_list))
   # I used genomeorder <- tRNAcountdf$genome from vidualization of integrate_Te_Ara.R to be able to compare them
   #tRNAcountdf <- data.frame(genomeorder)
@@ -467,14 +466,14 @@ vidualization <- function(genome_list) {
 # assign identity to Homo genes
 fastafile <-
   read.table(
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputfiles2/HOMO.fasta",
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/Homo.fasta",
     sep = "\n"
   )
 fastafile2 <- as.character(fastafile$V1)
 sequences <-
   as.character(fastafile2[seq(2, length(fastafile2), 2)])
 headers <- as.character(fastafile2[seq(1, length(fastafile2), 2)])
-identities <- substr(headers,21,23)
+identities <- substr(headers,20,22)
 
 #identities
 #Ala Arg Asn Asp Cys Gln Glu Gly His Ile iMe Leu Lys Met Phe Pro SeC Ser Thr Trp Tyr Val 
@@ -550,12 +549,12 @@ for (i in 1:length(identities)) {
 
 #Gene Length & 70  &71&72&73&74&75
 #Gene Length & 1   &20& 151& 118& 60& 1
-headers <- paste(headers,funcClasses,sep="")
+headers <- paste(headers,"_",funcClasses,sep="")
 headers <- gsub("\\s", "", headers)
 write.fwf(
   data.frame(headers,
              sequences),
-  "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputfiles2/HOMO2.fasta",
+  "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/HOMO.fasta",
   sep = "\n",
   colnames = FALSE
 )

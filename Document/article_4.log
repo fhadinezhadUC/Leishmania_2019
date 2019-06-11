@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  7 JUN 2019 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.15)  10 JUN 2019 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1203,7 +1203,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 
-<Figures/GenomeComparisonV41.png, id=46, 1011.78pt x 505.89pt>
+<Figures/GenomeComparisonV41.png, id=51, 1011.78pt x 505.89pt>
 File: Figures/GenomeComparisonV41.png Graphic file (type png)
 
 <use Figures/GenomeComparisonV41.png>
@@ -1224,14 +1224,14 @@ se-quence
  []
 
 [2 <./Figures/GenomeComparisonV41.png (PNG copy)>] [3]
-<Figures/EndDisplacement.png, id=78, 1011.78pt x 505.89pt>
+<Figures/EndDisplacement.png, id=83, 1011.78pt x 505.89pt>
 File: Figures/EndDisplacement.png Graphic file (type png)
 
 <use Figures/EndDisplacement.png>
 Package pdftex.def Info: Figures/EndDisplacement.png used on input line 178.
 (pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
 
-<Figures/intersecttRNAcounts.png, id=79, 1011.78pt x 505.89pt>
+<Figures/intersecttRNAcounts.png, id=84, 1011.78pt x 505.89pt>
 File: Figures/intersecttRNAcounts.png Graphic file (type png)
 
 <use Figures/intersecttRNAcounts.png>
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: Figures/intersecttRNAcounts.png used on input line 185
 .
 (pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
 
-<Figures/ara_funcPerc.png, id=80, 1011.78pt x 505.89pt>
+<Figures/ara_funcPerc.png, id=85, 1011.78pt x 505.89pt>
 File: Figures/ara_funcPerc.png Graphic file (type png)
 
 <use Figures/ara_funcPerc.png>
@@ -1247,7 +1247,7 @@ Package pdftex.def Info: Figures/ara_funcPerc.png used on input line 192.
 (pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
  [4 <./Figures/EndDisplacement.png (PNG copy)> <./Figures/intersecttRNAcounts.p
 ng (PNG copy)>]
-<Figures/ara_funcPerc2.png, id=94, 1011.78pt x 505.89pt>
+<Figures/ara_funcPerc2.png, id=99, 1011.78pt x 505.89pt>
 File: Figures/ara_funcPerc2.png Graphic file (type png)
 
 <use Figures/ara_funcPerc2.png>
@@ -1270,7 +1270,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []\T1/pplj/m/n/10 TcruziCLBrenerNon-
  []
 
-<Figures/tRNAcounts_clustered.png, id=108, 1011.78pt x 505.89pt>
+<Figures/tRNAcounts_clustered.png, id=112, 1011.78pt x 505.89pt>
 File: Figures/tRNAcounts_clustered.png Graphic file (type png)
 
 <use Figures/tRNAcounts_clustered.png>
@@ -1278,7 +1278,7 @@ Package pdftex.def Info: Figures/tRNAcounts_clustered.png used on input line 31
 9.
 (pdftex.def)             Requested size: 268.80103pt x 134.39984pt.
 
-<Figures/funcPerc_clustered.png, id=109, 1011.78pt x 505.89pt>
+<Figures/funcPerc_clustered.png, id=113, 1011.78pt x 505.89pt>
 File: Figures/funcPerc_clustered.png Graphic file (type png)
 
 <use Figures/funcPerc_clustered.png>
@@ -1293,22 +1293,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
 (./article_4.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 342.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 342.
-
-
-Package rerunfilecheck Warning: File `article_4.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `article_4.out':
-(rerunfilecheck)             Before: 8A8D20A70D7A2EE23F75F98C489BDE07;450
-(rerunfilecheck)             After:  88DE8D1BD34D61E0210EE518B9207619;515.
+Package rerunfilecheck Info: File `article_4.out' has not changed.
+(rerunfilecheck)             Checksum: 88DE8D1BD34D61E0210EE518B9207619;515.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
  ) 
 Here is how much of TeX's memory you used:
- 16143 strings out of 493029
- 276579 string characters out of 6136233
+ 16144 strings out of 493029
+ 276590 string characters out of 6136233
  591227 words of memory out of 5000000
- 19270 multiletter control sequences out of 15000+600000
+ 19271 multiletter control sequences out of 15000+600000
  79811 words of font info for 96 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  61i,22n,86p,1336b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1323,10 +1316,10 @@ b.pfb></usr/share/texlive/texmf-dist/fonts/type1/nowacki/iwona/iwonar.pfb></usr
 live/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/palatino/uplri8a.pfb>
-Output written on article_4.pdf (7 pages, 2056661 bytes).
+Output written on article_4.pdf (7 pages, 2478123 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
+ 229 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
  83 named destinations out of 1000 (max. 500000)
- 14932 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 14940 words of extra memory for PDF output out of 17280 (max. 10000000)
 

@@ -64,7 +64,6 @@ Integrate_Tse_Ara <- function() {
   integrated_tse_ara
   
 }
-
 # ____________________ formating the final integrated tse ara file with a fixed length format and write it into four file _____________________________
 
 formatoutput <- function(integrated_tse_ara,resultpath) {
@@ -350,7 +349,6 @@ formatoutput <- function(integrated_tse_ara,resultpath) {
   # Write one file to have all the data to read everytime we need the genefile
   write.table(integrated_tse_ara,col.names = TRUE,file = paste(resultpath,"integrated_tse_ara.txt",sep = ""))
 }
-
 # ___________________ integrate (union) genes found by tse and ara into integrated_tse_ara dataframe __________________________________________________
 
 integrate <- function(aradf, tsedf) {
@@ -533,7 +531,6 @@ integrate <- function(aradf, tsedf) {
   integrated_tse_ara
   
 }
-
 #_____________________ reading aragorn's output  (one file) and return its info as aradf dataframe ____________________________________________
 
 making_ara_df <- function(arafilename) {
@@ -699,7 +696,6 @@ making_ara_df <- function(arafilename) {
   geneinfo <- geneinfo[2:nrow(geneinfo),]
   geneinfo
 }
-
 #_____________________ reading tRNAscan's output  (one file) and return its info as tsedf dataframe ___________________________________________
 
 making_tse_df <- function(tse_filename, tse_ss_filename) {
@@ -831,7 +827,6 @@ making_tse_df <- function(tse_filename, tse_ss_filename) {
   geneinfo <- geneinfo[2:nrow(geneinfo), ]
   geneinfo
 }
-
 #_______________________________________________________________________________________________________________________________________________________
 addfuncTypes <- function(integrated_tse_ara) {
   integrated_tse_ara$arafunc <- ''
