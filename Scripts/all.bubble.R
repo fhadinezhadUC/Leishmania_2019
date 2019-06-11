@@ -160,6 +160,28 @@ all.bubble <- function(df,name="bubble",clus_name,outputpath,alpha=0.5,fact=0.5,
   #   y[g >= 0.95 | c >= 0.70] <- 3;	
   #   y;
   # }
+  # colormap <- function (g,c) { 
+  #   y <- rep(0,length(g));
+  #   y[g <  0.48            & c < 0.44]             <- rgb(t(col2rgb("white"))/255,alpha=alpha);
+  #   y[g >= 0.48 & g < 0.95 & c < 0.44]             <- rgb(t(col2rgb("darkred"))/255,alpha=alpha);
+  #   y[g >= 0.95            & c < 0.44]             <- rgb(t(col2rgb("red"))/255,alpha=alpha);
+  #   y[g <  0.48            & c >= 0.44 & c < 0.70] <- rgb(t(col2rgb("darkblue"))/255,alpha=alpha);
+  #   y[g >= 0.48 & g < 0.95 & c >= 0.44 & c < 0.70] <- rgb(t(col2rgb("darkmagenta"))/255,alpha=alpha);
+  #   y[g >= 0.95            & c >= 0.44 & c < 0.70] <- map2rgb("deeppink");
+  #   y[g <  0.48            & c >= 0.70]            <- map2rgb("blue");
+  #   y[g >= 0.48 & g < 0.95 & c >= 0.70]            <- map2rgb("blueviolet");
+  #   y[g >= 0.95            & c >= 0.70]            <- map2rgb("magenta");
+  #   y;
+  # }
+  # colors <- colormap(gains,convs);
+  # 
+  # widthmap <- function (g,c) {
+  #   y <- rep(1,length(g));
+  #   y[g < 0.48 & c < 0.44] <- 1;
+  #   y[g >= 0.48 | c >= 0.44] <- 2;
+  #   y[g >= 0.95 | c >= 0.70] <- 3;	
+  #   y;
+  # }
   colormap <- function (g,c) { 
     y <- rep(0,length(g));
     y[g <  0.48            & c < 0.44]             <- rgb(t(col2rgb("white"))/255,alpha=alpha);
