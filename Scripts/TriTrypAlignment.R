@@ -22,13 +22,13 @@ TriTrypAlignment <- function() {
   # covea processing
   
   # if we are using the merged file of Tritryp and homo:
-  #dirpath <-
-  #  "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/"
-  #covea_filename <- "tsfm_finalinput_HomoC2.covea"
+  dirpath <-
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/ExcludingZInput/"
+  covea_filename <- "Tritryp_Homo_final_tsfm_mergedfile.covea"
   
-   dirpath <-
-     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
-   covea_filename <- "tsfm_input_geneset2.covea"
+   #dirpath <-
+  #   "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
+  # covea_filename <- "tsfm_input_geneset2.covea"
   
   readSeqsIntoDf(dirpath, covea_filename)
   seqDB <-
@@ -37,8 +37,8 @@ TriTrypAlignment <- function() {
   SSDB <-
     read_csv(paste(dirpath, "coveaDF_SS.txt", sep = ""))
   
-  fasta_filename <- "tsfm_finalinput_HomoC_EditedCovea2.fasta"
-  CS_filename <- "tsfm_finalinput_HomoC_structfile2.txt"
+  fasta_filename <- "Tritryp_Homo_final_tsfm_mergedfile.fasta"
+  CS_filename <- "Tritryp_Homo_final_tsfm_mergedfile.txt"
   
   # fasta_filename <- "tsfm_input_geneset_EditedCovea.fasta"
   # CS_filename <- "tsfm_input_geneset_structfile.txt"

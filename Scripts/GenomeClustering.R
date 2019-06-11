@@ -90,7 +90,7 @@ split_tRNAgene_with_clustername <- function() {
   library(gdata)
   fastafile <-
     read.table(
-      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/tsfm_finalinput_HomoC_EditedCovea.fasta",
+      "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/ExcludingZInput/Tritryp_Homo_final_tsfm_mergedfile.fasta",
       sep = "\n"
     )
   fastafile2 <- as.character(fastafile$V1)
@@ -207,7 +207,7 @@ split_tRNAgene_with_clustername <- function() {
     # write the DF in a file to be processed by the bash
     filepath <-
       paste(
-        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input4//",
+        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/ExcludingZInput/input5/",
         names(genome_list[i]),
         ".fasta",
         sep = ""
@@ -475,7 +475,7 @@ vidualization <- function(genome_list) {
 # assign identity to Homo genes
 fastafile <-
   read.table(
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/Homo.fasta",
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/ExcludingZInput/input5/Homo.fasta",
     sep = "\n"
   )
 fastafile2 <- as.character(fastafile$V1)
@@ -558,6 +558,7 @@ for (i in 1:length(identities)) {
 
 #Gene Length & 70  &71&72&73&74&75
 #Gene Length & 1   &20& 151& 118& 60& 1
+#exclude the Z
 headers <- paste(headers,"_",funcClasses,sep="")
 headers <- gsub("\\s", "", headers)
 write.fwf(
