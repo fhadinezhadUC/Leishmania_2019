@@ -71,7 +71,7 @@ prepare.tsfm.input <- function(genefile){
   resultpath <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
   write.table(tsfmInput,col.names = TRUE,file = paste(resultpath,"tsfm_input_geneset.txt",sep = ""))
   # read in the HomoC tRNA genes downloaded from http://gtrnadb.ucsc.edu/GtRNAdb2/genomes/eukaryota/Hsapi38/Hsapi38-seq.html
-  Homo_geneset <- read.fasta("/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/hg38-tRNAs.fa",seqtype="DNA",as.string = TRUE)
+  #Homo_geneset <- read.fasta("/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/hg38-tRNAs.fa",seqtype="DNA",as.string = TRUE)
   # create a dataframe with columns
   #merged both fasta files 
   #cat hg38-tRNAs.fa tsfm_input_geneset_EditedCovea.fasta > tsfm_finalinput_HomoC.fasta

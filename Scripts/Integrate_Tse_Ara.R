@@ -958,8 +958,7 @@ initiatorDetecting <- function(geneDF) {
   library(factoextra) # clustering visualization
   library(dendextend) # for comparing two dendrograms
   # GeneDF from the function profile_cm
-  # the input is the filtered gene file from Integrate_Tse_Ara script. (geneDF6)
-  #GeneDF$headers <- gsub(">","",GeneDF$headers)
+  # GeneDF$headers <- gsub(">","",GeneDF$headers)
   
   GeneDF$araac <- genefile[genefile$geneid %in% GeneDF$geneid,]$araac
   GeneDF$tseac <- genefile[genefile$geneid %in% GeneDF$geneid,]$tseac

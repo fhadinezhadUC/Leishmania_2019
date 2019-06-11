@@ -20,7 +20,7 @@ library("heR.Misc"); ## THIS IS REQUIRED FOR THE BUBBLEPLOT FUNCTION AND MUST BE
 # THESE ARE THE COORDINATES FOR THE TRNA STRUCTURE BACKBONE IN THE FIGURES
 
 # positions x= 8.75 and y= 10.5 are manually added
-TableDir <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/inputfiles2/Logos/"
+TableDir <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/Logos/"
 line.x <- c(6.875,6.500,6.125,5.750,5.375,5.000,4.625,4.625,5.000,5.000,2.375
             ,2.750,2.375,2.750,2.500,2.875,3.250,2.875,2.500,2.125,1.750,1.375,1.000
             ,0.625,0.250,0.625,1.000,1.500,1.125,1.500,1.125,1.500,1.125,1.500,1.125
