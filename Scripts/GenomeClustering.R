@@ -207,7 +207,7 @@ split_tRNAgene_with_clustername <- function() {
     # write the DF in a file to be processed by the bash
     filepath <-
       paste(
-        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/",
+        "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input4//",
         names(genome_list[i]),
         ".fasta",
         sep = ""
@@ -332,7 +332,7 @@ vidualization <- function(genome_list) {
   # 1. number of tRNA genes in HomoC and TryTryp genomes
   # 2. Percentage of 21 tRNA functional classes covered by each genome
   plotpath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/"
+    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input4/"
   tRNAcountdf <- data.frame(names(genome_list))
   # I used genomeorder <- tRNAcountdf$genome from vidualization of integrate_Te_Ara.R to be able to compare them
   #tRNAcountdf <- data.frame(genomeorder)
@@ -394,7 +394,8 @@ vidualization <- function(genome_list) {
       "T",
       "W",
       "Y" ,
-      "V"
+      "V",
+      "Z"
     )
   tRNAcountdf$percent_21 <- 0
   tRNAcountdf$missing <- ''
@@ -421,9 +422,9 @@ vidualization <- function(genome_list) {
         paste(setdiff(func_classes, as.character(countsdf$Var1)), collapse = " ")
       diffset <-
         setdiff(func_classes, as.character(countsdf$Var1))
-      fcount <- 21 - length(diffset)
+      fcount <- 22 - length(diffset)
       tRNAcountdf[tRNAcountdf$genome == names(genome_list[i]),]$percent_21 <-
-        (fcount / 21) * 100
+        (fcount / 22) * 100
       # make a vector of missing functional classes
       
     }
@@ -436,21 +437,29 @@ vidualization <- function(genome_list) {
     factor(tRNAcountdf$genome, levels = tRNAcountdf$genome)
   p <- ggplot(data = tRNAcountdf, aes(x = genome, y = percent_21)) +
     geom_bar(stat = "identity", fill = "#56B4E9")  + theme(axis.text.x = element_text(angle = 90, hjust = 1),
-                                                           plot.title = element_text(hjust = 0.5)) +
+                                                           plot.title = element_text(hjust = 0.5) ,text = element_text(size = 19)) +
+    geom_text(
+      aes(y = tRNAcountdf$percent_21, label = tRNAcountdf$tRNAcounts),
+      vjust = 1.3,
+      color = "gray20",
+      size = 8
+    )+
     labs(title =
-           "Percentage of 21 tRNA functional classes covered by each cluster",
+           "Percentage of 22 tRNA functional classes covered by each cluster",
          x =
-           "Genome", y = "Percentage of tRNA functional classes(total=21)") + geom_text(
+           "Genome", y = "Percentage of tRNA functional classes(total=22)") + geom_text(
              aes(label =
                    missing),
              vjust = 0.5,
              angle = 90,
-             hjust = -0.1
+             hjust = -0.1,
+             color = "blueviolet",
+             size=7
            )
   p
   ggsave(paste(plotpath, "funcPerc_clustered.png", sep = ""),
          width = 14,
-         height = 7)
+         height = 9)
   
   # some statistics on TryTryp genes _________________________________________________________
   #

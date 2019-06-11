@@ -75,10 +75,11 @@ prepare.tsfm.input <- function(genefile){
   # create a dataframe with columns
   #merged both fasta files 
   #cat hg38-tRNAs.fa tsfm_input_geneset_EditedCovea.fasta > tsfm_finalinput_HomoC.fasta
-  #covea TRNA2-euk.cm tsfm_finalinput_HomoC.fasta > tsfm_finalinput_HomoC.covea
+  #covea TRNA2-euk.cm tsfm_finalinput_HomoC2.fasta > tsfm_finalinput_HomoC2.covea
   #WARNING: Warning: unrecognized character - in sequence
-  # edit the file tsfm_finalinput_HomoC.covea using the functions in TriTrypAlignment.R and save the result in tsfm_input_geneset_EditedCovea.fasta
+  # Edit the file tsfm_finalinput_HomoC2.covea using the functions in TriTrypAlignment.R and save the result in tsfm_input_homo_TriTryp_EditedCovea2.fasta
   # Split genes based on genome names or clusters (clusters of Leishmania and Trypanosoma) using the script GenomeClustering.R
+  # Add classes to the end of Homo headers
   # Use script splitFuncClass.sh to split the genes based on their function generate the input tsfm files in clustal format
 }
 create.summary.table <- function(genefile) {

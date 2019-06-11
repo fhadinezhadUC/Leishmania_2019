@@ -12,22 +12,23 @@ TriTrypAlignment <- function() {
   # cataraifs<- paste(catDF[catDF$foundby=="ara",]$geneid,"araM",sep = "_")
   # aracatsGenes <- geneDF_Int_noVar_noIntron[geneDF_Int_noVar_noIntron$GeneID %in% cataraifs,]
   # finalgene_initiators <- geneDF_Int_noVar_noIntron[geneDF_Int_noVar_noIntron$foundby=="both" | (geneDF_Int_noVar_noIntron$GeneID %in% cataraifs),]
-  write.genefile(geneDF_Int_noVar_noIntron,resultpath,"tsfm_input_geneset_NoVarIntron.fasta")
+  #resultpath <- "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/"
+  write.genefile(geneDF_Int_noVar_noIntron,resultpath,"tsfm_input_geneset_NoVarIntron2.fasta")
   # remove sequences that has n in them before the alignment 
   # run covea
   system(
-    "covea /home/fatemeh/Leishmania_2019/Leishmania_2019/Scripts/TRNA2-euk.cm /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset_NoVarIntron.fasta > /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset.covea"
+    "covea /home/fatemeh/Leishmania_2019/Leishmania_2019/Scripts/TRNA2-euk.cm /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset_NoVarIntron2.fasta > /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset2.covea"
   )
   # covea processing
   
   # if we are using the merged file of Tritryp and homo:
-  dirpath <-
-    "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/"
-  covea_filename <- "tsfm_finalinput_HomoC.covea"
+  #dirpath <-
+  #  "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/"
+  #covea_filename <- "tsfm_finalinput_HomoC2.covea"
   
-  # dirpath <-
-  #   "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
-  # covea_filename <- "tsfm_input_geneset.covea"
+   dirpath <-
+     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/"
+   covea_filename <- "tsfm_input_geneset2.covea"
   
   readSeqsIntoDf(dirpath, covea_filename)
   seqDB <-
@@ -36,8 +37,8 @@ TriTrypAlignment <- function() {
   SSDB <-
     read_csv(paste(dirpath, "coveaDF_SS.txt", sep = ""))
   
-  fasta_filename <- "tsfm_finalinput_HomoC_EditedCovea.fasta"
-  CS_filename <- "tsfm_finalinput_HomoC_structfile.txt"
+  fasta_filename <- "tsfm_finalinput_HomoC_EditedCovea2.fasta"
+  CS_filename <- "tsfm_finalinput_HomoC_structfile2.txt"
   
   # fasta_filename <- "tsfm_input_geneset_EditedCovea.fasta"
   # CS_filename <- "tsfm_input_geneset_structfile.txt"
@@ -73,7 +74,8 @@ read.input2 <- function() {
     "/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/tsfm_input_geneset.txt"
   genefile <-
     read.table(genefilepath, header = TRUE, colClasses = "character")
-  
+  genefile<- genefile[genefile$genefunc!="Z",]
+  #3490 genes left
   araonly <- genefile$foundby == "ara"
   genefile$geneid[araonly] <-
     paste(genefile$geneid[araonly], "_ara", genefile$arafunc[araonly], sep = "")

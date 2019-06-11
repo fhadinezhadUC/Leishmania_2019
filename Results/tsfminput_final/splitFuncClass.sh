@@ -6,7 +6,7 @@
 
 #filenames=$(ls /home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfmInput-output/input2/*.fasta)
 #pathstring="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/Integrated_Genes/TriTrypgenemodel_Intersection/"
-pathstring="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input3/"
+pathstring="/home/fatemeh/Leishmania_2019/Leishmania_2019/Results/tsfminput_final/input4/"
 
 filenames=$(ls "${pathstring}"*.fasta)
 array=(A R N D C Q E G H I L K M X F P S T W Y V X)
