@@ -559,6 +559,7 @@ for (i in 1:length(identities)) {
 #Gene Length & 70  &71&72&73&74&75
 #Gene Length & 1   &20& 151& 118& 60& 1
 #exclude the Z
+
 headers <- paste(headers,"_",funcClasses,sep="")
 headers <- gsub("\\s", "", headers)
 write.fwf(
